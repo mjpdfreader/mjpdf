@@ -557,16 +557,6 @@ h1.hero-h1 .accent { color: var(--primary); }
   width: 100%;
 }
 .hero-app-dl:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue-lg); }
-.hero-float-badge {
-  position: absolute; background: var(--bg-white);
-  border-radius: var(--r-md); padding: 10px 14px;
-  box-shadow: var(--shadow-lg); border: 1px solid var(--border);
-  display: flex; align-items: center; gap: 10px;
-  font-size: 0.78rem; font-weight: 700; color: var(--text-dark);
-}
-.hero-float-badge.top-left { top: 20px; left: -20px; }
-.hero-float-badge.bottom-right { bottom: 20px; right: -20px; }
-.hfb-ico { font-size: 1.2rem; }
 
 /* ─── ABOUT ─── */
 #about {
@@ -1002,7 +992,6 @@ footer {
   .dl-wrapper { padding: 32px 20px; }
   .dl-btns { flex-direction: column; align-items: center; }
   .dl-btns .btn { width: 100%; justify-content: center; }
-  .hero-float-badge { display: none; }
 }
 </style>
 </head>
@@ -1020,7 +1009,10 @@ footer {
         <span class="logo-tagline">v2.2.1 · Free & Open Source</span>
       </div>
     </a>
+
+    <!-- CHANGE #2: Home button added to desktop nav -->
     <nav id="desktopNav">
+      <a href="#hero">Home</a>
       <a href="#about">About</a>
       <a href="#features">Features</a>
       <a href="#screenshots">Screenshots</a>
@@ -1029,10 +1021,12 @@ footer {
       <a href="#faq">FAQ</a>
       <a href="#download" class="nav-dl">⬇ Download APK</a>
     </nav>
+
     <button class="hamburger" id="hamBtn" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
+
   <div class="mobile-menu" id="mobileMenu">
     <a href="#hero" onclick="closeMenu()">🏠 Home</a>
     <a href="#about" onclick="closeMenu()">📖 About MJ PDF</a>
@@ -1099,10 +1093,9 @@ footer {
 
       <!-- RIGHT: APP CARD -->
       <div class="hero-visual">
-        <div class="hero-float-badge top-left">
-          <span class="hfb-ico">🔒</span>
-          <span>Zero Data Collected</span>
-        </div>
+
+        <!-- CHANGE #1: Removed the two floating badges ("Zero Data Collected" and "Only 5.1 MB!") -->
+
         <div class="hero-app-card">
           <div class="hero-app-icon">
             <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader App Icon">
@@ -1118,10 +1111,7 @@ footer {
             ⬇ Download v2.2.1 APK
           </a>
         </div>
-        <div class="hero-float-badge bottom-right">
-          <span class="hfb-ico">⚡</span>
-          <span>Only 5.1 MB!</span>
-        </div>
+
       </div>
     </div>
   </div>
@@ -1639,6 +1629,43 @@ footer {
   </div>
 </section>
 
+<!-- CHANGE #3: Footer menu links require target sections -->
+<section id="contact" class="section reveal" style="background: var(--bg);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-teal">Contact</span></div>
+    <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+    <p class="section-sub">Add your contact details here (support email, contact form link, or social profiles).</p>
+  </div>
+</section>
+
+<section id="privacy" class="section reveal" style="background: var(--bg-white);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-green">Legal</span></div>
+    <h2 class="section-title">Privacy <span class="accent">Policy</span></h2>
+    <p class="section-sub">Add your privacy policy text here (what data is collected, how it’s used, and user rights).</p>
+  </div>
+</section>
+
+<section id="disclaimer" class="section reveal" style="background: var(--bg);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-orange">Legal</span></div>
+    <h2 class="section-title">Disclaimer</h2>
+    <p class="section-sub">Add your disclaimer text here (informational purposes, external links, and liability limitations).</p>
+  </div>
+</section>
+
+<section id="terms" class="section reveal" style="background: var(--bg-white);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-purple">Legal</span></div>
+    <h2 class="section-title">Terms &amp; <span class="accent">Conditions</span></h2>
+    <p class="section-sub">Add your terms and conditions here (usage rules, licensing, limitations, and changes).</p>
+  </div>
+</section>
+
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="container">
@@ -1646,6 +1673,8 @@ footer {
       <h2>MJ PDF Reader APK — Complete Resource Guide</h2>
       <p>This page provides a comprehensive guide to <strong>MJ PDF Reader APK v2.2.1</strong>, a fast, lightweight, open-source PDF viewer for Android developed by Mudlej. MJ PDF Reader is available for free on the Google Play Store and via direct APK download. It supports Android 5.0 through Android 14 across all major CPU architectures. Key features include <strong>blazing-fast PDF search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, <strong>hyperlink support</strong>, and <strong>total privacy with zero data collection</strong>. The app weighs only 5.1 MB, requires no root access, and collects absolutely no personal data — only requesting Internet (for URL-based PDFs) and Storage permissions. All information on this page is provided for informational purposes.</p>
     </div>
+
+    <!-- CHANGE #3: Footer menu included with About/Contact/Privacy/Disclaimer/Terms -->
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#hero" class="footer-logo-wrap" style="margin-bottom:12px;display:inline-flex;gap:10px;text-decoration:none;">
@@ -1656,6 +1685,7 @@ footer {
         </a>
         <p>A fast, minimalist, powerful and totally free PDF viewer for Android. Made by Mudlej. Open source. No ads. No data collected.</p>
       </div>
+
       <div class="footer-col">
         <h5>Navigation</h5>
         <a href="#hero">Home</a>
@@ -1663,24 +1693,28 @@ footer {
         <a href="#features">Features</a>
         <a href="#info">App Details</a>
         <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
       </div>
+
       <div class="footer-col">
         <h5>Resources</h5>
         <a href="#release">Release Notes</a>
-        <a href="#permissions">Privacy Policy</a>
+        <a href="#permissions">Permissions & Privacy (App)</a>
         <a href="#install">Install Guide</a>
         <a href="#faq">FAQ</a>
         <a href="https://gitlab.com/mudlej_android/mj_pdf_reader" target="_blank" rel="noopener">Source Code ↗</a>
       </div>
+
       <div class="footer-col">
-        <h5>App Info</h5>
-        <a href="#info">Version 2.2.1</a>
-        <a href="#info">Android 5.0+</a>
-        <a href="#info">~5 MB Size</a>
-        <a href="#info">No Root Needed</a>
-        <a href="#download">Free Download</a>
+        <h5>Company & Legal</h5>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#disclaimer">Disclaimer</a>
+        <a href="#terms">Terms &amp; Conditions</a>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>© 2024 MJ PDF Reader — Made by Mudlej — Open Source on GitLab. All rights reserved.</p>
       <p>Not affiliated with any third-party PDF services or platforms.</p>
