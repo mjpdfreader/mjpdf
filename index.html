@@ -63,7 +63,7 @@
       "name": "What is MJ PDF Reader?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "MJ PDF Reader is a fast, minimalist, lightweight and totally free open-source PDF viewer for Android developed by Mudlej. It features dark mode, powerful search, text mode, auto scroll, hyperlinks, table of contents, and total privacy with no data collection."
+        "text": "MJ PDF Reader is a fast, minimalist, lightweight and totally free open-source PDF viewer for Android developed by Mudlej."
       }
     },
     {
@@ -79,7 +79,7 @@
       "name": "Does MJ PDF Reader collect any data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. MJ PDF Reader does not collect any data. It only requests Internet permission (for opening PDFs through links) and Storage permission (for saving/opening PDFs from device storage)."
+        "text": "No. MJ PDF Reader does not collect any data. It only requests Internet permission and Storage permission."
       }
     },
     {
@@ -99,6 +99,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
 
 <style>
+/* ─── CSS VARIABLES ─── */
 :root {
   --primary: #2563EB;
   --primary-dark: #1D4ED8;
@@ -145,6 +146,7 @@
   --font-body: 'Inter', system-ui, sans-serif;
 }
 
+/* ─── RESET ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -153,6 +155,7 @@ body {
   color: var(--text-body);
   overflow-x: hidden;
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -168,7 +171,6 @@ section[id] { scroll-margin-top: 86px; }
 .sec-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
-  margin: 0;
 }
 
 .badge {
@@ -176,38 +178,41 @@ section[id] { scroll-margin-top: 86px; }
   padding: 5px 14px; border-radius: var(--r-full);
   font-size: 0.72rem; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
+  white-space: nowrap;
 }
-.badge-blue { background: var(--primary-mid); color: var(--primary-dark); }
+.badge-blue  { background: var(--primary-mid); color: var(--primary-dark); }
 .badge-green { background: var(--green-light); color: var(--green); }
-.badge-purple { background: var(--accent-light); color: var(--accent); }
-.badge-orange { background: var(--orange-light); color: var(--orange); }
-.badge-teal { background: var(--teal-light); color: var(--teal); }
+.badge-purple{ background: var(--accent-light); color: var(--accent); }
+.badge-orange{ background: var(--orange-light); color: var(--orange); }
+.badge-teal  { background: var(--teal-light);   color: var(--teal); }
 
 .section-eyebrow { text-align: center; margin-bottom: 16px; }
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
   font-weight: 800;
   color: var(--text-dark);
   text-align: center;
   line-height: 1.15;
   margin-bottom: 14px;
   letter-spacing: -0.5px;
+  word-break: break-word;
 }
 .section-title .accent { color: var(--primary); }
 .section-sub {
   text-align: center;
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   max-width: 760px;
   margin: 0 auto 56px;
   line-height: 1.75;
+  padding: 0 4px;
 }
 
-/* BUTTONS */
+/* ─── BUTTONS ─── */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 14px 30px; border-radius: var(--r-full);
+  padding: 14px 28px; border-radius: var(--r-full);
   font-family: var(--font-body);
   font-size: 0.95rem; font-weight: 700;
   cursor: pointer; text-decoration: none; border: none;
@@ -215,14 +220,15 @@ section[id] { scroll-margin-top: 86px; }
   position: relative; overflow: hidden;
   letter-spacing: 0.2px;
   white-space: nowrap;
+  max-width: 100%;
 }
 .btn-primary { background: var(--primary); color: #fff; box-shadow: var(--shadow-blue); }
 .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue-lg); }
 .btn-ghost { background: var(--bg-white); color: var(--text-body); border: 1.5px solid var(--border); box-shadow: var(--shadow-sm); }
 .btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.btn-lg { padding: 17px 40px; font-size: 1.05rem; }
+.btn-lg { padding: 17px 36px; font-size: 1.02rem; }
 
-/* CARDS */
+/* ─── CARDS ─── */
 .card {
   background: var(--bg-white);
   border: 1px solid var(--border);
@@ -248,11 +254,10 @@ header.scrolled { box-shadow: 0 8px 28px rgba(15,23,42,0.10); }
   height: 68px; padding: 0 20px;
   max-width: 1160px; margin: 0 auto;
 }
-.logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
 .logo-icon {
   width: 38px; height: 38px;
-  border-radius: 10px;
-  overflow: hidden;
+  border-radius: 10px; overflow: hidden;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
   display: flex; align-items: center; justify-content: center;
@@ -265,7 +270,7 @@ header.scrolled { box-shadow: 0 8px 28px rgba(15,23,42,0.10); }
 .logo-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.3px; }
 .logo-tagline { font-size: 0.6rem; font-weight: 600; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
 
-/* NAV */
+/* ─── DESKTOP NAV ─── */
 nav { display: flex; align-items: center; gap: 4px; }
 nav a {
   color: var(--text-muted);
@@ -273,6 +278,7 @@ nav a {
   font-size: 0.875rem; font-weight: 600;
   padding: 7px 13px; border-radius: var(--r-xs);
   transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
 }
 nav a:hover { color: var(--primary); background: var(--primary-light); }
 nav a.active { color: var(--primary); }
@@ -287,11 +293,12 @@ nav a.active { color: var(--primary); }
 }
 .nav-dl:hover { background: var(--primary-dark) !important; box-shadow: var(--shadow-blue-lg) !important; transform: translateY(-1px); }
 
-/* HAMBURGER */
+/* ─── HAMBURGER ─── */
 .hamburger {
-  display: none; flex-direction: column; gap: 5px;
+  display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
   cursor: pointer; padding: 10px; background: none; border: none;
   border-radius: var(--r-xs); transition: background 0.2s;
+  width: 44px; height: 44px; flex-shrink: 0;
 }
 .hamburger:hover { background: var(--bg-gray); }
 .hamburger span {
@@ -303,47 +310,69 @@ nav a.active { color: var(--primary); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* MOBILE NAV */
+/* ─── MOBILE MENU ─── */
 .mobile-menu {
-  position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.99);
-  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 68px; left: 0; right: 0; bottom: 0;
+  background: #fff;
   z-index: 4900;
-  display: flex; flex-direction: column;
-  padding: 18px;
-  gap: 6px;
+  padding: 16px 14px 32px;
+  /* Use block layout so overflow-y:scroll works correctly */
+  display: block;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  border-top: 1px solid var(--border);
+  /* Slide from right */
   transform: translateX(110%);
   transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
-  overflow-y: auto;
-  border-top: 1px solid var(--border);
-  -webkit-overflow-scrolling: touch;
 }
 .mobile-menu.open { transform: translateX(0); }
+
+/* Section label inside mobile menu */
+.mobile-menu-label {
+  font-size: 0.62rem; font-weight: 900; color: var(--text-faint);
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 14px 12px 6px;
+  display: block;
+}
 .mobile-menu a {
   color: var(--text-body);
   text-decoration: none;
-  font-size: 1.02rem; font-weight: 650;
-  padding: 14px 16px; border-radius: var(--r-md);
+  font-size: 1rem; font-weight: 650;
+  padding: 13px 14px;
+  border-radius: var(--r-md);
   transition: all 0.2s;
   display: flex; align-items: center; gap: 12px;
   border: 1px solid transparent;
+  margin-bottom: 4px;
+  width: 100%;
 }
 .mobile-menu a:hover { color: var(--primary); background: var(--primary-light); border-color: var(--primary-mid); }
-.mobile-menu .m-dl {
-  margin-top: 12px;
-  background: var(--primary);
+.mobile-menu-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 10px 0;
+}
+.m-dl {
+  margin-top: 14px !important;
+  background: var(--primary) !important;
   color: #fff !important;
   justify-content: center;
   border-radius: var(--r-full) !important;
-  box-shadow: var(--shadow-blue);
+  box-shadow: var(--shadow-blue) !important;
+  font-size: 1.02rem !important;
+  padding: 15px 14px !important;
+  margin-bottom: 0 !important;
 }
+.m-dl:hover { background: var(--primary-dark) !important; }
 
 @media (max-width: 900px) {
   nav { display: none; }
   .hamburger { display: flex; }
 }
 
-/* ─── HERO (REDESIGNED) ─── */
+/* ─── HERO ─── */
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
@@ -366,6 +395,7 @@ nav a.active { color: var(--primary); }
   gap: 54px;
   align-items: center;
   position: relative; z-index: 2;
+  width: 100%;
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -378,7 +408,7 @@ nav a.active { color: var(--primary); }
 }
 h1.hero-h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.15rem, 5.6vw, 4rem);
+  font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 900;
   line-height: 1.06;
   letter-spacing: -1px;
@@ -393,10 +423,11 @@ h1.hero-h1 .accent { color: var(--primary); }
   border-radius: var(--r-full); padding: 8px 14px;
   font-size: 0.80rem; font-weight: 800;
   margin-bottom: 18px; letter-spacing: 0.2px;
+  flex-wrap: wrap;
 }
 .hero-vtag b { color: #065F46; }
 .hero-p {
-  font-size: 1.08rem; color: var(--text-muted);
+  font-size: 1.05rem; color: var(--text-muted);
   line-height: 1.85; margin-bottom: 24px;
   max-width: 620px;
 }
@@ -410,34 +441,35 @@ h1.hero-h1 .accent { color: var(--primary); }
   border: 1.5px solid var(--border);
   color: var(--text-body);
   box-shadow: var(--shadow-sm);
+  white-space: nowrap;
 }
-.hero-pill.blue { color: var(--primary); border-color: rgba(37,99,235,0.25); background: var(--primary-light); }
-.hero-pill.green { color: var(--green); border-color: rgba(5,150,105,0.25); background: var(--green-light); }
-.hero-pill.purple { color: var(--accent); border-color: rgba(124,58,237,0.25); background: var(--accent-light); }
-.hero-pill.orange { color: var(--orange); border-color: rgba(217,119,6,0.25); background: var(--orange-light); }
+.hero-pill.blue   { color: var(--primary); border-color: rgba(37,99,235,0.25); background: var(--primary-light); }
+.hero-pill.green  { color: var(--green);   border-color: rgba(5,150,105,0.25); background: var(--green-light); }
+.hero-pill.purple { color: var(--accent);  border-color: rgba(124,58,237,0.25); background: var(--accent-light); }
+.hero-pill.orange { color: var(--orange);  border-color: rgba(217,119,6,0.25);  background: var(--orange-light); }
 
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 26px; }
 .hero-stats {
-  display: flex; gap: 22px; flex-wrap: wrap;
+  display: flex; gap: 20px; flex-wrap: wrap;
   padding-top: 20px;
   border-top: 1px solid rgba(226,232,240,0.9);
 }
-.hs-val { font-family: var(--font-display); font-size: 1.55rem; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
-.hs-lbl { font-size: 0.68rem; color: var(--text-faint); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-top: 4px; display: block; }
+.hs-val { font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
+.hs-lbl { font-size: 0.65rem; color: var(--text-faint); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-top: 4px; display: block; }
 
 .hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
 .hero-app-card {
   background: rgba(255,255,255,0.86);
   border-radius: var(--r-2xl);
-  padding: 30px;
+  padding: 28px 24px;
   box-shadow: var(--shadow-xl);
   border: 1px solid rgba(226,232,240,0.9);
   text-align: center;
-  max-width: 360px; width: 100%;
+  max-width: 340px; width: 100%;
   position: relative; z-index: 2;
   backdrop-filter: blur(16px);
 }
-.hero-app-card::before{
+.hero-app-card::before {
   content:'';
   position:absolute; inset:-2px;
   border-radius: var(--r-2xl);
@@ -445,20 +477,20 @@ h1.hero-h1 .accent { color: var(--primary); }
   z-index:-1;
 }
 .hero-app-icon {
-  width: 92px; height: 92px;
+  width: 88px; height: 88px;
   border-radius: 22px;
   margin: 0 auto 16px;
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(37,99,235,0.25);
 }
 .hero-app-icon img { width: 100%; height: 100%; object-fit: cover; }
-.hero-app-name { font-family: var(--font-display); font-size: 1.55rem; font-weight: 900; color: var(--text-dark); margin-bottom: 6px; }
-.hero-app-sub { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
-.hero-app-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px; }
+.hero-app-name { font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; color: var(--text-dark); margin-bottom: 6px; }
+.hero-app-sub  { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+.hero-app-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 14px; }
 .hero-app-dl {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
   background: var(--text-dark); color: #fff;
-  padding: 12px 18px; border-radius: var(--r-full);
+  padding: 13px 16px; border-radius: var(--r-full);
   font-weight: 800; font-size: 0.92rem;
   text-decoration: none;
   box-shadow: 0 12px 28px rgba(15,23,42,0.20);
@@ -468,35 +500,45 @@ h1.hero-h1 .accent { color: var(--primary); }
 }
 .hero-app-dl:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(15,23,42,0.22); }
 
+/* Hero responsive */
 @media (max-width: 860px) {
-  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 28px; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+  .hero-eyebrow, .hero-vtag { display: inline-flex; }
   .hero-p { margin-left: auto; margin-right: auto; }
   .hero-pills, .hero-ctas, .hero-stats { justify-content: center; }
+  .hero-visual { order: -1; }
+  .hero-app-card { max-width: 320px; }
 }
 @media (max-width: 480px) {
-  #hero { padding-top: 92px; }
+  #hero { padding-top: 92px; padding-bottom: 48px; min-height: unset; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
-  .hero-ctas .btn { width: 100%; }
-  .hero-stats { gap: 16px; justify-content: center; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .hero-stats { gap: 14px; }
+  .hs-val { font-size: 1.2rem; }
+  h1.hero-h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .hero-app-card { max-width: 100%; padding: 22px 16px; }
+}
+@media (max-width: 360px) {
+  .hero-pills .hero-pill { font-size: 0.72rem; padding: 5px 10px; }
+  .hero-vtag { font-size: 0.72rem; }
 }
 
 /* ─── ABOUT ─── */
 #about { background: var(--bg-white); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
 .about-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.3rem);
   font-weight: 800; line-height: 1.2;
   color: var(--text-dark); margin-bottom: 18px;
   letter-spacing: -0.3px;
 }
 .about-heading .accent { color: var(--primary); }
-.about-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 0.97rem; line-height: 1.8; }
+.about-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 0.96rem; line-height: 1.8; }
 .about-text p strong { color: var(--text-dark); }
 .about-point {
   display: flex; align-items: flex-start; gap: 14px;
-  padding: 16px 18px; border-radius: var(--r-lg);
+  padding: 16px 16px; border-radius: var(--r-lg);
   background: var(--bg);
   border: 1px solid var(--border);
   margin-bottom: 12px;
@@ -505,18 +547,21 @@ h1.hero-h1 .accent { color: var(--primary); }
 .about-point:hover { border-color: var(--primary-mid); background: var(--primary-light); box-shadow: var(--shadow-sm); }
 .about-point-ico {
   width: 40px; height: 40px; flex-shrink: 0;
-  border-radius: var(--r-xs); display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-xs);
+  display: flex; align-items: center; justify-content: center;
   font-size: 1.2rem;
 }
 .about-point-body h4 { font-size: 0.92rem; font-weight: 800; color: var(--text-dark); margin-bottom: 3px; }
-.about-point-body p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+.about-point-body p  { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 30px; }
+}
 
 /* ─── FEATURES ─── */
 #features { background: var(--bg); }
 .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 540px) { .feat-grid { grid-template-columns: 1fr; } }
-.feat-card { padding: 28px 24px; position: relative; overflow: hidden; }
+.feat-card { padding: 26px 22px; position: relative; overflow: hidden; }
 .feat-top-bar {
   position: absolute; top: 0; left: 0; right: 0;
   height: 3px; border-radius: var(--r-xl) var(--r-xl) 0 0;
@@ -524,24 +569,26 @@ h1.hero-h1 .accent { color: var(--primary); }
 }
 .feat-card:hover .feat-top-bar { opacity: 1; }
 .feat-ico {
-  width: 52px; height: 52px;
+  width: 50px; height: 50px;
   border-radius: var(--r-md);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; margin-bottom: 16px;
+  font-size: 1.45rem; margin-bottom: 14px;
 }
-.feat-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; }
-.feat-card p { color: var(--text-muted); font-size: 0.87rem; line-height: 1.75; margin-bottom: 16px; }
+.feat-card h3 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; }
+.feat-card p  { color: var(--text-muted); font-size: 0.86rem; line-height: 1.75; margin-bottom: 14px; }
 .feat-tag {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 4px 12px; border-radius: var(--r-full);
   font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
 }
 
-/* ─── APP INFO (FULL WIDTH) ─── */
+@media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .feat-grid { grid-template-columns: 1fr; } }
+
+/* ─── APP INFO ─── */
 #info { background: var(--bg-white); }
 .info-wrap {
   width: 100%;
-  margin: 0 auto;
   border-radius: var(--r-xl);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -549,8 +596,8 @@ h1.hero-h1 .accent { color: var(--primary); }
   box-shadow: var(--shadow-md);
 }
 .info-row {
-  display: grid; grid-template-columns: 240px 1fr;
-  padding: 16px 24px;
+  display: grid; grid-template-columns: 220px 1fr;
+  padding: 15px 22px;
   border-bottom: 1px solid var(--border-light);
   align-items: center;
   transition: background 0.2s;
@@ -558,27 +605,27 @@ h1.hero-h1 .accent { color: var(--primary); }
 .info-row:last-child { border-bottom: none; }
 .info-row:hover { background: var(--bg); }
 .info-k {
-  font-size: 0.78rem; font-weight: 900;
+  font-size: 0.76rem; font-weight: 900;
   color: var(--text-muted);
   text-transform: uppercase; letter-spacing: 1px;
   display: flex; align-items: center; gap: 8px;
 }
 .info-v {
-  font-size: 0.95rem; font-weight: 700;
+  font-size: 0.94rem; font-weight: 700;
   color: var(--text-dark);
   display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
 }
 .info-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
 @media (max-width: 640px) {
-  .info-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 16px; }
-  .info-v { font-size: 0.92rem; }
+  .info-row { grid-template-columns: 1fr; gap: 5px; padding: 12px 16px; }
+  .info-k { font-size: 0.72rem; }
+  .info-v { font-size: 0.88rem; }
 }
 
-/* ─── SCREENSHOTS (6) ─── */
+/* ─── SCREENSHOTS ─── */
 #screenshots { background: var(--bg); }
-.ss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 768px) { .ss-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .ss-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+.ss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .ss-item {
   aspect-ratio: 9/18;
   border-radius: var(--r-lg);
@@ -613,18 +660,21 @@ h1.hero-h1 .accent { color: var(--primary); }
   color: #fff; text-align: center; flex-shrink: 0;
 }
 
-/* LIGHTBOX */
+@media (max-width: 768px) { .ss-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (max-width: 400px) { .ss-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+
+/* ─── LIGHTBOX ─── */
 .lightbox {
   display: none; position: fixed; inset: 0;
   background: rgba(15,23,42,0.9); z-index: 9999;
   align-items: center; justify-content: center;
-  backdrop-filter: blur(16px); padding: 24px;
+  backdrop-filter: blur(16px); padding: 20px;
 }
 .lightbox.open { display: flex; }
 .lb-inner {
-  max-width: 360px; width: 100%;
+  max-width: 340px; width: 100%;
   background: var(--bg-white); border: 1px solid var(--border);
-  border-radius: var(--r-2xl); padding: 22px; text-align: center;
+  border-radius: var(--r-2xl); padding: 20px; text-align: center;
   position: relative; box-shadow: var(--shadow-xl);
 }
 .lb-img-preview {
@@ -636,8 +686,8 @@ h1.hero-h1 .accent { color: var(--primary); }
   border: 1px solid var(--border);
 }
 .lb-img-preview img { width: 100%; height: 100%; object-fit: contain; border-radius: var(--r-lg); }
-.lb-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 900; margin-bottom: 4px; color: var(--text-dark); }
-.lb-sub { font-size: 0.8rem; color: var(--text-muted); }
+.lb-title { font-family: var(--font-display); font-size: 1.02rem; font-weight: 900; margin-bottom: 4px; color: var(--text-dark); }
+.lb-sub   { font-size: 0.8rem; color: var(--text-muted); }
 .lb-close {
   position: absolute; top: 12px; right: 12px;
   width: 34px; height: 34px; border-radius: 50%;
@@ -647,7 +697,7 @@ h1.hero-h1 .accent { color: var(--primary); }
 }
 .lb-close:hover { background: var(--red-light); color: var(--red); border-color: rgba(220,38,38,0.3); }
 
-/* ─── RELEASE NOTES (REDESIGNED + SHORTER) ─── */
+/* ─── RELEASE NOTES ─── */
 #release { background: var(--bg-white); }
 .rn-wrap {
   width: 100%;
@@ -657,55 +707,55 @@ h1.hero-h1 .accent { color: var(--primary); }
   box-shadow: var(--shadow-md);
 }
 .rn-header {
-  padding: 22px 22px;
+  padding: 22px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;
   flex-wrap: wrap;
 }
 .rn-chip {
-  display:inline-flex; align-items:center; gap:8px;
-  padding: 8px 12px;
-  border-radius: var(--r-full);
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: var(--r-full);
   background: rgba(255,255,255,0.18);
   border: 1px solid rgba(255,255,255,0.24);
-  color:#fff;
-  font-weight: 900;
-  letter-spacing: 0.2px;
-  font-size: 0.9rem;
+  color: #fff; font-weight: 900; font-size: 0.9rem;
+  white-space: nowrap;
 }
-.rn-header h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; color: #fff; margin-bottom: 2px; }
-.rn-header p { font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+.rn-header h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 900; color: #fff; margin: 10px 0 2px; }
+.rn-header p  { font-size: 0.84rem; color: rgba(255,255,255,0.85); }
 .rn-body { padding: 22px; background: var(--bg-white); }
 .rn-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .rn-list li {
   display: flex; align-items: flex-start; gap: 10px;
   padding: 12px 12px; border-radius: var(--r-md);
   background: var(--bg); border: 1px solid var(--border-light);
-  font-size: 0.88rem; color: var(--text-body); line-height: 1.6;
+  font-size: 0.87rem; color: var(--text-body); line-height: 1.6;
 }
 .rn-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
-@media (max-width: 720px){
+
+@media (max-width: 720px) {
   .rn-list { grid-template-columns: 1fr; }
-  .rn-header { align-items: flex-start; }
+  .rn-body { padding: 16px; }
+}
+@media (max-width: 480px) {
+  .rn-header { padding: 16px; }
 }
 
-/* ─── PERMISSIONS (FULL WIDTH) ─── */
+/* ─── PERMISSIONS ─── */
 #permissions { background: var(--bg); }
-.perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; width: 100%; margin: 0 auto; }
-@media (max-width: 760px) { .perm-grid { grid-template-columns: 1fr; } }
-.perm-card { padding: 26px 22px; display: flex; align-items: flex-start; gap: 16px; }
+.perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.perm-card { padding: 24px 20px; display: flex; align-items: flex-start; gap: 16px; }
 .perm-ico {
-  width: 52px; height: 52px; flex-shrink: 0;
+  width: 50px; height: 50px; flex-shrink: 0;
   border-radius: var(--r-md);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.4rem;
 }
 .perm-body h4 { font-size: 1rem; font-weight: 900; color: var(--text-dark); margin-bottom: 6px; }
-.perm-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+.perm-body p  { font-size: 0.87rem; color: var(--text-muted); line-height: 1.7; }
 .privacy-note {
   width: 100%;
   margin: 18px auto 0;
-  padding: 20px 20px;
+  padding: 20px;
   border-radius: var(--r-xl);
   background: linear-gradient(135deg, rgba(5,150,105,0.10), rgba(8,145,178,0.08));
   border: 1px solid rgba(5,150,105,0.18);
@@ -713,40 +763,50 @@ h1.hero-h1 .accent { color: var(--primary); }
   display: flex; gap: 14px; align-items: flex-start;
 }
 .privacy-note-ico { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
-.privacy-note h4 { color: #065F46; margin-bottom: 5px; font-size: 0.95rem; font-weight: 900; }
-.privacy-note p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.75; margin: 0; }
+.privacy-note h4  { color: #065F46; margin-bottom: 5px; font-size: 0.95rem; font-weight: 900; }
+.privacy-note p   { color: var(--text-muted); font-size: 0.87rem; line-height: 1.75; margin: 0; }
 
-/* ─── INSTALL (REDESIGNED) ─── */
+@media (max-width: 760px) { .perm-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .privacy-note { flex-direction: column; gap: 10px; }
+}
+
+/* ─── INSTALL GUIDE ─── */
 #install { background: var(--bg-white); }
 .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-@media (max-width: 1000px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 680px) { .steps-grid { grid-template-columns: 1fr; } }
-.step-card { padding: 22px 18px; text-align: left; border-radius: var(--r-xl); position: relative; overflow: hidden; }
-.step-card::before{
+.step-card {
+  padding: 20px 16px; text-align: left;
+  border-radius: var(--r-xl); position: relative; overflow: hidden;
+}
+.step-card::before {
   content:'';
   position:absolute; top:-40px; right:-40px;
   width:120px; height:120px; border-radius:50%;
   background: rgba(37,99,235,0.10);
 }
-.step-head { display:flex; align-items:center; gap:12px; margin-bottom: 10px; }
+.step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
 .step-ring {
-  width: 44px; height: 44px; border-radius: 14px;
+  width: 42px; height: 42px; border-radius: 14px;
   background: var(--primary); color: #fff;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 1.1rem; font-weight: 900;
   box-shadow: var(--shadow-blue);
-  flex-shrink:0;
+  flex-shrink: 0;
 }
-.step-emo { font-size: 1.4rem; display: inline-flex; }
-.step-card h4 { font-size: 0.95rem; font-weight: 900; margin-bottom: 6px; color: var(--text-dark); }
-.step-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.75; }
+.step-emo  { font-size: 1.3rem; display: inline-flex; }
+.step-card h4 { font-size: 0.93rem; font-weight: 900; margin-bottom: 6px; color: var(--text-dark); }
+.step-card p  { font-size: 0.84rem; color: var(--text-muted); line-height: 1.75; }
 .step-card p strong { color: var(--text-dark); }
+
+@media (max-width: 1000px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 680px)  { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px)  { .steps-grid { grid-template-columns: 1fr; } }
 
 /* ─── DOWNLOAD ─── */
 #download { background: var(--bg); }
 .dl-wrapper {
   max-width: 860px; margin: 0 auto;
-  padding: 54px 44px;
+  padding: 52px 44px;
   border-radius: var(--r-2xl);
   background: linear-gradient(135deg, #EFF6FF 0%, #EDE9FE 100%);
   border: 1px solid rgba(37,99,235,0.15);
@@ -755,40 +815,46 @@ h1.hero-h1 .accent { color: var(--primary); }
   box-shadow: var(--shadow-lg);
 }
 .dl-wrapper::before {
-  content: '';
-  position: absolute; top: -80px; right: -80px;
-  width: 280px; height: 280px; border-radius: 50%;
+  content:'';
+  position:absolute; top:-80px; right:-80px;
+  width:280px; height:280px; border-radius:50%;
   background: radial-gradient(circle, rgba(37,99,235,0.08), transparent 70%);
   pointer-events: none;
 }
 .dl-title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 900; color: var(--text-dark);
   margin-bottom: 10px; letter-spacing: -0.5px;
 }
 .dl-title .accent { color: var(--primary); }
-.dl-sub { color: var(--text-muted); margin-bottom: 30px; font-size: 0.98rem; line-height:1.75; }
+.dl-sub { color: var(--text-muted); margin-bottom: 28px; font-size: 0.97rem; line-height: 1.75; }
 .dl-meta-row {
-  display: flex; justify-content: center; gap: 30px;
-  flex-wrap: wrap; margin-bottom: 28px;
+  display: flex; justify-content: center; gap: 24px;
+  flex-wrap: wrap; margin-bottom: 26px;
 }
 .dl-meta-item { text-align: center; }
-.dl-meta-val { font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; color: var(--primary); display: block; }
-.dl-meta-lbl { font-size: 0.68rem; color: var(--text-faint); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800; }
-.dl-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
-.trust-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.dl-meta-val { font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; color: var(--primary); display: block; }
+.dl-meta-lbl { font-size: 0.67rem; color: var(--text-faint); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800; }
+.dl-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+.trust-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 .trust-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-weight: 700; }
-@media (max-width: 480px) {
-  .section { padding: 72px 0; }
-  .dl-wrapper { padding: 30px 18px; }
-  .dl-btns { flex-direction: column; align-items: center; }
-  .dl-btns .btn { width: 100%; }
+
+@media (max-width: 600px) {
+  .dl-wrapper { padding: 32px 20px; }
+  .dl-btns { flex-direction: column; align-items: stretch; }
+  .dl-btns .btn { width: 100%; justify-content: center; }
+  .dl-meta-row { gap: 16px; }
+  .trust-row { gap: 10px; }
+  .trust-item { font-size: 0.73rem; }
+}
+@media (max-width: 380px) {
+  .dl-wrapper { padding: 24px 14px; }
 }
 
-/* ─── FAQ (FULL WIDTH) ─── */
+/* ─── FAQ ─── */
 #faq { background: var(--bg-white); }
-.faq-list { width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.faq-list { width: 100%; display: flex; flex-direction: column; gap: 10px; }
 .faq-item {
   border-radius: var(--r-xl); overflow: hidden;
   border: 1px solid var(--border);
@@ -797,13 +863,13 @@ h1.hero-h1 .accent { color: var(--primary); }
 }
 .faq-item.open { border-color: var(--primary-mid); box-shadow: var(--shadow-sm); }
 .faq-q {
-  padding: 18px 18px;
+  padding: 17px 16px;
   display: flex; justify-content: space-between; align-items: center;
   cursor: pointer; gap: 14px;
   transition: background 0.2s;
 }
 .faq-q:hover { background: var(--bg); }
-.faq-q h3 { font-size: 0.98rem; font-weight: 900; color: var(--text-dark); flex: 1; line-height:1.35; }
+.faq-q h3 { font-size: 0.96rem; font-weight: 900; color: var(--text-dark); flex: 1; line-height: 1.4; }
 .faq-toggle {
   width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
   border: 1.5px solid var(--border);
@@ -816,9 +882,30 @@ h1.hero-h1 .accent { color: var(--primary); }
 .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
 .faq-item.open .faq-body { max-height: 560px; }
 .faq-body-inner {
-  padding: 14px 18px 18px;
-  color: var(--text-muted); font-size: 0.92rem; line-height: 1.85;
+  padding: 12px 16px 16px;
+  color: var(--text-muted); font-size: 0.91rem; line-height: 1.85;
   border-top: 1px solid var(--border-light);
+}
+
+/* ─── CONTENT SECTIONS (About Us, Contact, Privacy, Disclaimer, Terms) ─── */
+.prose-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2xl);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.prose-card p {
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+.prose-card p:last-child { margin-bottom: 0; }
+.prose-card p strong { color: var(--text-dark); }
+
+@media (max-width: 480px) {
+  .prose-card { padding: 20px 16px; }
 }
 
 /* ─── FOOTER ─── */
@@ -827,15 +914,22 @@ footer {
   padding: 60px 0 32px;
   color: rgba(255,255,255,0.7);
 }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 42px; }
-@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-.footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-top: 12px; line-height: 1.8; max-width: 320px; }
-.footer-col h5 { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; font-weight: 900; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px; margin-bottom: 42px;
+}
+.footer-brand p {
+  color: rgba(255,255,255,0.5); font-size: 0.82rem;
+  margin-top: 12px; line-height: 1.8; max-width: 300px;
+}
+.footer-col h5 {
+  font-size: 0.67rem; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 14px; font-weight: 900;
+}
 .footer-col a {
   display: block; color: rgba(255,255,255,0.62);
-  text-decoration: none; font-size: 0.86rem;
-  margin-bottom: 9px; font-weight: 650;
+  text-decoration: none; font-size: 0.85rem;
+  margin-bottom: 9px; font-weight: 600;
   transition: color 0.2s;
 }
 .footer-col a:hover { color: #fff; }
@@ -846,11 +940,11 @@ footer {
 .seo-section {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.07);
-  border-radius: var(--r-xl); padding: 26px;
+  border-radius: var(--r-xl); padding: 24px;
   margin-bottom: 38px;
 }
-.seo-section h2 { font-family: var(--font-display); font-size: 0.98rem; color: rgba(255,255,255,0.55); margin-bottom: 12px; }
-.seo-section p { font-size: 0.78rem; color: rgba(255,255,255,0.34); line-height: 1.95; }
+.seo-section h2 { font-family: var(--font-display); font-size: 0.97rem; color: rgba(255,255,255,0.55); margin-bottom: 12px; }
+.seo-section p  { font-size: 0.78rem; color: rgba(255,255,255,0.34); line-height: 1.95; }
 .seo-section p strong { color: rgba(255,255,255,0.5); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.07);
@@ -860,12 +954,24 @@ footer {
 }
 .footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.76rem; }
 
+@media (max-width: 860px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-brand p { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+  footer { padding: 48px 0 28px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .seo-section { padding: 18px 16px; }
+}
+
 /* ─── BACK TO TOP ─── */
 #btt {
-  position: fixed; bottom: 24px; right: 24px;
+  position: fixed; bottom: 24px; right: 20px;
   width: 46px; height: 46px; border-radius: 50%;
   background: var(--primary); border: none; cursor: pointer;
-  color: #fff; font-size: 1rem; font-weight: 800;
+  color: #fff; font-size: 1.1rem; font-weight: 800;
   display: flex; align-items: center; justify-content: center;
   box-shadow: var(--shadow-blue); z-index: 4500;
   opacity: 0; transform: translateY(16px);
@@ -874,7 +980,18 @@ footer {
 #btt.show { opacity: 1; transform: translateY(0); }
 #btt:hover { transform: translateY(-3px); box-shadow: var(--shadow-blue-lg); }
 
-/* ─── REVEAL ─── */
+/* ─── SECTION PADDING MOBILE ─── */
+@media (max-width: 600px) {
+  .section { padding: 68px 0; }
+  .container { padding: 0 16px; }
+  .section-sub { margin-bottom: 36px; font-size: 0.95rem; }
+}
+@media (max-width: 380px) {
+  .section { padding: 56px 0; }
+  .container { padding: 0 12px; }
+}
+
+/* ─── SCROLL REVEAL ─── */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
 </style>
@@ -885,7 +1002,6 @@ footer {
 <!-- ─── HEADER ─── -->
 <header id="mainHeader">
   <div class="header-inner">
-    <!-- Logo now goes to homepage URL -->
     <a href="https://www.mjpdf.site/" class="logo-wrap" aria-label="MJ PDF Reader Home">
       <div class="logo-icon">
         <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader icon" loading="eager">
@@ -911,24 +1027,35 @@ footer {
       <span></span><span></span><span></span>
     </button>
   </div>
-
-  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
-    <a href="https://www.mjpdf.site/">🏠 Home</a>
-    <a href="#about">📖 About MJ PDF</a>
-    <a href="#features">✨ Features</a>
-    <a href="#screenshots">📸 Screenshots</a>
-    <a href="#release">🆕 What's New</a>
-    <a href="#permissions">🔒 Permissions & Privacy</a>
-    <a href="#install">📲 How to Install</a>
-    <a href="#faq">❓ FAQ</a>
-    <a href="#about-us">🏢 About Us</a>
-    <a href="#contact">✉️ Contact Us</a>
-    <a href="#privacy">🛡️ Privacy Policy</a>
-    <a href="#disclaimer">⚠️ Disclaimer</a>
-    <a href="#terms">📜 Terms & Conditions</a>
-    <a href="#download" class="m-dl">⬇ Get APK</a>
-  </div>
 </header>
+
+<!-- ─── MOBILE MENU ─── -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile Navigation">
+
+  <span class="mobile-menu-label">Main</span>
+  <a href="https://www.mjpdf.site/">🏠 Home</a>
+  <a href="#about">📖 About MJ PDF</a>
+  <a href="#features">✨ Features</a>
+  <a href="#screenshots">📸 Screenshots</a>
+  <a href="#release">🆕 What's New</a>
+
+  <div class="mobile-menu-divider"></div>
+  <span class="mobile-menu-label">Details</span>
+  <a href="#permissions">🔒 Permissions &amp; Privacy</a>
+  <a href="#install">📲 How to Install</a>
+  <a href="#faq">❓ FAQ</a>
+
+  <div class="mobile-menu-divider"></div>
+  <span class="mobile-menu-label">Company &amp; Legal</span>
+  <a href="#about-us">🏢 About Us</a>
+  <a href="#contact">✉️ Contact Us</a>
+  <a href="#privacy">🛡️ Privacy Policy</a>
+  <a href="#disclaimer">⚠️ Disclaimer</a>
+  <a href="#terms">📜 Terms &amp; Conditions</a>
+
+  <a href="#download" class="m-dl">⬇ Download APK — Free</a>
+
+</div>
 
 <!-- ─── HERO ─── -->
 <section id="hero" class="section">
@@ -942,25 +1069,27 @@ footer {
           <span class="accent">MJ PDF</span><br>Reader
         </h1>
 
-        <div class="hero-vtag">v2.2.1 · Released <b>2024-05-19</b> · Size <b>15 MB</b></div>
+        <div class="hero-vtag">
+          v2.2.1 · Released <b>2024-05-19</b> · Size <b>15 MB</b>
+        </div>
 
         <p class="hero-p">
-          A <strong>fast, minimalist, powerful</strong> and totally free PDF viewer for Android. Open source with <strong>total privacy</strong> — no data collection, no ads, no bloat.
-          Just smooth PDF reading with <strong>dark mode</strong>, <strong>powerful search</strong>, and <strong>Text Mode</strong> in a lightweight build.
+          A <strong>fast, minimalist, powerful</strong> and totally free PDF viewer for Android.
+          Open source with <strong>total privacy</strong> — no data collection, no ads, no bloat.
+          Just smooth PDF reading with <strong>dark mode</strong>, <strong>powerful search</strong>, and <strong>Text Mode</strong>.
         </p>
 
         <div class="hero-pills">
           <span class="hero-pill blue">📂 Open Source</span>
-          <span class="hero-pill green">🔒 Zero Data Collection</span>
+          <span class="hero-pill green">🔒 Zero Data</span>
           <span class="hero-pill purple">🌙 Dark Mode</span>
           <span class="hero-pill orange">⚡ 15 MB</span>
-          <span class="hero-pill">🔍 Powerful Search</span>
+          <span class="hero-pill">🔍 Fast Search</span>
           <span class="hero-pill">📝 Text Mode</span>
         </div>
 
-        <!-- IMPORTANT: No direct APK link here anymore -->
         <div class="hero-ctas">
-          <a href="#download" class="btn btn-primary btn-lg">⬇ Get the APK (Scroll)</a>
+          <a href="#download" class="btn btn-primary btn-lg">⬇ Get the APK</a>
           <a href="#features" class="btn btn-ghost">Explore Features →</a>
         </div>
 
@@ -978,7 +1107,7 @@ footer {
             <span class="hs-lbl">Cost</span>
           </div>
           <div class="hs">
-            <span class="hs-val">Open Source</span>
+            <span class="hs-val">Open Src</span>
             <span class="hs-lbl">License</span>
           </div>
         </div>
@@ -996,9 +1125,7 @@ footer {
             <span class="badge badge-blue">📂 Open Source</span>
             <span class="badge badge-purple">🔒 Private</span>
           </div>
-
-          <!-- IMPORTANT: No direct APK link here anymore -->
-          <a href="#download" class="hero-app-dl" rel="noopener">
+          <a href="#download" class="hero-app-dl">
             ⬇ Get APK in Download Section
           </a>
         </div>
@@ -1017,8 +1144,8 @@ footer {
         <span class="badge badge-blue" style="margin-bottom:16px;">About the App</span>
         <h2 class="about-heading">What is <span class="accent">MJ PDF Reader?</span></h2>
         <p>MJ PDF Reader is a <strong>fast, minimalist, powerful and completely free</strong> PDF viewer for Android, created by the developer known as <strong>Mudlej</strong>. It is proudly open-source and available on GitLab for anyone to inspect, use, or contribute to.</p>
-        <p>Unlike bloated PDF readers that demand excessive permissions, show ads, or quietly harvest your data, MJ PDF Reader was built with a single focus: <strong>reading PDFs quickly and privately</strong>. It’s a lightweight PDF reader that respects your device and your privacy.</p>
-        <p>With features like <strong>blazing-fast search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, and <strong>hyperlink support</strong> — MJ PDF punches far above its weight. It also supports opening PDFs from URLs and remembers your last read position in every document.</p>
+        <p>Unlike bloated PDF readers that demand excessive permissions, show ads, or quietly harvest your data, MJ PDF Reader was built with a single focus: <strong>reading PDFs quickly and privately</strong>. It's a lightweight PDF reader that respects your device and your privacy.</p>
+        <p>With features like <strong>blazing-fast search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, and <strong>hyperlink support</strong> — MJ PDF punches far above its weight.</p>
       </div>
 
       <div class="about-points">
@@ -1039,8 +1166,8 @@ footer {
         <div class="about-point reveal">
           <div class="about-point-ico" style="background:var(--accent-light);">📂</div>
           <div class="about-point-body">
-            <h4>Free & Open Source</h4>
-            <p>Source code is available publicly on GitLab. Transparent and community-friendly.</p>
+            <h4>Free &amp; Open Source</h4>
+            <p>Source code is publicly available on GitLab. Transparent and community-friendly.</p>
           </div>
         </div>
         <div class="about-point reveal">
@@ -1051,7 +1178,6 @@ footer {
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1101,7 +1227,7 @@ footer {
         <div class="feat-top-bar" style="background:linear-gradient(90deg,#0891B2,#2563EB);"></div>
         <div class="feat-ico" style="background:var(--teal-light);">📑</div>
         <h3>Table of Contents</h3>
-        <p>Jump to chapters quickly using a dedicated TOC page—perfect for large books and manuals.</p>
+        <p>Jump to chapters quickly using a dedicated TOC page — perfect for large books and manuals.</p>
         <span class="feat-tag" style="background:var(--teal-light);color:var(--teal);border:1px solid rgba(8,145,178,0.2);">🧭 Navigate</span>
       </div>
 
@@ -1122,7 +1248,7 @@ footer {
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-teal">App Details</span></div>
     <h2 class="section-title">App <span class="accent">Information</span></h2>
-    <p class="section-sub">Complete technical specifications for MJ PDF Reader v2.2.1 (mobile-friendly full-width layout).</p>
+    <p class="section-sub">Complete technical specifications for MJ PDF Reader v2.2.1.</p>
 
     <div class="info-wrap reveal">
       <div class="info-row">
@@ -1199,7 +1325,7 @@ footer {
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-purple">Preview</span></div>
     <h2 class="section-title">App <span class="accent">Screenshots</span></h2>
-    <p class="section-sub">6 screenshots placeholder (duplicated for now). You can replace them later with your own images.</p>
+    <p class="section-sub">A look at MJ PDF Reader's clean, minimal interface in action.</p>
 
     <div class="ss-grid">
       <!-- 1 -->
@@ -1207,7 +1333,7 @@ footer {
         <div class="ss-img-wrap">
           <img src="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67"
                alt="MJ PDF Reader Light Mode screenshot" loading="lazy"
-               onerror="this.parentElement.innerHTML='<div class=\\'ss-placeholder\\'><span class=\\'ss-placeholder-ico\\'>☀️</span><span class=\\'ss-placeholder-lbl\\'>Light Mode</span></div>'">
+               onerror="this.parentElement.innerHTML='<div class=\'ss-placeholder\'><span class=\'ss-placeholder-ico\'>☀️</span><span class=\'ss-placeholder-lbl\'>Light Mode</span></div>'">
         </div>
         <div class="ss-overlay">🔍</div>
         <div class="ss-caption">Light Mode</div>
@@ -1218,7 +1344,7 @@ footer {
         <div class="ss-img-wrap">
           <img src="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67"
                alt="MJ PDF Reader Dark Mode screenshot" loading="lazy"
-               onerror="this.parentElement.innerHTML='<div class=\\'ss-placeholder\\'><span class=\\'ss-placeholder-ico\\'>🌙</span><span class=\\'ss-placeholder-lbl\\'>Dark Mode</span></div>'">
+               onerror="this.parentElement.innerHTML='<div class=\'ss-placeholder\'><span class=\'ss-placeholder-ico\'>🌙</span><span class=\'ss-placeholder-lbl\'>Dark Mode</span></div>'">
         </div>
         <div class="ss-overlay">🔍</div>
         <div class="ss-caption">Dark Mode</div>
@@ -1229,42 +1355,41 @@ footer {
         <div class="ss-img-wrap">
           <img src="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67"
                alt="MJ PDF Reader Main Menu screenshot" loading="lazy"
-               onerror="this.parentElement.innerHTML='<div class=\\'ss-placeholder\\'><span class=\\'ss-placeholder-ico\\'>📋</span><span class=\\'ss-placeholder-lbl\\'>Main Menu</span></div>'">
+               onerror="this.parentElement.innerHTML='<div class=\'ss-placeholder\'><span class=\'ss-placeholder-ico\'>📋</span><span class=\'ss-placeholder-lbl\'>Main Menu</span></div>'">
         </div>
         <div class="ss-overlay">🔍</div>
         <div class="ss-caption">Main Menu</div>
       </div>
 
-      <!-- 4 duplicate -->
+      <!-- 4 -->
       <div class="ss-item" data-title="Light Mode (Alt)" data-img="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67" onclick="openLightbox(this)">
         <div class="ss-img-wrap">
           <img src="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67"
-               alt="MJ PDF Reader Light Mode screenshot duplicate" loading="lazy">
+               alt="MJ PDF Reader Light Mode Alt" loading="lazy">
         </div>
         <div class="ss-overlay">🔍</div>
         <div class="ss-caption">Light Mode (Alt)</div>
       </div>
 
-      <!-- 5 duplicate -->
+      <!-- 5 -->
       <div class="ss-item" data-title="Dark Mode (Alt)" data-img="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67" onclick="openLightbox(this)">
         <div class="ss-img-wrap">
           <img src="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67"
-               alt="MJ PDF Reader Dark Mode screenshot duplicate" loading="lazy">
+               alt="MJ PDF Reader Dark Mode Alt" loading="lazy">
         </div>
         <div class="ss-overlay">🔍</div>
         <div class="ss-caption">Dark Mode (Alt)</div>
       </div>
 
-      <!-- 6 duplicate -->
+      <!-- 6 -->
       <div class="ss-item" data-title="Main Menu (Alt)" data-img="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67" onclick="openLightbox(this)">
         <div class="ss-img-wrap">
           <img src="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67"
-               alt="MJ PDF Reader Main Menu screenshot duplicate" loading="lazy">
+               alt="MJ PDF Reader Main Menu Alt" loading="lazy">
         </div>
         <div class="ss-overlay">🔍</div>
         <div class="ss-caption">Main Menu (Alt)</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1278,7 +1403,7 @@ footer {
       <img id="lbImg" src="" alt="" style="display:none;width:100%;height:100%;object-fit:contain;">
     </div>
     <div class="lb-title" id="lbTitle">Screenshot Preview</div>
-    <div class="lb-sub" id="lbSub">MJ PDF Reader v2.2.1</div>
+    <div class="lb-sub"   id="lbSub">MJ PDF Reader v2.2.1</div>
   </div>
 </div>
 
@@ -1288,13 +1413,13 @@ footer {
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-green">What's New</span></div>
     <h2 class="section-title">MJ PDF <span class="accent">V2.0.0 – Major Update</span></h2>
-    <p class="section-sub">A cleaner brand identity, faster search, better navigation, and reading-focused upgrades—optimized for mobile layout.</p>
+    <p class="section-sub">A cleaner brand identity, faster search, better navigation, and reading-focused upgrades.</p>
 
     <div class="rn-wrap reveal">
       <div class="rn-header">
         <div>
           <div class="rn-chip">🎉 Major Update</div>
-          <h3 style="margin-top:10px;">MJ PDF V2.0.0 — Highlights</h3>
+          <h3>MJ PDF V2.0.0 — Highlights</h3>
           <p>Key improvements that made MJ PDF faster, cleaner, and easier to use.</p>
         </div>
       </div>
@@ -1306,7 +1431,7 @@ footer {
           <li><span class="rn-icon">✨</span><span>Search results can be expanded and <strong>highlighted</strong>.</span></li>
           <li><span class="rn-icon">📑</span><span>Added a dedicated <strong>Table of Contents</strong> page.</span></li>
           <li><span class="rn-icon">🔗</span><span>Full <strong>hyperlink support</strong> + links listing page.</span></li>
-          <li><span class="rn-icon">⏩</span><span><strong>Auto scroll</strong> added with adjustable speed and direction.</span></li>
+          <li><span class="rn-icon">⏩</span><span><strong>Auto scroll</strong> with adjustable speed and direction.</span></li>
           <li><span class="rn-icon">🧩</span><span>Many stability fixes and quality-of-life improvements.</span></li>
         </ul>
       </div>
@@ -1318,8 +1443,8 @@ footer {
 <section id="permissions" class="section reveal">
   <div class="sec-divider"></div>
   <div class="container">
-    <div class="section-eyebrow"><span class="badge badge-green">Privacy & Permissions</span></div>
-    <h2 class="section-title">Permissions & <span class="accent">Privacy</span></h2>
+    <div class="section-eyebrow"><span class="badge badge-green">Privacy &amp; Permissions</span></div>
+    <h2 class="section-title">Permissions &amp; <span class="accent">Privacy</span></h2>
     <p class="section-sub">MJ PDF Reader is built around privacy. It requests only the permissions needed to open and save PDFs.</p>
 
     <div class="perm-grid">
@@ -1343,7 +1468,7 @@ footer {
       <div class="privacy-note-ico">🛡️</div>
       <div>
         <h4>Zero Data Collection</h4>
-        <p>MJ PDF Reader does not collect personal data. No analytics SDKs, no advertising frameworks, and no third-party tracking. As an open-source PDF reader, you can verify this behavior through the public code on GitLab.</p>
+        <p>MJ PDF Reader does not collect personal data. No analytics SDKs, no advertising frameworks, and no third-party tracking. As an open-source PDF reader, you can verify this through the public code on GitLab.</p>
       </div>
     </div>
   </div>
@@ -1355,7 +1480,7 @@ footer {
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-orange">Install Guide</span></div>
     <h2 class="section-title">How to Download <span class="accent">&amp; Install</span></h2>
-    <p class="section-sub">A modern, mobile-friendly install guide. Follow these steps to install MJ PDF Reader APK safely.</p>
+    <p class="section-sub">Follow these simple steps to install MJ PDF Reader APK safely on your Android device.</p>
 
     <div class="steps-grid">
       <div class="card step-card reveal">
@@ -1371,14 +1496,14 @@ footer {
           <div class="step-ring">2</div><span class="step-emo">📥</span>
         </div>
         <h4>Download the APK</h4>
-        <p>Scroll to the <strong>Download</strong> section and download the file <em>mj-pdf-2.2.1.apk</em> (15 MB).</p>
+        <p>Scroll to the <strong>Download</strong> section below and tap the download button to get <em>mj-pdf-2.2.1.apk</em> (15 MB).</p>
       </div>
 
       <div class="card step-card reveal">
         <div class="step-head">
           <div class="step-ring">3</div><span class="step-emo">🛡️</span>
         </div>
-        <h4>Optional: Verify the File</h4>
+        <h4>Optional: Verify File</h4>
         <p>If you prefer, scan the APK with your antivirus app before installing.</p>
       </div>
 
@@ -1401,7 +1526,7 @@ footer {
   </div>
 </section>
 
-<!-- ─── DOWNLOAD (ONLY DIRECT APK LINK HERE) ─── -->
+<!-- ─── DOWNLOAD ─── -->
 <section id="download" class="section reveal">
   <div class="sec-divider"></div>
   <div class="container">
@@ -1430,7 +1555,6 @@ footer {
       </div>
 
       <div class="dl-btns">
-        <!-- ONLY direct APK download link -->
         <a href="https://gitlab.com/mudlej_android/mj_pdf_reader/uploads/61d28d2434f42c02e8dca9000a21e8a9/mj-pdf-2.2.1.apk"
            class="btn btn-primary btn-lg" rel="noopener noreferrer">
           ⬇ Download MJ PDF APK (15 MB)
@@ -1448,7 +1572,7 @@ footer {
   </div>
 </section>
 
-<!-- ─── FAQ (15 items, full width) ─── -->
+<!-- ─── FAQ ─── -->
 <section id="faq" class="section reveal">
   <div class="sec-divider"></div>
   <div class="container">
@@ -1457,6 +1581,7 @@ footer {
     <p class="section-sub">Answers about MJ PDF Reader APK, privacy, permissions, features, and installation.</p>
 
     <div class="faq-list">
+
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
           <h3>What is MJ PDF Reader?</h3><div class="faq-toggle">+</div>
@@ -1487,7 +1612,7 @@ footer {
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <h3>What Android version is needed to run MJ PDF Reader?</h3><div class="faq-toggle">+</div>
+          <h3>What Android version is needed?</h3><div class="faq-toggle">+</div>
         </div>
         <div class="faq-body"><div class="faq-body-inner">MJ PDF Reader requires Android 5.0 (Lollipop) or higher and targets Android 14.</div></div>
       </div>
@@ -1496,7 +1621,7 @@ footer {
         <div class="faq-q" onclick="toggleFaq(this)">
           <h3>Can I open PDFs from the internet or online links?</h3><div class="faq-toggle">+</div>
         </div>
-        <div class="faq-body"><div class="faq-body-inner">Yes. It supports opening PDFs via direct URLs (this is why the Internet permission exists).</div></div>
+        <div class="faq-body"><div class="faq-body-inner">Yes. It supports opening PDFs via direct URLs — this is why the Internet permission exists.</div></div>
       </div>
 
       <div class="faq-item">
@@ -1510,10 +1635,9 @@ footer {
         <div class="faq-q" onclick="toggleFaq(this)">
           <h3>What is Text Mode in MJ PDF Reader?</h3><div class="faq-toggle">+</div>
         </div>
-        <div class="faq-body"><div class="faq-body-inner">Text Mode extracts and displays PDF text as plain reading content. You can customize size and colors for comfortable reading.</div></div>
+        <div class="faq-body"><div class="faq-body-inner">Text Mode extracts and displays PDF text as plain reading content. You can customize font size and colors for comfortable reading.</div></div>
       </div>
 
-      <!-- Added FAQs (to reach 15) -->
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
           <h3>Is MJ PDF Reader safe to install?</h3><div class="faq-toggle">+</div>
@@ -1562,40 +1686,43 @@ footer {
         </div>
         <div class="faq-body"><div class="faq-body-inner">Uninstall normally through Android Settings → Apps → MJ PDF Reader → Uninstall.</div></div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ─── ABOUT US (NEW CONTENT) ─── -->
-<section id="about-us" class="section reveal" style="background: var(--bg);">
+<!-- ─── ABOUT US ─── -->
+<section id="about-us" class="section reveal" style="background:var(--bg);">
   <div class="sec-divider"></div>
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-blue">Company</span></div>
     <h2 class="section-title">About <span class="accent">Us</span></h2>
     <p class="section-sub">MJ PDF Reader is a privacy-first project focused on building a fast, lightweight PDF reader for Android users worldwide.</p>
-
-    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
-      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+    <div class="prose-card">
+      <p>
         <strong>MJ PDF Reader</strong> is created with a simple idea: a PDF viewer should be fast, clean, and respectful of user privacy.
         This website (<strong>https://www.mjpdf.site/</strong>) provides a structured, SEO-friendly resource for users looking to learn about the app, its features, permissions, and how to install the APK safely.
-        We aim to keep the experience minimal: no forced signups, no unnecessary tracking, and a clear download flow.
+      </p>
+      <p>
+        We aim to keep the experience minimal: no forced signups, no unnecessary tracking, and a clear download flow for everyone.
       </p>
     </div>
   </div>
 </section>
 
 <!-- ─── CONTACT ─── -->
-<section id="contact" class="section reveal" style="background: var(--bg-white);">
+<section id="contact" class="section reveal" style="background:var(--bg-white);">
   <div class="sec-divider"></div>
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-teal">Support</span></div>
     <h2 class="section-title">Contact <span class="accent">Us</span></h2>
     <p class="section-sub">Need help with installation, reporting a bug, or requesting a feature? Contact us anytime.</p>
-
-    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
-      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+    <div class="prose-card">
+      <p>
         For support regarding <strong>MJ PDF Reader APK</strong>, installation steps, privacy questions, or feature requests, email:
-        <strong>mjpdfreader@gmail.com</strong>.
+        <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ff2f5effbf9edfafefbfaeddff8f2fef6f3b1fcf0f2">[email&#160;protected]</a></strong>.
+      </p>
+      <p>
         Please include your Android version and a short description of the issue for faster support.
       </p>
     </div>
@@ -1603,19 +1730,18 @@ footer {
 </section>
 
 <!-- ─── PRIVACY POLICY ─── -->
-<section id="privacy" class="section reveal" style="background: var(--bg);">
+<section id="privacy" class="section reveal" style="background:var(--bg);">
   <div class="sec-divider"></div>
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-green">Legal</span></div>
     <h2 class="section-title">Privacy <span class="accent">Policy</span></h2>
     <p class="section-sub">A clear, SEO-friendly privacy policy overview for MJ PDF Reader and this website.</p>
-
-    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
-      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;margin-bottom:12px;">
+    <div class="prose-card">
+      <p>
         <strong>MJ PDF Reader</strong> is designed with privacy in mind. The app does not collect personal information, does not include advertising SDKs, and does not run background tracking.
         Any network use occurs only when a user explicitly opens a PDF URL.
       </p>
-      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+      <p>
         This website (<strong>mjpdf.site</strong>) includes Google Analytics to measure basic traffic and improve content quality. We do not sell user data.
       </p>
     </div>
@@ -1623,15 +1749,14 @@ footer {
 </section>
 
 <!-- ─── DISCLAIMER ─── -->
-<section id="disclaimer" class="section reveal" style="background: var(--bg-white);">
+<section id="disclaimer" class="section reveal" style="background:var(--bg-white);">
   <div class="sec-divider"></div>
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-orange">Legal</span></div>
     <h2 class="section-title">Disclaimer</h2>
     <p class="section-sub">Informational-only disclaimer for MJ PDF Reader APK downloads and external resources.</p>
-
-    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
-      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+    <div class="prose-card">
+      <p>
         Content on this page is provided for informational purposes. External links (such as GitLab) are owned by their respective platforms.
         Users are responsible for how they install APKs on their devices. Always download from trusted sources and keep Android security settings updated.
       </p>
@@ -1640,17 +1765,16 @@ footer {
 </section>
 
 <!-- ─── TERMS ─── -->
-<section id="terms" class="section reveal" style="background: var(--bg);">
+<section id="terms" class="section reveal" style="background:var(--bg);">
   <div class="sec-divider"></div>
   <div class="container">
     <div class="section-eyebrow"><span class="badge badge-purple">Legal</span></div>
     <h2 class="section-title">Terms &amp; <span class="accent">Conditions</span></h2>
     <p class="section-sub">Simple usage terms for this website and APK download information.</p>
-
-    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
-      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+    <div class="prose-card">
+      <p>
         By using this website, you agree not to misuse content, attempt unauthorized access, or distribute modified downloads as official.
-        The MJ PDF Reader project remains open source, and usage is subject to the project’s license terms available in the source repository.
+        The MJ PDF Reader project remains open source, and usage is subject to the project's license terms available in the source repository.
       </p>
     </div>
   </div>
@@ -1661,12 +1785,12 @@ footer {
   <div class="container">
     <div class="seo-section reveal">
       <h2>MJ PDF Reader APK — Complete Resource Guide</h2>
-      <p>This page provides a comprehensive guide to <strong>MJ PDF Reader APK v2.2.1</strong>, a fast, lightweight, open-source PDF viewer for Android developed by Mudlej. MJ PDF Reader is designed for Android 5.0 through Android 14 and supports multiple CPU architectures. Key features include <strong>fast PDF search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, and <strong>hyperlink support</strong>, with a strong focus on <strong>privacy</strong> and <strong>zero data collection</strong>. File size is <strong>15 MB</strong> and the app requires no root access.</p>
+      <p>This page provides a comprehensive guide to <strong>MJ PDF Reader APK v2.2.1</strong>, a fast, lightweight, open-source PDF viewer for Android developed by Mudlej. MJ PDF Reader supports Android 5.0 through Android 14 with multiple CPU architectures. Key features include <strong>fast PDF search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, and <strong>hyperlink support</strong>, with a strong focus on <strong>privacy</strong> and <strong>zero data collection</strong>. File size is <strong>15 MB</strong> and the app requires no root access.</p>
     </div>
 
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="https://www.mjpdf.site/" class="footer-logo-wrap" style="margin-bottom:12px;display:inline-flex;gap:10px;text-decoration:none;">
+        <a href="https://www.mjpdf.site/" class="footer-logo-wrap">
           <div class="footer-logo-icon">
             <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader icon">
           </div>
@@ -1688,14 +1812,14 @@ footer {
       <div class="footer-col">
         <h5>Resources</h5>
         <a href="#release">Release Notes</a>
-        <a href="#permissions">Permissions & Privacy (App)</a>
+        <a href="#permissions">Permissions &amp; Privacy</a>
         <a href="#install">Install Guide</a>
         <a href="#faq">FAQ</a>
         <a href="https://gitlab.com/mudlej_android/mj_pdf_reader" target="_blank" rel="noopener">Source Code ↗</a>
       </div>
 
       <div class="footer-col">
-        <h5>Company & Legal</h5>
+        <h5>Company &amp; Legal</h5>
         <a href="#about-us">About Us</a>
         <a href="#contact">Contact Us</a>
         <a href="#privacy">Privacy Policy</a>
@@ -1705,7 +1829,7 @@ footer {
     </div>
 
     <div class="footer-bottom">
-      <p>© 2024 MJ PDF Reader — Made by Mudlej — Open Source on GitLab. All rights reserved.</p>
+      <p>© 2026 MJ PDF Reader — Made by Mudlej — Open Source on GitLab. All rights reserved.</p>
       <p>Not affiliated with any third-party PDF services or platforms.</p>
     </div>
   </div>
@@ -1714,9 +1838,10 @@ footer {
 <!-- BACK TO TOP -->
 <button id="btt" aria-label="Back to top">↑</button>
 
-<script>
-// HEADER SCROLL + BACK TO TOP
-var hdr = document.getElementById('mainHeader');
+<!-- ─── SCRIPTS ─── -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── HEADER SCROLL + BACK TO TOP ── */
+var hdr    = document.getElementById('mainHeader');
 var bttBtn = document.getElementById('btt');
 var ticking = false;
 
@@ -1729,21 +1854,23 @@ window.addEventListener('scroll', function() {
     });
     ticking = true;
   }
-}, {passive:true});
+}, { passive: true });
 
-bttBtn.addEventListener('click', function() { window.scrollTo({top:0, behavior:'smooth'}); });
+bttBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-// HAMBURGER (fixed mobile behavior)
-var hamBtn = document.getElementById('hamBtn');
+/* ── HAMBURGER + MOBILE MENU ── */
+var hamBtn     = document.getElementById('hamBtn');
 var mobileMenu = document.getElementById('mobileMenu');
 
-function openMenu(){
+function openMenu() {
   hamBtn.classList.add('open');
   mobileMenu.classList.add('open');
   hamBtn.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
 }
-function closeMenu(){
+function closeMenu() {
   hamBtn.classList.remove('open');
   mobileMenu.classList.remove('open');
   hamBtn.setAttribute('aria-expanded', 'false');
@@ -1751,90 +1878,102 @@ function closeMenu(){
 }
 
 hamBtn.addEventListener('click', function() {
-  var isOpen = mobileMenu.classList.contains('open');
-  if(isOpen) closeMenu(); else openMenu();
+  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
 });
 
-// Close menu when clicking any mobile menu link (and allow smooth scroll)
-document.querySelectorAll('#mobileMenu a').forEach(function(a){
-  a.addEventListener('click', function(e){
-    // If it's a hash link on this page, do smooth scroll with offset
+/* Close on any link tap (hash or absolute) */
+document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
     var href = a.getAttribute('href') || '';
-    if(href.startsWith('#')){
+    if (href.startsWith('#')) {
       e.preventDefault();
       closeMenu();
-      var target = document.querySelector(href);
-      if(target){
-        target.scrollIntoView({behavior:'smooth', block:'start'});
-      }
+      setTimeout(function() {
+        var target = document.querySelector(href);
+        if (target) {
+          var offset = 86;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 320); /* wait for menu close animation */
     } else {
-      // normal navigation (Home)
       closeMenu();
     }
   });
 });
 
-// FAQ ACCORDION
-function toggleFaq(el){
-  var item = el.parentElement;
+/* Close menu when tapping outside */
+document.addEventListener('click', function(e) {
+  if (mobileMenu.classList.contains('open') &&
+      !mobileMenu.contains(e.target) &&
+      !hamBtn.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(el) {
+  var item   = el.parentElement;
   var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-  if(!isOpen) item.classList.add('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
 }
 
-// LIGHTBOX
-function openLightbox(el){
+/* ── LIGHTBOX ── */
+function openLightbox(el) {
   var title = el.dataset.title || 'Screenshot';
-  var img = el.dataset.img || '';
-  var lb = document.getElementById('lightbox');
-  var lbImg = document.getElementById('lbImg');
-  var lbEmoji = document.getElementById('lbEmoji');
+  var img   = el.dataset.img   || '';
+  var lb     = document.getElementById('lightbox');
+  var lbImg  = document.getElementById('lbImg');
+  var lbEmoji= document.getElementById('lbEmoji');
 
   document.getElementById('lbTitle').textContent = title;
-  document.getElementById('lbSub').textContent = 'MJ PDF Reader v2.2.1';
+  document.getElementById('lbSub').textContent   = 'MJ PDF Reader v2.2.1';
 
-  if(img){
-    lbImg.src = img;
-    lbImg.alt = title;
-    lbImg.style.display = 'block';
-    lbEmoji.style.display = 'none';
-    lbImg.onerror = function(){
-      lbImg.style.display = 'none';
-      lbEmoji.style.display = '';
-      var icons = {'Light Mode':'☀️','Dark Mode':'🌙','Main Menu':'📋'};
+  if (img) {
+    lbImg.src   = img;
+    lbImg.alt   = title;
+    lbImg.style.display  = 'block';
+    lbEmoji.style.display= 'none';
+    lbImg.onerror = function() {
+      lbImg.style.display  = 'none';
+      lbEmoji.style.display= '';
+      var icons = { 'Light Mode': '☀️', 'Dark Mode': '🌙', 'Main Menu': '📋' };
       lbEmoji.textContent = icons[title] || '📄';
     };
   } else {
-    lbImg.style.display = 'none';
-    lbEmoji.style.display = '';
-    lbEmoji.textContent = '📄';
+    lbImg.style.display  = 'none';
+    lbEmoji.style.display= '';
+    lbEmoji.textContent  = '📄';
   }
 
   lb.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeLightbox(){
+function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.getElementById('lightbox').addEventListener('click', function(e){
-  if(e.target === this) closeLightbox();
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
 });
-document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
 
-// SCROLL REVEAL
+/* ── SCROLL REVEAL ── */
 var reveals = document.querySelectorAll('.reveal');
 var ro = new IntersectionObserver(function(entries) {
   entries.forEach(function(e, i) {
-    if(e.isIntersecting){
-      setTimeout(function(){ e.target.classList.add('in'); }, i * 45);
+    if (e.isIntersecting) {
+      setTimeout(function() { e.target.classList.add('in'); }, i * 45);
       ro.unobserve(e.target);
     }
   });
-}, {threshold: 0.07, rootMargin: '0px 0px -40px 0px'});
-reveals.forEach(function(r){ ro.observe(r); });
+}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(function(r) { ro.observe(r); });
 
-// NAV ACTIVE STATE (desktop)
+/* ── NAV ACTIVE STATE (desktop) ── */
 var navLinks = document.querySelectorAll('nav a:not(.nav-dl)');
 var sections = document.querySelectorAll('section[id]');
 var navTicking = false;
@@ -1843,12 +1982,12 @@ window.addEventListener('scroll', function() {
     requestAnimationFrame(function() {
       var cur = '';
       sections.forEach(function(s) {
-        if(window.scrollY >= s.offsetTop - 120) cur = s.id;
+        if (window.scrollY >= s.offsetTop - 130) cur = s.id;
       });
       navLinks.forEach(function(l) {
         var href = l.getAttribute('href') || '';
-        if(href.startsWith('#')){
-          l.classList.toggle('active', href === '#'+cur);
+        if (href.startsWith('#')) {
+          l.classList.toggle('active', href === '#' + cur);
         } else {
           l.classList.remove('active');
         }
@@ -1857,7 +1996,7 @@ window.addEventListener('scroll', function() {
     });
     navTicking = true;
   }
-}, {passive:true});
+}, { passive: true });
 </script>
 
 <!-- Google tag (gtag.js) -->
@@ -1866,7 +2005,6 @@ window.addEventListener('scroll', function() {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-89379TQVVS');
 </script>
 
