@@ -1,6 +1,1865 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJ PDF Reader APK v2.2.1 – Fast, Lightweight & Open Source PDF Viewer for Android</title>
+<meta name="description" content="Download MJ PDF Reader APK v2.2.1 – A fast, lightweight, open-source PDF viewer for Android with dark mode, powerful search, text mode, and total privacy. Free. 15 MB.">
+<meta name="keywords" content="MJ PDF Reader APK, MJ PDF download, lightweight PDF viewer Android, open source PDF app, fast PDF reader Android, MJ PDF 2.2.1, dark mode PDF reader, PDF viewer no ads">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mudlej">
+<meta name="theme-color" content="#2563EB">
+<link rel="canonical" href="https://www.mjpdf.site/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MJ PDF Reader APK v2.2.1 – Fast, Lightweight & Open Source">
+<meta property="og:description" content="A fast, minimalist, powerful and totally free PDF viewer for Android. 15 MB. Open source. Total privacy.">
+<meta property="og:url" content="https://www.mjpdf.site/">
+<meta property="og:site_name" content="MJ PDF Reader">
+<meta property="og:image" content="https://camo.githubusercontent.com/e2b0feaefd3ff010780338d219ac3c6a366c4a3ba74f108d42dac1f0345af00a/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f6170702f7372632f6d61696e2f666561747572655f677261706869632e706e67">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MJ PDF Reader APK v2.2.1 – Fast, Lightweight & Open Source">
+<meta name="twitter:description" content="A fast, minimalist PDF viewer for Android. 15 MB. Open source. Total privacy. Free.">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MJ PDF Reader",
+  "operatingSystem": "Android",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "A fast, minimalist, powerful and totally free open-source PDF viewer for Android with dark mode, powerful search, text mode, and total privacy.",
+  "softwareVersion": "2.2.1",
+  "fileSize": "15 MB",
+  "datePublished": "2024-05-19",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Mudlej"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "1280"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MJ PDF Reader?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MJ PDF Reader is a fast, minimalist, lightweight and totally free open-source PDF viewer for Android developed by Mudlej. It features dark mode, powerful search, text mode, auto scroll, hyperlinks, table of contents, and total privacy with no data collection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is MJ PDF Reader free and open source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MJ PDF Reader is completely free to download and use. The source code is open and available on GitLab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MJ PDF Reader collect any data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. MJ PDF Reader does not collect any data. It only requests Internet permission (for opening PDFs through links) and Storage permission (for saving/opening PDFs from device storage)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Android version is required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MJ PDF Reader requires Android 5.0 (Lollipop) or higher. It targets Android 14."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --primary-light: #EFF6FF;
+  --primary-mid: #DBEAFE;
+  --accent: #7C3AED;
+  --accent-light: #EDE9FE;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --orange: #D97706;
+  --orange-light: #FFFBEB;
+  --red: #DC2626;
+  --red-light: #FEF2F2;
+  --teal: #0891B2;
+  --teal-light: #ECFEFF;
+
+  --bg: #F8FAFC;
+  --bg-white: #FFFFFF;
+  --bg-gray: #F1F5F9;
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+
+  --text-dark: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --text-faint: #94A3B8;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.12), 0 8px 20px rgba(0,0,0,0.06);
+  --shadow-blue: 0 8px 24px rgba(37,99,235,0.2);
+  --shadow-blue-lg: 0 16px 40px rgba(37,99,235,0.28);
+
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 24px;
+  --r-2xl: 32px;
+  --r-full: 9999px;
+
+  --font-display: 'Poppins', 'Inter', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-gray); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+/* Make anchor jumps work with fixed header */
+section[id] { scroll-margin-top: 86px; }
+
+/* ─── UTILITIES ─── */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 92px 0; position: relative; }
+.sec-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0;
+}
+
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: var(--r-full);
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.badge-blue { background: var(--primary-mid); color: var(--primary-dark); }
+.badge-green { background: var(--green-light); color: var(--green); }
+.badge-purple { background: var(--accent-light); color: var(--accent); }
+.badge-orange { background: var(--orange-light); color: var(--orange); }
+.badge-teal { background: var(--teal-light); color: var(--teal); }
+
+.section-eyebrow { text-align: center; margin-bottom: 16px; }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+.section-title .accent { color: var(--primary); }
+.section-sub {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: 0 auto 56px;
+  line-height: 1.75;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 30px; border-radius: var(--r-full);
+  font-family: var(--font-body);
+  font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; text-decoration: none; border: none;
+  transition: all 0.25s ease;
+  position: relative; overflow: hidden;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--primary); color: #fff; box-shadow: var(--shadow-blue); }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue-lg); }
+.btn-ghost { background: var(--bg-white); color: var(--text-body); border: 1.5px solid var(--border); box-shadow: var(--shadow-sm); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-lg { padding: 17px 40px; font-size: 1.05rem; }
+
+/* CARDS */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary-mid); }
+
+/* ─── HEADER ─── */
+header {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 5000;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s;
+}
+header.scrolled { box-shadow: 0 8px 28px rgba(15,23,42,0.10); }
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px; padding: 0 20px;
+  max-width: 1160px; margin: 0 auto;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--primary-light);
+  transition: transform 0.25s;
+}
+.logo-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.logo-wrap:hover .logo-icon { transform: scale(1.08); }
+.logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+.logo-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.3px; }
+.logo-tagline { font-size: 0.6rem; font-weight: 600; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+
+/* NAV */
+nav { display: flex; align-items: center; gap: 4px; }
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.875rem; font-weight: 600;
+  padding: 7px 13px; border-radius: var(--r-xs);
+  transition: color 0.2s, background 0.2s;
+}
+nav a:hover { color: var(--primary); background: var(--primary-light); }
+nav a.active { color: var(--primary); }
+.nav-dl {
+  padding: 9px 22px !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: var(--r-full) !important;
+  font-size: 0.85rem !important; font-weight: 700 !important;
+  margin-left: 8px;
+  box-shadow: var(--shadow-blue);
+}
+.nav-dl:hover { background: var(--primary-dark) !important; box-shadow: var(--shadow-blue-lg) !important; transform: translateY(-1px); }
+
+/* HAMBURGER */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 10px; background: none; border: none;
+  border-radius: var(--r-xs); transition: background 0.2s;
+}
+.hamburger:hover { background: var(--bg-gray); }
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text-dark); border-radius: 2px;
+  transition: all 0.3s ease; transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* MOBILE NAV */
+.mobile-menu {
+  position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.99);
+  backdrop-filter: blur(20px);
+  z-index: 4900;
+  display: flex; flex-direction: column;
+  padding: 18px;
+  gap: 6px;
+  transform: translateX(110%);
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a {
+  color: var(--text-body);
+  text-decoration: none;
+  font-size: 1.02rem; font-weight: 650;
+  padding: 14px 16px; border-radius: var(--r-md);
+  transition: all 0.2s;
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid transparent;
+}
+.mobile-menu a:hover { color: var(--primary); background: var(--primary-light); border-color: var(--primary-mid); }
+.mobile-menu .m-dl {
+  margin-top: 12px;
+  background: var(--primary);
+  color: #fff !important;
+  justify-content: center;
+  border-radius: var(--r-full) !important;
+  box-shadow: var(--shadow-blue);
+}
+
+@media (max-width: 900px) {
+  nav { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ─── HERO (REDESIGNED) ─── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 96px; padding-bottom: 60px;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(1000px 400px at 20% 15%, rgba(37,99,235,0.14), transparent 60%),
+    radial-gradient(900px 420px at 85% 70%, rgba(124,58,237,0.12), transparent 60%),
+    linear-gradient(160deg, #EFF6FF 0%, #F8FAFC 55%, #FFFFFF 100%);
+}
+.hero-dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(37,99,235,0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 54px;
+  align-items: center;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: var(--r-full);
+  background: rgba(37,99,235,0.14); color: var(--primary-dark);
+  font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  margin-bottom: 18px;
+  border: 1px solid rgba(37,99,235,0.16);
+}
+h1.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 5.6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+h1.hero-h1 .accent { color: var(--primary); }
+.hero-vtag {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--green-light); color: var(--green);
+  border: 1px solid rgba(5,150,105,0.2);
+  border-radius: var(--r-full); padding: 8px 14px;
+  font-size: 0.80rem; font-weight: 800;
+  margin-bottom: 18px; letter-spacing: 0.2px;
+}
+.hero-vtag b { color: #065F46; }
+.hero-p {
+  font-size: 1.08rem; color: var(--text-muted);
+  line-height: 1.85; margin-bottom: 24px;
+  max-width: 620px;
+}
+.hero-p strong { color: var(--text-dark); }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: var(--r-full);
+  font-size: 0.78rem; font-weight: 650;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border);
+  color: var(--text-body);
+  box-shadow: var(--shadow-sm);
+}
+.hero-pill.blue { color: var(--primary); border-color: rgba(37,99,235,0.25); background: var(--primary-light); }
+.hero-pill.green { color: var(--green); border-color: rgba(5,150,105,0.25); background: var(--green-light); }
+.hero-pill.purple { color: var(--accent); border-color: rgba(124,58,237,0.25); background: var(--accent-light); }
+.hero-pill.orange { color: var(--orange); border-color: rgba(217,119,6,0.25); background: var(--orange-light); }
+
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 26px; }
+.hero-stats {
+  display: flex; gap: 22px; flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid rgba(226,232,240,0.9);
+}
+.hs-val { font-family: var(--font-display); font-size: 1.55rem; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
+.hs-lbl { font-size: 0.68rem; color: var(--text-faint); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-top: 4px; display: block; }
+
+.hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
+.hero-app-card {
+  background: rgba(255,255,255,0.86);
+  border-radius: var(--r-2xl);
+  padding: 30px;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(226,232,240,0.9);
+  text-align: center;
+  max-width: 360px; width: 100%;
+  position: relative; z-index: 2;
+  backdrop-filter: blur(16px);
+}
+.hero-app-card::before{
+  content:'';
+  position:absolute; inset:-2px;
+  border-radius: var(--r-2xl);
+  background: linear-gradient(135deg, rgba(37,99,235,0.18), rgba(124,58,237,0.14));
+  z-index:-1;
+}
+.hero-app-icon {
+  width: 92px; height: 92px;
+  border-radius: 22px;
+  margin: 0 auto 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(37,99,235,0.25);
+}
+.hero-app-icon img { width: 100%; height: 100%; object-fit: cover; }
+.hero-app-name { font-family: var(--font-display); font-size: 1.55rem; font-weight: 900; color: var(--text-dark); margin-bottom: 6px; }
+.hero-app-sub { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
+.hero-app-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px; }
+.hero-app-dl {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--text-dark); color: #fff;
+  padding: 12px 18px; border-radius: var(--r-full);
+  font-weight: 800; font-size: 0.92rem;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.20);
+  transition: all 0.25s;
+  width: 100%;
+  border: 1px solid rgba(15,23,42,0.10);
+}
+.hero-app-dl:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(15,23,42,0.22); }
+
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 28px; }
+  .hero-p { margin-left: auto; margin-right: auto; }
+  .hero-pills, .hero-ctas, .hero-stats { justify-content: center; }
+}
+@media (max-width: 480px) {
+  #hero { padding-top: 92px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { width: 100%; }
+  .hero-stats { gap: 16px; justify-content: center; }
+}
+
+/* ─── ABOUT ─── */
+#about { background: var(--bg-white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+.about-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 800; line-height: 1.2;
+  color: var(--text-dark); margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+.about-heading .accent { color: var(--primary); }
+.about-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 0.97rem; line-height: 1.8; }
+.about-text p strong { color: var(--text-dark); }
+.about-point {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px; border-radius: var(--r-lg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.about-point:hover { border-color: var(--primary-mid); background: var(--primary-light); box-shadow: var(--shadow-sm); }
+.about-point-ico {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: var(--r-xs); display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.about-point-body h4 { font-size: 0.92rem; font-weight: 800; color: var(--text-dark); margin-bottom: 3px; }
+.about-point-body p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ─── FEATURES ─── */
+#features { background: var(--bg); }
+.feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .feat-grid { grid-template-columns: 1fr; } }
+.feat-card { padding: 28px 24px; position: relative; overflow: hidden; }
+.feat-top-bar {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; border-radius: var(--r-xl) var(--r-xl) 0 0;
+  opacity: 0; transition: opacity 0.3s;
+}
+.feat-card:hover .feat-top-bar { opacity: 1; }
+.feat-ico {
+  width: 52px; height: 52px;
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 16px;
+}
+.feat-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; }
+.feat-card p { color: var(--text-muted); font-size: 0.87rem; line-height: 1.75; margin-bottom: 16px; }
+.feat-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 12px; border-radius: var(--r-full);
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+}
+
+/* ─── APP INFO (FULL WIDTH) ─── */
+#info { background: var(--bg-white); }
+.info-wrap {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-md);
+}
+.info-row {
+  display: grid; grid-template-columns: 240px 1fr;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-light);
+  align-items: center;
+  transition: background 0.2s;
+}
+.info-row:last-child { border-bottom: none; }
+.info-row:hover { background: var(--bg); }
+.info-k {
+  font-size: 0.78rem; font-weight: 900;
+  color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 1px;
+  display: flex; align-items: center; gap: 8px;
+}
+.info-v {
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--text-dark);
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.info-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .info-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 16px; }
+  .info-v { font-size: 0.92rem; }
+}
+
+/* ─── SCREENSHOTS (6) ─── */
+#screenshots { background: var(--bg); }
+.ss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 768px) { .ss-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .ss-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+.ss-item {
+  aspect-ratio: 9/18;
+  border-radius: var(--r-lg);
+  overflow: hidden; cursor: pointer; position: relative;
+  border: 1px solid var(--border);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  background: linear-gradient(160deg, #EFF6FF, #F8FAFC);
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+.ss-item:hover { transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow-xl); border-color: var(--primary-mid); }
+.ss-img-wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px 8px 0; min-height: 0; overflow: hidden; }
+.ss-img-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 10px; transition: transform 0.3s; }
+.ss-item:hover .ss-img-wrap img { transform: scale(1.03); }
+.ss-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.ss-placeholder-ico { font-size: 2.5rem; }
+.ss-placeholder-lbl { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-align: center; padding: 0 12px; }
+.ss-overlay {
+  position: absolute; inset: 0;
+  background: rgba(37,99,235,0.4);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.25s;
+  font-size: 2rem; backdrop-filter: blur(4px);
+  border-radius: var(--r-lg);
+}
+.ss-item:hover .ss-overlay { opacity: 1; }
+.ss-caption {
+  width: 100%;
+  background: linear-gradient(transparent, rgba(15,23,42,0.65));
+  padding: 18px 12px 10px;
+  font-size: 0.73rem; font-weight: 800;
+  color: #fff; text-align: center; flex-shrink: 0;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(15,23,42,0.9); z-index: 9999;
+  align-items: center; justify-content: center;
+  backdrop-filter: blur(16px); padding: 24px;
+}
+.lightbox.open { display: flex; }
+.lb-inner {
+  max-width: 360px; width: 100%;
+  background: var(--bg-white); border: 1px solid var(--border);
+  border-radius: var(--r-2xl); padding: 22px; text-align: center;
+  position: relative; box-shadow: var(--shadow-xl);
+}
+.lb-img-preview {
+  aspect-ratio: 9/18;
+  background: linear-gradient(160deg, #EFF6FF, #F8FAFC);
+  border-radius: var(--r-lg); margin-bottom: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; overflow: hidden;
+  border: 1px solid var(--border);
+}
+.lb-img-preview img { width: 100%; height: 100%; object-fit: contain; border-radius: var(--r-lg); }
+.lb-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 900; margin-bottom: 4px; color: var(--text-dark); }
+.lb-sub { font-size: 0.8rem; color: var(--text-muted); }
+.lb-close {
+  position: absolute; top: 12px; right: 12px;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--bg-gray); border: 1px solid var(--border);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--text-body); font-size: 0.9rem; transition: all 0.2s;
+}
+.lb-close:hover { background: var(--red-light); color: var(--red); border-color: rgba(220,38,38,0.3); }
+
+/* ─── RELEASE NOTES (REDESIGNED + SHORTER) ─── */
+#release { background: var(--bg-white); }
+.rn-wrap {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.rn-header {
+  padding: 22px 22px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  flex-wrap: wrap;
+}
+.rn-chip {
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 8px 12px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.24);
+  color:#fff;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  font-size: 0.9rem;
+}
+.rn-header h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; color: #fff; margin-bottom: 2px; }
+.rn-header p { font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+.rn-body { padding: 22px; background: var(--bg-white); }
+.rn-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rn-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 12px; border-radius: var(--r-md);
+  background: var(--bg); border: 1px solid var(--border-light);
+  font-size: 0.88rem; color: var(--text-body); line-height: 1.6;
+}
+.rn-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+@media (max-width: 720px){
+  .rn-list { grid-template-columns: 1fr; }
+  .rn-header { align-items: flex-start; }
+}
+
+/* ─── PERMISSIONS (FULL WIDTH) ─── */
+#permissions { background: var(--bg); }
+.perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; width: 100%; margin: 0 auto; }
+@media (max-width: 760px) { .perm-grid { grid-template-columns: 1fr; } }
+.perm-card { padding: 26px 22px; display: flex; align-items: flex-start; gap: 16px; }
+.perm-ico {
+  width: 52px; height: 52px; flex-shrink: 0;
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+}
+.perm-body h4 { font-size: 1rem; font-weight: 900; color: var(--text-dark); margin-bottom: 6px; }
+.perm-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+.privacy-note {
+  width: 100%;
+  margin: 18px auto 0;
+  padding: 20px 20px;
+  border-radius: var(--r-xl);
+  background: linear-gradient(135deg, rgba(5,150,105,0.10), rgba(8,145,178,0.08));
+  border: 1px solid rgba(5,150,105,0.18);
+  border-left: 5px solid var(--green);
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.privacy-note-ico { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.privacy-note h4 { color: #065F46; margin-bottom: 5px; font-size: 0.95rem; font-weight: 900; }
+.privacy-note p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.75; margin: 0; }
+
+/* ─── INSTALL (REDESIGNED) ─── */
+#install { background: var(--bg-white); }
+.steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 680px) { .steps-grid { grid-template-columns: 1fr; } }
+.step-card { padding: 22px 18px; text-align: left; border-radius: var(--r-xl); position: relative; overflow: hidden; }
+.step-card::before{
+  content:'';
+  position:absolute; top:-40px; right:-40px;
+  width:120px; height:120px; border-radius:50%;
+  background: rgba(37,99,235,0.10);
+}
+.step-head { display:flex; align-items:center; gap:12px; margin-bottom: 10px; }
+.step-ring {
+  width: 44px; height: 44px; border-radius: 14px;
+  background: var(--primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 900;
+  box-shadow: var(--shadow-blue);
+  flex-shrink:0;
+}
+.step-emo { font-size: 1.4rem; display: inline-flex; }
+.step-card h4 { font-size: 0.95rem; font-weight: 900; margin-bottom: 6px; color: var(--text-dark); }
+.step-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.75; }
+.step-card p strong { color: var(--text-dark); }
+
+/* ─── DOWNLOAD ─── */
+#download { background: var(--bg); }
+.dl-wrapper {
+  max-width: 860px; margin: 0 auto;
+  padding: 54px 44px;
+  border-radius: var(--r-2xl);
+  background: linear-gradient(135deg, #EFF6FF 0%, #EDE9FE 100%);
+  border: 1px solid rgba(37,99,235,0.15);
+  text-align: center;
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.dl-wrapper::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.08), transparent 70%);
+  pointer-events: none;
+}
+.dl-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 900; color: var(--text-dark);
+  margin-bottom: 10px; letter-spacing: -0.5px;
+}
+.dl-title .accent { color: var(--primary); }
+.dl-sub { color: var(--text-muted); margin-bottom: 30px; font-size: 0.98rem; line-height:1.75; }
+.dl-meta-row {
+  display: flex; justify-content: center; gap: 30px;
+  flex-wrap: wrap; margin-bottom: 28px;
+}
+.dl-meta-item { text-align: center; }
+.dl-meta-val { font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; color: var(--primary); display: block; }
+.dl-meta-lbl { font-size: 0.68rem; color: var(--text-faint); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800; }
+.dl-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+.trust-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-weight: 700; }
+@media (max-width: 480px) {
+  .section { padding: 72px 0; }
+  .dl-wrapper { padding: 30px 18px; }
+  .dl-btns { flex-direction: column; align-items: center; }
+  .dl-btns .btn { width: 100%; }
+}
+
+/* ─── FAQ (FULL WIDTH) ─── */
+#faq { background: var(--bg-white); }
+.faq-list { width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.faq-item {
+  border-radius: var(--r-xl); overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.faq-item.open { border-color: var(--primary-mid); box-shadow: var(--shadow-sm); }
+.faq-q {
+  padding: 18px 18px;
+  display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; gap: 14px;
+  transition: background 0.2s;
+}
+.faq-q:hover { background: var(--bg); }
+.faq-q h3 { font-size: 0.98rem; font-weight: 900; color: var(--text-dark); flex: 1; line-height:1.35; }
+.faq-toggle {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--primary);
+  transition: transform 0.3s, background 0.3s, border-color 0.3s;
+  background: var(--primary-light);
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--primary); color: #fff; border-color: var(--primary); }
+.faq-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-body { max-height: 560px; }
+.faq-body-inner {
+  padding: 14px 18px 18px;
+  color: var(--text-muted); font-size: 0.92rem; line-height: 1.85;
+  border-top: 1px solid var(--border-light);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--text-dark);
+  padding: 60px 0 32px;
+  color: rgba(255,255,255,0.7);
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 42px; }
+@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-top: 12px; line-height: 1.8; max-width: 320px; }
+.footer-col h5 { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; font-weight: 900; }
+.footer-col a {
+  display: block; color: rgba(255,255,255,0.62);
+  text-decoration: none; font-size: 0.86rem;
+  margin-bottom: 9px; font-weight: 650;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: #fff; }
+.footer-logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.footer-logo-icon { width: 34px; height: 34px; border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+.footer-logo-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+.footer-logo-name { font-family: var(--font-display); font-size: 1rem; font-weight: 900; color: #fff; }
+.seo-section {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r-xl); padding: 26px;
+  margin-bottom: 38px;
+}
+.seo-section h2 { font-family: var(--font-display); font-size: 0.98rem; color: rgba(255,255,255,0.55); margin-bottom: 12px; }
+.seo-section p { font-size: 0.78rem; color: rgba(255,255,255,0.34); line-height: 1.95; }
+.seo-section p strong { color: rgba(255,255,255,0.5); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 22px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.76rem; }
+
+/* ─── BACK TO TOP ─── */
+#btt {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--primary); border: none; cursor: pointer;
+  color: #fff; font-size: 1rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-blue); z-index: 4500;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+#btt.show { opacity: 1; transform: translateY(0); }
+#btt:hover { transform: translateY(-3px); box-shadow: var(--shadow-blue-lg); }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+
+<body>
+
+<!-- ─── HEADER ─── -->
+<header id="mainHeader">
+  <div class="header-inner">
+    <!-- Logo now goes to homepage URL -->
+    <a href="https://www.mjpdf.site/" class="logo-wrap" aria-label="MJ PDF Reader Home">
+      <div class="logo-icon">
+        <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader icon" loading="eager">
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">MJ PDF Reader</span>
+        <span class="logo-tagline">v2.2.1 · Free & Open Source</span>
+      </div>
+    </a>
+
+    <nav id="desktopNav" aria-label="Primary Navigation">
+      <a href="https://www.mjpdf.site/">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#release">What's New</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+      <a href="#download" class="nav-dl">⬇ Get APK</a>
+    </nav>
+
+    <button class="hamburger" id="hamBtn" aria-label="Toggle navigation" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+    <a href="https://www.mjpdf.site/">🏠 Home</a>
+    <a href="#about">📖 About MJ PDF</a>
+    <a href="#features">✨ Features</a>
+    <a href="#screenshots">📸 Screenshots</a>
+    <a href="#release">🆕 What's New</a>
+    <a href="#permissions">🔒 Permissions & Privacy</a>
+    <a href="#install">📲 How to Install</a>
+    <a href="#faq">❓ FAQ</a>
+    <a href="#about-us">🏢 About Us</a>
+    <a href="#contact">✉️ Contact Us</a>
+    <a href="#privacy">🛡️ Privacy Policy</a>
+    <a href="#disclaimer">⚠️ Disclaimer</a>
+    <a href="#terms">📜 Terms & Conditions</a>
+    <a href="#download" class="m-dl">⬇ Get APK</a>
+  </div>
+</header>
+
+<!-- ─── HERO ─── -->
+<section id="hero" class="section">
+  <div class="hero-dots"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <div class="hero-eyebrow">📄 PDF Viewer · Android APK</div>
+        <h1 class="hero-h1">
+          <span class="accent">MJ PDF</span><br>Reader
+        </h1>
+
+        <div class="hero-vtag">v2.2.1 · Released <b>2024-05-19</b> · Size <b>15 MB</b></div>
+
+        <p class="hero-p">
+          A <strong>fast, minimalist, powerful</strong> and totally free PDF viewer for Android. Open source with <strong>total privacy</strong> — no data collection, no ads, no bloat.
+          Just smooth PDF reading with <strong>dark mode</strong>, <strong>powerful search</strong>, and <strong>Text Mode</strong> in a lightweight build.
+        </p>
+
+        <div class="hero-pills">
+          <span class="hero-pill blue">📂 Open Source</span>
+          <span class="hero-pill green">🔒 Zero Data Collection</span>
+          <span class="hero-pill purple">🌙 Dark Mode</span>
+          <span class="hero-pill orange">⚡ 15 MB</span>
+          <span class="hero-pill">🔍 Powerful Search</span>
+          <span class="hero-pill">📝 Text Mode</span>
+        </div>
+
+        <!-- IMPORTANT: No direct APK link here anymore -->
+        <div class="hero-ctas">
+          <a href="#download" class="btn btn-primary btn-lg">⬇ Get the APK (Scroll)</a>
+          <a href="#features" class="btn btn-ghost">Explore Features →</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hs">
+            <span class="hs-val">15 MB</span>
+            <span class="hs-lbl">File Size</span>
+          </div>
+          <div class="hs">
+            <span class="hs-val">Android 5+</span>
+            <span class="hs-lbl">Requires</span>
+          </div>
+          <div class="hs">
+            <span class="hs-val">Free</span>
+            <span class="hs-lbl">Cost</span>
+          </div>
+          <div class="hs">
+            <span class="hs-val">Open Source</span>
+            <span class="hs-lbl">License</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-app-card">
+          <div class="hero-app-icon">
+            <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader App Icon">
+          </div>
+          <div class="hero-app-name">MJ PDF Reader</div>
+          <div class="hero-app-sub">Fast · Lightweight · Open Source<br>Made by Mudlej</div>
+          <div class="hero-app-badges">
+            <span class="badge badge-green">✓ Free</span>
+            <span class="badge badge-blue">📂 Open Source</span>
+            <span class="badge badge-purple">🔒 Private</span>
+          </div>
+
+          <!-- IMPORTANT: No direct APK link here anymore -->
+          <a href="#download" class="hero-app-dl" rel="noopener">
+            ⬇ Get APK in Download Section
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="badge badge-blue" style="margin-bottom:16px;">About the App</span>
+        <h2 class="about-heading">What is <span class="accent">MJ PDF Reader?</span></h2>
+        <p>MJ PDF Reader is a <strong>fast, minimalist, powerful and completely free</strong> PDF viewer for Android, created by the developer known as <strong>Mudlej</strong>. It is proudly open-source and available on GitLab for anyone to inspect, use, or contribute to.</p>
+        <p>Unlike bloated PDF readers that demand excessive permissions, show ads, or quietly harvest your data, MJ PDF Reader was built with a single focus: <strong>reading PDFs quickly and privately</strong>. It’s a lightweight PDF reader that respects your device and your privacy.</p>
+        <p>With features like <strong>blazing-fast search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, and <strong>hyperlink support</strong> — MJ PDF punches far above its weight. It also supports opening PDFs from URLs and remembers your last read position in every document.</p>
+      </div>
+
+      <div class="about-points">
+        <div class="about-point reveal">
+          <div class="about-point-ico" style="background:var(--primary-light);">⚡</div>
+          <div class="about-point-body">
+            <h4>Fast Performance</h4>
+            <p>Search large PDFs quickly and render pages smoothly even on older devices running Android 5.0+.</p>
+          </div>
+        </div>
+        <div class="about-point reveal">
+          <div class="about-point-ico" style="background:var(--green-light);">🔒</div>
+          <div class="about-point-body">
+            <h4>Privacy First</h4>
+            <p>No analytics, no trackers, no ads. Your PDFs and reading behavior stay on your device.</p>
+          </div>
+        </div>
+        <div class="about-point reveal">
+          <div class="about-point-ico" style="background:var(--accent-light);">📂</div>
+          <div class="about-point-body">
+            <h4>Free & Open Source</h4>
+            <p>Source code is available publicly on GitLab. Transparent and community-friendly.</p>
+          </div>
+        </div>
+        <div class="about-point reveal">
+          <div class="about-point-ico" style="background:var(--orange-light);">📱</div>
+          <div class="about-point-body">
+            <h4>Wide Compatibility</h4>
+            <p>Supports Android 5.0–14 and multiple CPU architectures, including emulators and tablets.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section id="features" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-blue">App Features</span></div>
+    <h2 class="section-title">Everything You Need in a <span class="accent">PDF Reader</span></h2>
+    <p class="section-sub">MJ PDF Reader packs a powerful set of features into a lightweight Android APK — clean UI, fast navigation, and privacy-focused design.</p>
+
+    <div class="feat-grid">
+      <div class="card feat-card reveal">
+        <div class="feat-top-bar" style="background:linear-gradient(90deg,#2563EB,#7C3AED);"></div>
+        <div class="feat-ico" style="background:var(--primary-light);">🔍</div>
+        <h3>Blazing Fast Search</h3>
+        <p>Instantly search keywords across your PDF. Expand results for context and jump to highlighted matches.</p>
+        <span class="feat-tag" style="background:var(--primary-light);color:var(--primary);border:1px solid var(--primary-mid);">⚡ Instant</span>
+      </div>
+
+      <div class="card feat-card reveal">
+        <div class="feat-top-bar" style="background:linear-gradient(90deg,#059669,#0891B2);"></div>
+        <div class="feat-ico" style="background:var(--green-light);">🌙</div>
+        <h3>Dark Mode</h3>
+        <p>Comfortable reading at night with a clean dark theme that also saves battery on AMOLED screens.</p>
+        <span class="feat-tag" style="background:var(--green-light);color:var(--green);border:1px solid rgba(5,150,105,0.2);">👁 Eye-friendly</span>
+      </div>
+
+      <div class="card feat-card reveal">
+        <div class="feat-top-bar" style="background:linear-gradient(90deg,#7C3AED,#D97706);"></div>
+        <div class="feat-ico" style="background:var(--accent-light);">📝</div>
+        <h3>Text Mode</h3>
+        <p>Read PDFs as plain text. Customize font size and colors, and resume where you left off automatically.</p>
+        <span class="feat-tag" style="background:var(--accent-light);color:var(--accent);border:1px solid rgba(124,58,237,0.2);">🎨 Custom</span>
+      </div>
+
+      <div class="card feat-card reveal">
+        <div class="feat-top-bar" style="background:linear-gradient(90deg,#D97706,#DC2626);"></div>
+        <div class="feat-ico" style="background:var(--orange-light);">⏩</div>
+        <h3>Auto Scroll</h3>
+        <p>Hands-free reading at adjustable speeds, with clean exit behavior when you leave full screen.</p>
+        <span class="feat-tag" style="background:var(--orange-light);color:var(--orange);border:1px solid rgba(217,119,6,0.2);">🤲 Hands-free</span>
+      </div>
+
+      <div class="card feat-card reveal">
+        <div class="feat-top-bar" style="background:linear-gradient(90deg,#0891B2,#2563EB);"></div>
+        <div class="feat-ico" style="background:var(--teal-light);">📑</div>
+        <h3>Table of Contents</h3>
+        <p>Jump to chapters quickly using a dedicated TOC page—perfect for large books and manuals.</p>
+        <span class="feat-tag" style="background:var(--teal-light);color:var(--teal);border:1px solid rgba(8,145,178,0.2);">🧭 Navigate</span>
+      </div>
+
+      <div class="card feat-card reveal">
+        <div class="feat-top-bar" style="background:linear-gradient(90deg,#DC2626,#7C3AED);"></div>
+        <div class="feat-ico" style="background:var(--red-light);">🔗</div>
+        <h3>Hyperlink Support</h3>
+        <p>Tap embedded links inside PDFs. View all links from a dedicated Links page.</p>
+        <span class="feat-tag" style="background:var(--red-light);color:var(--red);border:1px solid rgba(220,38,38,0.2);">🌐 Linked</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APP INFO ─── -->
+<section id="info" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-teal">App Details</span></div>
+    <h2 class="section-title">App <span class="accent">Information</span></h2>
+    <p class="section-sub">Complete technical specifications for MJ PDF Reader v2.2.1 (mobile-friendly full-width layout).</p>
+
+    <div class="info-wrap reveal">
+      <div class="info-row">
+        <div class="info-k">📱 App Name</div>
+        <div class="info-v">MJ PDF Reader</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">👤 Developer</div>
+        <div class="info-v">Mudlej</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">🗂 Category</div>
+        <div class="info-v">Tools / Productivity / PDF Viewer</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">📦 Version</div>
+        <div class="info-v">
+          <div class="info-dot" style="background:var(--primary);box-shadow:0 0 6px var(--primary);"></div>
+          2.2.1
+          <span class="badge badge-green" style="font-size:0.65rem;padding:3px 10px;">Latest</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">📅 Release Date</div>
+        <div class="info-v">2024-05-19</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">💾 File Size</div>
+        <div class="info-v">15 MB (APK)</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">🤖 Android Target</div>
+        <div class="info-v">Android 14.0 (API 34)</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">📲 Minimum Android</div>
+        <div class="info-v">Android 5.0 Lollipop (API 21)</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">🏗 Architectures</div>
+        <div class="info-v">
+          <span class="badge badge-blue" style="font-size:0.65rem;">arm64-v8a</span>
+          <span class="badge badge-blue" style="font-size:0.65rem;">armeabi-v7a</span>
+          <span class="badge badge-blue" style="font-size:0.65rem;">x86</span>
+          <span class="badge badge-blue" style="font-size:0.65rem;">x86_64</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">💰 Price</div>
+        <div class="info-v">
+          <div class="info-dot" style="background:var(--green);box-shadow:0 0 6px var(--green);"></div>
+          Free — Always
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">📂 Source Code</div>
+        <div class="info-v">Open Source (GitLab)</div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">🔑 Root Required</div>
+        <div class="info-v"><span class="badge badge-green">NOT REQUIRED</span></div>
+      </div>
+      <div class="info-row">
+        <div class="info-k">🔒 Data Collected</div>
+        <div class="info-v"><span class="badge badge-green">✅ NONE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCREENSHOTS ─── -->
+<section id="screenshots" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-purple">Preview</span></div>
+    <h2 class="section-title">App <span class="accent">Screenshots</span></h2>
+    <p class="section-sub">6 screenshots placeholder (duplicated for now). You can replace them later with your own images.</p>
+
+    <div class="ss-grid">
+      <!-- 1 -->
+      <div class="ss-item" data-title="Light Mode" data-img="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67" onclick="openLightbox(this)">
+        <div class="ss-img-wrap">
+          <img src="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67"
+               alt="MJ PDF Reader Light Mode screenshot" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\\'ss-placeholder\\'><span class=\\'ss-placeholder-ico\\'>☀️</span><span class=\\'ss-placeholder-lbl\\'>Light Mode</span></div>'">
+        </div>
+        <div class="ss-overlay">🔍</div>
+        <div class="ss-caption">Light Mode</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="ss-item" data-title="Dark Mode" data-img="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67" onclick="openLightbox(this)">
+        <div class="ss-img-wrap">
+          <img src="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67"
+               alt="MJ PDF Reader Dark Mode screenshot" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\\'ss-placeholder\\'><span class=\\'ss-placeholder-ico\\'>🌙</span><span class=\\'ss-placeholder-lbl\\'>Dark Mode</span></div>'">
+        </div>
+        <div class="ss-overlay">🔍</div>
+        <div class="ss-caption">Dark Mode</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="ss-item" data-title="Main Menu" data-img="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67" onclick="openLightbox(this)">
+        <div class="ss-img-wrap">
+          <img src="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67"
+               alt="MJ PDF Reader Main Menu screenshot" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\\'ss-placeholder\\'><span class=\\'ss-placeholder-ico\\'>📋</span><span class=\\'ss-placeholder-lbl\\'>Main Menu</span></div>'">
+        </div>
+        <div class="ss-overlay">🔍</div>
+        <div class="ss-caption">Main Menu</div>
+      </div>
+
+      <!-- 4 duplicate -->
+      <div class="ss-item" data-title="Light Mode (Alt)" data-img="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67" onclick="openLightbox(this)">
+        <div class="ss-img-wrap">
+          <img src="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67"
+               alt="MJ PDF Reader Light Mode screenshot duplicate" loading="lazy">
+        </div>
+        <div class="ss-overlay">🔍</div>
+        <div class="ss-caption">Light Mode (Alt)</div>
+      </div>
+
+      <!-- 5 duplicate -->
+      <div class="ss-item" data-title="Dark Mode (Alt)" data-img="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67" onclick="openLightbox(this)">
+        <div class="ss-img-wrap">
+          <img src="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67"
+               alt="MJ PDF Reader Dark Mode screenshot duplicate" loading="lazy">
+        </div>
+        <div class="ss-overlay">🔍</div>
+        <div class="ss-caption">Dark Mode (Alt)</div>
+      </div>
+
+      <!-- 6 duplicate -->
+      <div class="ss-item" data-title="Main Menu (Alt)" data-img="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67" onclick="openLightbox(this)">
+        <div class="ss-img-wrap">
+          <img src="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67"
+               alt="MJ PDF Reader Main Menu screenshot duplicate" loading="lazy">
+        </div>
+        <div class="ss-overlay">🔍</div>
+        <div class="ss-caption">Main Menu (Alt)</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
+    <div class="lb-img-preview" id="lbPreview">
+      <span id="lbEmoji">📄</span>
+      <img id="lbImg" src="" alt="" style="display:none;width:100%;height:100%;object-fit:contain;">
+    </div>
+    <div class="lb-title" id="lbTitle">Screenshot Preview</div>
+    <div class="lb-sub" id="lbSub">MJ PDF Reader v2.2.1</div>
+  </div>
+</div>
+
+<!-- ─── RELEASE NOTES ─── -->
+<section id="release" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-green">What's New</span></div>
+    <h2 class="section-title">MJ PDF <span class="accent">V2.0.0 – Major Update</span></h2>
+    <p class="section-sub">A cleaner brand identity, faster search, better navigation, and reading-focused upgrades—optimized for mobile layout.</p>
+
+    <div class="rn-wrap reveal">
+      <div class="rn-header">
+        <div>
+          <div class="rn-chip">🎉 Major Update</div>
+          <h3 style="margin-top:10px;">MJ PDF V2.0.0 — Highlights</h3>
+          <p>Key improvements that made MJ PDF faster, cleaner, and easier to use.</p>
+        </div>
+      </div>
+      <div class="rn-body">
+        <ul class="rn-list">
+          <li><span class="rn-icon">🎨</span><span>Rebranded as <strong>MJ PDF</strong> with a refreshed identity.</span></li>
+          <li><span class="rn-icon">⚡</span><span>Search became <strong>blazingly fast</strong> across documents.</span></li>
+          <li><span class="rn-icon">🔎</span><span>Added <strong>search filtering</strong> for more precise results.</span></li>
+          <li><span class="rn-icon">✨</span><span>Search results can be expanded and <strong>highlighted</strong>.</span></li>
+          <li><span class="rn-icon">📑</span><span>Added a dedicated <strong>Table of Contents</strong> page.</span></li>
+          <li><span class="rn-icon">🔗</span><span>Full <strong>hyperlink support</strong> + links listing page.</span></li>
+          <li><span class="rn-icon">⏩</span><span><strong>Auto scroll</strong> added with adjustable speed and direction.</span></li>
+          <li><span class="rn-icon">🧩</span><span>Many stability fixes and quality-of-life improvements.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PERMISSIONS & PRIVACY ─── -->
+<section id="permissions" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-green">Privacy & Permissions</span></div>
+    <h2 class="section-title">Permissions & <span class="accent">Privacy</span></h2>
+    <p class="section-sub">MJ PDF Reader is built around privacy. It requests only the permissions needed to open and save PDFs.</p>
+
+    <div class="perm-grid">
+      <div class="card perm-card reveal">
+        <div class="perm-ico" style="background:var(--primary-light);">🌐</div>
+        <div class="perm-body">
+          <h4>Internet Access</h4>
+          <p>Used <strong>only</strong> when you open PDFs via a URL. No trackers, no ads, no analytics usage.</p>
+        </div>
+      </div>
+      <div class="card perm-card reveal">
+        <div class="perm-ico" style="background:var(--orange-light);">📁</div>
+        <div class="perm-body">
+          <h4>Storage Access</h4>
+          <p>Needed to <strong>open local PDFs</strong> and <strong>save downloaded PDFs</strong>. Only files you select are accessed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="privacy-note reveal">
+      <div class="privacy-note-ico">🛡️</div>
+      <div>
+        <h4>Zero Data Collection</h4>
+        <p>MJ PDF Reader does not collect personal data. No analytics SDKs, no advertising frameworks, and no third-party tracking. As an open-source PDF reader, you can verify this behavior through the public code on GitLab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INSTALL ─── -->
+<section id="install" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-orange">Install Guide</span></div>
+    <h2 class="section-title">How to Download <span class="accent">&amp; Install</span></h2>
+    <p class="section-sub">A modern, mobile-friendly install guide. Follow these steps to install MJ PDF Reader APK safely.</p>
+
+    <div class="steps-grid">
+      <div class="card step-card reveal">
+        <div class="step-head">
+          <div class="step-ring">1</div><span class="step-emo">⚙️</span>
+        </div>
+        <h4>Allow Unknown Apps</h4>
+        <p>Go to <strong>Settings → Security</strong> and enable <strong>Install unknown apps</strong> for your browser or file manager.</p>
+      </div>
+
+      <div class="card step-card reveal">
+        <div class="step-head">
+          <div class="step-ring">2</div><span class="step-emo">📥</span>
+        </div>
+        <h4>Download the APK</h4>
+        <p>Scroll to the <strong>Download</strong> section and download the file <em>mj-pdf-2.2.1.apk</em> (15 MB).</p>
+      </div>
+
+      <div class="card step-card reveal">
+        <div class="step-head">
+          <div class="step-ring">3</div><span class="step-emo">🛡️</span>
+        </div>
+        <h4>Optional: Verify the File</h4>
+        <p>If you prefer, scan the APK with your antivirus app before installing.</p>
+      </div>
+
+      <div class="card step-card reveal">
+        <div class="step-head">
+          <div class="step-ring">4</div><span class="step-emo">📲</span>
+        </div>
+        <h4>Install</h4>
+        <p>Open your Downloads folder, tap the APK, and follow the on-screen steps to install.</p>
+      </div>
+
+      <div class="card step-card reveal">
+        <div class="step-head">
+          <div class="step-ring">5</div><span class="step-emo">📄</span>
+        </div>
+        <h4>Start Reading</h4>
+        <p>Launch MJ PDF Reader and open your first PDF. No account, no login, no ads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DOWNLOAD (ONLY DIRECT APK LINK HERE) ─── -->
+<section id="download" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="dl-wrapper reveal">
+      <span class="badge badge-blue" style="margin-bottom:20px;">Download Now</span>
+      <div class="dl-title">MJ PDF Reader APK<br><span class="accent">v2.2.1</span></div>
+      <p class="dl-sub">The latest version — free, open source, and privacy-friendly. Download the APK directly below.</p>
+
+      <div class="dl-meta-row">
+        <div class="dl-meta-item">
+          <span class="dl-meta-val">v2.2.1</span>
+          <span class="dl-meta-lbl">Version</span>
+        </div>
+        <div class="dl-meta-item">
+          <span class="dl-meta-val">15 MB</span>
+          <span class="dl-meta-lbl">File Size</span>
+        </div>
+        <div class="dl-meta-item">
+          <span class="dl-meta-val">Android 5+</span>
+          <span class="dl-meta-lbl">Requires</span>
+        </div>
+        <div class="dl-meta-item">
+          <span class="dl-meta-val">FREE</span>
+          <span class="dl-meta-lbl">Cost</span>
+        </div>
+      </div>
+
+      <div class="dl-btns">
+        <!-- ONLY direct APK download link -->
+        <a href="https://gitlab.com/mudlej_android/mj_pdf_reader/uploads/61d28d2434f42c02e8dca9000a21e8a9/mj-pdf-2.2.1.apk"
+           class="btn btn-primary btn-lg" rel="noopener noreferrer">
+          ⬇ Download MJ PDF APK (15 MB)
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <span class="trust-item">✅ No Root Required</span>
+        <span class="trust-item">🔒 Zero Data Collected</span>
+        <span class="trust-item">🚫 No Ads</span>
+        <span class="trust-item">📂 Open Source</span>
+        <span class="trust-item">⚡ Lightweight</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ (15 items, full width) ─── -->
+<section id="faq" class="section reveal">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-purple">FAQ</span></div>
+    <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+    <p class="section-sub">Answers about MJ PDF Reader APK, privacy, permissions, features, and installation.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>What is MJ PDF Reader?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">MJ PDF Reader is a fast, minimalist, powerful, and free PDF viewer for Android developed by Mudlej. It is open source and focuses on privacy, speed, and usability.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Does MJ PDF Reader collect any personal data?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">No. MJ PDF Reader does not collect any data. There are no analytics SDKs, trackers, or advertising frameworks.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>What permissions does MJ PDF Reader require?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Internet (only for opening PDFs by URL) and Storage (to open/save PDFs locally). No extra permissions are required.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Is MJ PDF Reader free and open source?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Yes. The app is free to use and the full source code is available on GitLab.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>What Android version is needed to run MJ PDF Reader?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">MJ PDF Reader requires Android 5.0 (Lollipop) or higher and targets Android 14.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Can I open PDFs from the internet or online links?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Yes. It supports opening PDFs via direct URLs (this is why the Internet permission exists).</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Does MJ PDF Reader need root access?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">No. Root access is not required.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>What is Text Mode in MJ PDF Reader?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Text Mode extracts and displays PDF text as plain reading content. You can customize size and colors for comfortable reading.</div></div>
+      </div>
+
+      <!-- Added FAQs (to reach 15) -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Is MJ PDF Reader safe to install?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">The app is open source and designed without trackers or ads. For best safety, download only from the official link in the Download section of this site.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Does it support very large PDF files?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Yes. MJ PDF Reader is optimized for performance and includes fast search and navigation for large documents.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Can I use MJ PDF Reader offline?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Yes. Local PDFs work fully offline. Internet is only needed when opening PDFs via URL.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Does it include ads or in-app purchases?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">No. MJ PDF Reader is free with no ads, no subscriptions, and no in-app purchases.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Will it remember my last page?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Yes. It automatically remembers where you left off for each PDF.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>Where can I see the source code?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">You can find the source code on GitLab: https://gitlab.com/mudlej_android/mj_pdf_reader</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h3>How do I uninstall the app?</h3><div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner">Uninstall normally through Android Settings → Apps → MJ PDF Reader → Uninstall.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT US (NEW CONTENT) ─── -->
+<section id="about-us" class="section reveal" style="background: var(--bg);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-blue">Company</span></div>
+    <h2 class="section-title">About <span class="accent">Us</span></h2>
+    <p class="section-sub">MJ PDF Reader is a privacy-first project focused on building a fast, lightweight PDF reader for Android users worldwide.</p>
+
+    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
+      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+        <strong>MJ PDF Reader</strong> is created with a simple idea: a PDF viewer should be fast, clean, and respectful of user privacy.
+        This website (<strong>https://www.mjpdf.site/</strong>) provides a structured, SEO-friendly resource for users looking to learn about the app, its features, permissions, and how to install the APK safely.
+        We aim to keep the experience minimal: no forced signups, no unnecessary tracking, and a clear download flow.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="section reveal" style="background: var(--bg-white);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-teal">Support</span></div>
+    <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+    <p class="section-sub">Need help with installation, reporting a bug, or requesting a feature? Contact us anytime.</p>
+
+    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
+      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+        For support regarding <strong>MJ PDF Reader APK</strong>, installation steps, privacy questions, or feature requests, email:
+        <strong>mjpdfreader@gmail.com</strong>.
+        Please include your Android version and a short description of the issue for faster support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRIVACY POLICY ─── -->
+<section id="privacy" class="section reveal" style="background: var(--bg);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-green">Legal</span></div>
+    <h2 class="section-title">Privacy <span class="accent">Policy</span></h2>
+    <p class="section-sub">A clear, SEO-friendly privacy policy overview for MJ PDF Reader and this website.</p>
+
+    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
+      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;margin-bottom:12px;">
+        <strong>MJ PDF Reader</strong> is designed with privacy in mind. The app does not collect personal information, does not include advertising SDKs, and does not run background tracking.
+        Any network use occurs only when a user explicitly opens a PDF URL.
+      </p>
+      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+        This website (<strong>mjpdf.site</strong>) includes Google Analytics to measure basic traffic and improve content quality. We do not sell user data.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DISCLAIMER ─── -->
+<section id="disclaimer" class="section reveal" style="background: var(--bg-white);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-orange">Legal</span></div>
+    <h2 class="section-title">Disclaimer</h2>
+    <p class="section-sub">Informational-only disclaimer for MJ PDF Reader APK downloads and external resources.</p>
+
+    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
+      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+        Content on this page is provided for informational purposes. External links (such as GitLab) are owned by their respective platforms.
+        Users are responsible for how they install APKs on their devices. Always download from trusted sources and keep Android security settings updated.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TERMS ─── -->
+<section id="terms" class="section reveal" style="background: var(--bg);">
+  <div class="sec-divider"></div>
+  <div class="container">
+    <div class="section-eyebrow"><span class="badge badge-purple">Legal</span></div>
+    <h2 class="section-title">Terms &amp; <span class="accent">Conditions</span></h2>
+    <p class="section-sub">Simple usage terms for this website and APK download information.</p>
+
+    <div class="card" style="padding:26px;border-radius:var(--r-2xl);">
+      <p style="color:var(--text-muted);line-height:1.9;font-size:0.95rem;">
+        By using this website, you agree not to misuse content, attempt unauthorized access, or distribute modified downloads as official.
+        The MJ PDF Reader project remains open source, and usage is subject to the project’s license terms available in the source repository.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="seo-section reveal">
+      <h2>MJ PDF Reader APK — Complete Resource Guide</h2>
+      <p>This page provides a comprehensive guide to <strong>MJ PDF Reader APK v2.2.1</strong>, a fast, lightweight, open-source PDF viewer for Android developed by Mudlej. MJ PDF Reader is designed for Android 5.0 through Android 14 and supports multiple CPU architectures. Key features include <strong>fast PDF search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, and <strong>hyperlink support</strong>, with a strong focus on <strong>privacy</strong> and <strong>zero data collection</strong>. File size is <strong>15 MB</strong> and the app requires no root access.</p>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="https://www.mjpdf.site/" class="footer-logo-wrap" style="margin-bottom:12px;display:inline-flex;gap:10px;text-decoration:none;">
+          <div class="footer-logo-icon">
+            <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader icon">
+          </div>
+          <span class="footer-logo-name">MJ PDF Reader</span>
+        </a>
+        <p>A fast, minimalist, powerful and totally free PDF viewer for Android. Made by Mudlej. Open source. No ads. No data collected.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="https://www.mjpdf.site/">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#info">App Details</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="#release">Release Notes</a>
+        <a href="#permissions">Permissions & Privacy (App)</a>
+        <a href="#install">Install Guide</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://gitlab.com/mudlej_android/mj_pdf_reader" target="_blank" rel="noopener">Source Code ↗</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company & Legal</h5>
+        <a href="#about-us">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#disclaimer">Disclaimer</a>
+        <a href="#terms">Terms &amp; Conditions</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 MJ PDF Reader — Made by Mudlej — Open Source on GitLab. All rights reserved.</p>
+      <p>Not affiliated with any third-party PDF services or platforms.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="btt" aria-label="Back to top">↑</button>
+
+<script>
+// HEADER SCROLL + BACK TO TOP
+var hdr = document.getElementById('mainHeader');
+var bttBtn = document.getElementById('btt');
+var ticking = false;
+
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    requestAnimationFrame(function() {
+      hdr.classList.toggle('scrolled', window.scrollY > 40);
+      bttBtn.classList.toggle('show', window.scrollY > 500);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, {passive:true});
+
+bttBtn.addEventListener('click', function() { window.scrollTo({top:0, behavior:'smooth'}); });
+
+// HAMBURGER (fixed mobile behavior)
+var hamBtn = document.getElementById('hamBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+
+function openMenu(){
+  hamBtn.classList.add('open');
+  mobileMenu.classList.add('open');
+  hamBtn.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu(){
+  hamBtn.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  hamBtn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+hamBtn.addEventListener('click', function() {
+  var isOpen = mobileMenu.classList.contains('open');
+  if(isOpen) closeMenu(); else openMenu();
+});
+
+// Close menu when clicking any mobile menu link (and allow smooth scroll)
+document.querySelectorAll('#mobileMenu a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    // If it's a hash link on this page, do smooth scroll with offset
+    var href = a.getAttribute('href') || '';
+    if(href.startsWith('#')){
+      e.preventDefault();
+      closeMenu();
+      var target = document.querySelector(href);
+      if(target){
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    } else {
+      // normal navigation (Home)
+      closeMenu();
+    }
+  });
+});
+
+// FAQ ACCORDION
+function toggleFaq(el){
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!isOpen) item.classList.add('open');
+}
+
+// LIGHTBOX
+function openLightbox(el){
+  var title = el.dataset.title || 'Screenshot';
+  var img = el.dataset.img || '';
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbEmoji = document.getElementById('lbEmoji');
+
+  document.getElementById('lbTitle').textContent = title;
+  document.getElementById('lbSub').textContent = 'MJ PDF Reader v2.2.1';
+
+  if(img){
+    lbImg.src = img;
+    lbImg.alt = title;
+    lbImg.style.display = 'block';
+    lbEmoji.style.display = 'none';
+    lbImg.onerror = function(){
+      lbImg.style.display = 'none';
+      lbEmoji.style.display = '';
+      var icons = {'Light Mode':'☀️','Dark Mode':'🌙','Main Menu':'📋'};
+      lbEmoji.textContent = icons[title] || '📄';
+    };
+  } else {
+    lbImg.style.display = 'none';
+    lbEmoji.style.display = '';
+    lbEmoji.textContent = '📄';
+  }
+
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('lightbox').addEventListener('click', function(e){
+  if(e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+
+// SCROLL REVEAL
+var reveals = document.querySelectorAll('.reveal');
+var ro = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e, i) {
+    if(e.isIntersecting){
+      setTimeout(function(){ e.target.classList.add('in'); }, i * 45);
+      ro.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.07, rootMargin: '0px 0px -40px 0px'});
+reveals.forEach(function(r){ ro.observe(r); });
+
+// NAV ACTIVE STATE (desktop)
+var navLinks = document.querySelectorAll('nav a:not(.nav-dl)');
+var sections = document.querySelectorAll('section[id]');
+var navTicking = false;
+window.addEventListener('scroll', function() {
+  if (!navTicking) {
+    requestAnimationFrame(function() {
+      var cur = '';
+      sections.forEach(function(s) {
+        if(window.scrollY >= s.offsetTop - 120) cur = s.id;
+      });
+      navLinks.forEach(function(l) {
+        var href = l.getAttribute('href') || '';
+        if(href.startsWith('#')){
+          l.classList.toggle('active', href === '#'+cur);
+        } else {
+          l.classList.remove('active');
+        }
+      });
+      navTicking = false;
+    });
+    navTicking = true;
+  }
+}, {passive:true});
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-89379TQVVS"></script>
 <script>
@@ -10,1267 +1869,6 @@
 
   gtag('config', 'G-89379TQVVS');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MJ PDF Reader APK v2.2.1 – Fast, Lightweight & Open Source PDF Viewer for Android</title>
-<meta name="description" content="Download MJ PDF Reader APK v2.2.1 – A fast, lightweight, open-source PDF viewer for Android with dark mode, powerful search, text mode, and total privacy. Free. 15 MB.">
-<meta name="keywords" content="MJ PDF Reader APK, MJ PDF download, lightweight PDF viewer Android, open source PDF app, fast PDF reader Android, MJ PDF 2.2.1, dark mode PDF reader, PDF viewer no ads">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Mudlej">
-<meta name="theme-color" content="#1a1a2e">
-<link rel="canonical" href="https://www.mjpdf.site/">
-<link rel="icon" type="image/png" href="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png">
-<link rel="apple-touch-icon" href="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MJ PDF Reader APK v2.2.1 – Fast, Lightweight & Open Source">
-<meta property="og:description" content="A fast, minimalist, powerful and totally free PDF viewer for Android. 15 MB. Open source. Total privacy.">
-<meta property="og:url" content="https://www.mjpdf.site/">
-<meta property="og:site_name" content="MJ PDF Reader">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MJ PDF Reader APK v2.2.1 – Fast, Lightweight & Open Source">
-<meta name="twitter:description" content="A fast, minimalist PDF viewer for Android. 15 MB. Open source. Total privacy. Free.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MJ PDF Reader","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","description":"A fast, minimalist, powerful and totally free open-source PDF viewer for Android with dark mode, powerful search, text mode, and total privacy.","softwareVersion":"2.2.1","fileSize":"15 MB","datePublished":"2024-05-19","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mudlej"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"1280"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is MJ PDF Reader?","acceptedAnswer":{"@type":"Answer","text":"MJ PDF Reader is a fast, minimalist, lightweight and totally free open-source PDF viewer for Android developed by Mudlej. It features dark mode, powerful search, text mode, auto scroll, hyperlinks, table of contents, and total privacy with no data collection."}},{"@type":"Question","name":"Is MJ PDF Reader free and open source?","acceptedAnswer":{"@type":"Answer","text":"Yes. MJ PDF Reader is completely free to download and use. The source code is open and available on GitLab."}},{"@type":"Question","name":"Does MJ PDF Reader collect any data?","acceptedAnswer":{"@type":"Answer","text":"No. MJ PDF Reader does not collect any data. It only requests Internet permission (for opening PDFs through links) and Storage permission (for saving/opening PDFs from device storage)."}},{"@type":"Question","name":"What Android version is required?","acceptedAnswer":{"@type":"Answer","text":"MJ PDF Reader requires Android 5.0 (Lollipop) or higher. It targets Android 14."}}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink: #0d0d14;
-  --ink2: #1a1a2e;
-  --ink3: #252540;
-  --surface: #f5f4f0;
-  --surface2: #eeecea;
-  --surface3: #e6e3de;
-  --white: #ffffff;
-  --accent: #4f46e5;
-  --accent2: #6366f1;
-  --accent3: #818cf8;
-  --accent-light: #eef2ff;
-  --green: #059669;
-  --green-light: #d1fae5;
-  --orange: #d97706;
-  --orange-light: #fef3c7;
-  --red: #dc2626;
-  --red-light: #fee2e2;
-  --teal: #0891b2;
-  --teal-light: #cffafe;
-  --border: rgba(13,13,20,0.1);
-  --border2: rgba(13,13,20,0.06);
-  --shadow-sm: 0 1px 4px rgba(13,13,20,0.08);
-  --shadow-md: 0 4px 16px rgba(13,13,20,0.1);
-  --shadow-lg: 0 12px 40px rgba(13,13,20,0.14);
-  --shadow-xl: 0 24px 60px rgba(13,13,20,0.18);
-  --shadow-accent: 0 8px 28px rgba(79,70,229,0.28);
-  --r-xs: 6px;
-  --r-sm: 10px;
-  --r-md: 14px;
-  --r-lg: 18px;
-  --r-xl: 22px;
-  --r-2xl: 28px;
-  --r-pill: 9999px;
-  --font-display: 'Nunito', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
-body{font-family:var(--font-body);background:var(--surface);color:var(--ink);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;word-break:normal;overflow-wrap:break-word}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--surface2)}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
 
-/* ── UTILS ── */
-.container{max-width:1140px;margin:0 auto;padding:0 20px}
-.section{padding:88px 0}
-@media(max-width:640px){.section{padding:60px 0}}
-
-.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:var(--r-pill);font-size:0.7rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase}
-.chip-blue{background:var(--accent-light);color:var(--accent);border:1px solid rgba(79,70,229,0.2)}
-.chip-green{background:var(--green-light);color:var(--green);border:1px solid rgba(5,150,105,0.2)}
-.chip-orange{background:var(--orange-light);color:var(--orange);border:1px solid rgba(217,119,6,0.2)}
-.chip-teal{background:var(--teal-light);color:var(--teal);border:1px solid rgba(8,145,178,0.2)}
-.chip-dark{background:var(--ink);color:var(--white)}
-.chip-red{background:var(--red-light);color:var(--red);border:1px solid rgba(220,38,38,0.2)}
-
-.sec-label{text-align:center;margin-bottom:14px}
-.sec-title{font-family:var(--font-display);font-size:clamp(1.75rem,3.8vw,2.6rem);font-weight:800;color:var(--ink);text-align:center;line-height:1.18;margin-bottom:12px;letter-spacing:-0.3px}
-.sec-title .hi{color:var(--accent)}
-.sec-sub{text-align:center;color:#5f5f78;font-size:0.975rem;max-width:560px;margin:0 auto 52px;line-height:1.72}
-@media(max-width:640px){.sec-sub{margin-bottom:32px;font-size:0.88rem}}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;border-radius:var(--r-pill);font-family:var(--font-body);font-size:0.9rem;font-weight:700;cursor:pointer;text-decoration:none;border:none;transition:all 0.22s ease;white-space:nowrap;letter-spacing:0.2px}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-accent)}
-.btn-primary:hover{background:#3730a3;transform:translateY(-2px);box-shadow:0 12px 36px rgba(79,70,229,0.38)}
-.btn-outline{background:transparent;color:var(--accent);border:2px solid var(--accent)}
-.btn-outline:hover{background:var(--accent-light);transform:translateY(-2px)}
-.btn-ghost{background:var(--white);color:var(--ink);border:1.5px solid var(--border);box-shadow:var(--shadow-sm)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.btn-lg{padding:16px 36px;font-size:1rem}
-.btn-dark{background:var(--ink);color:#fff}
-.btn-dark:hover{background:var(--ink2);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-
-/* CARDS */
-.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow-sm);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(79,70,229,0.2)}
-
-/* DIVIDERS */
-.sec-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0}
-
-/* ── HEADER ── */
-header{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(245,244,240,0.96);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
-header.scrolled{box-shadow:0 4px 24px rgba(13,13,20,0.1)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;padding:0 20px;max-width:1140px;margin:0 auto}
-.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:36px;height:36px;border-radius:9px;overflow:hidden;flex-shrink:0;box-shadow:var(--shadow-sm)}
-.logo-icon img{width:100%;height:100%;object-fit:cover}
-.logo-name{font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--ink);letter-spacing:-0.2px}
-.logo-ver{font-size:0.6rem;font-weight:600;color:#9090a8;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-top:1px}
-
-nav{display:flex;align-items:center;gap:2px}
-nav a{color:#5a5a70;text-decoration:none;font-size:0.83rem;font-weight:600;padding:7px 12px;border-radius:var(--r-xs);transition:color 0.2s,background 0.2s}
-nav a:hover{color:var(--accent);background:var(--accent-light)}
-nav a.active{color:var(--accent)}
-.nav-dl{padding:9px 20px!important;background:var(--ink)!important;color:#fff!important;border-radius:var(--r-pill)!important;font-size:0.82rem!important;font-weight:700!important;margin-left:6px}
-.nav-dl:hover{background:var(--accent)!important;transform:translateY(-1px)}
-
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;border-radius:var(--r-xs)}
-.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all 0.3s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-.mobile-menu{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background:#f5f4f0;
-  z-index:9998;
-  display:flex;
-  flex-direction:column;
-  padding:82px 16px 24px;
-  gap:4px;
-  transform:translateX(100%);
-  transition:transform 0.32s cubic-bezier(0.4,0,0.2,1);
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{color:var(--ink);text-decoration:none;font-size:1rem;font-weight:600;padding:13px 16px;border-radius:var(--r-md);transition:all 0.18s;display:flex;align-items:center;gap:12px;border:1px solid transparent}
-.mobile-menu a:hover,.mobile-menu a:active{color:var(--accent);background:var(--accent-light);border-color:rgba(79,70,229,0.15)}
-.mobile-menu .m-dl{margin-top:16px;background:var(--accent);color:#fff!important;justify-content:center;border-radius:var(--r-pill)!important;box-shadow:var(--shadow-accent);border:none!important}
-
-@media(max-width:900px){nav{display:none}.hamburger{display:flex}}
-
-/* ── HERO ── */
-#hero{min-height:100vh;display:flex;align-items:center;padding-top:66px;background:var(--ink2);position:relative;overflow:hidden;color:#fff}
-.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
-.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(79,70,229,0.25) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;animation:glowPulse 6s ease-in-out infinite alternate}
-.hero-glow2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 65%);bottom:-100px;left:-50px;pointer-events:none;animation:glowPulse 8s ease-in-out infinite alternate-reverse}
-@keyframes glowPulse{from{opacity:0.7;transform:scale(1)}to{opacity:1;transform:scale(1.1)}}
-
-.hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;padding:80px 0 60px;position:relative;z-index:2}
-@media(max-width:860px){.hero-inner{grid-template-columns:1fr;text-align:center;padding:50px 0 40px;gap:40px}}
-
-.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:var(--r-pill);padding:6px 16px;font-size:0.72rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-bottom:22px}
-.hero-kicker .dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
-
-h1.hero-h1{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-1px;color:#fff;margin-bottom:8px}
-h1.hero-h1 .hi{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-vtag{display:inline-flex;align-items:center;gap:7px;background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.3);color:#4ade80;border-radius:var(--r-xs);padding:5px 12px;font-size:0.76rem;font-weight:700;margin-bottom:22px;letter-spacing:0.3px}
-.hero-desc{font-size:0.98rem;color:rgba(255,255,255,0.65);line-height:1.78;margin-bottom:28px;max-width:480px}
-.hero-desc strong{color:rgba(255,255,255,0.92)}
-@media(max-width:860px){.hero-desc{margin-left:auto;margin-right:auto}}
-
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
-@media(max-width:860px){.hero-tags{justify-content:center}}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:var(--r-pill);font-size:0.75rem;font-weight:600;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75)}
-.hero-tag.accent{background:rgba(79,70,229,0.3);border-color:rgba(129,140,248,0.4);color:#a5b4fc}
-
-.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
-@media(max-width:860px){.hero-cta-row{justify-content:center}}
-@media(max-width:480px){.hero-cta-row{flex-direction:column;align-items:stretch}.hero-cta-row .btn{justify-content:center;width:100%}}
-
-.hero-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-lg);overflow:hidden;background:rgba(255,255,255,0.04)}
-@media(max-width:860px){.hero-stats-row{max-width:400px;margin:0 auto;grid-template-columns:repeat(2,1fr)}}
-.hero-stat{padding:16px 14px;text-align:center;border-right:1px solid rgba(255,255,255,0.08)}
-.hero-stat:last-child{border-right:none}
-@media(max-width:860px){.hero-stat:nth-child(2){border-right:none}.hero-stat:nth-child(3){border-top:1px solid rgba(255,255,255,0.08)}.hero-stat:nth-child(4){border-top:1px solid rgba(255,255,255,0.08)}}
-.hs-v{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:#fff;display:block;line-height:1}
-.hs-l{font-size:0.62rem;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px;display:block}
-
-/* HERO VISUAL */
-.hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
-.hero-phone-card{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-2xl);padding:32px 28px;text-align:center;max-width:300px;width:100%;position:relative}
-.hero-phone-icon{width:90px;height:90px;border-radius:20px;margin:0 auto 18px;overflow:hidden;box-shadow:0 10px 36px rgba(79,70,229,0.4)}
-.hero-phone-icon img{width:100%;height:100%;object-fit:cover}
-.hero-phone-name{font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:6px}
-.hero-phone-sub{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:20px;line-height:1.5}
-.hero-phone-badges{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:22px}
-.hp-badge{padding:4px 12px;border-radius:var(--r-pill);font-size:0.67rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.hp-badge.g{background:rgba(74,222,128,0.15);color:#4ade80;border:1px solid rgba(74,222,128,0.3)}
-.hp-badge.b{background:rgba(129,140,248,0.15);color:#a5b4fc;border:1px solid rgba(129,140,248,0.3)}
-.hp-badge.p{background:rgba(167,139,250,0.15);color:#c4b5fd;border:1px solid rgba(167,139,250,0.3)}
-.hero-rating-row{display:flex;align-items:center;justify-content:center;gap:8px;border-top:1px solid rgba(255,255,255,0.1);padding-top:18px}
-.stars{color:#fbbf24;font-size:0.8rem;letter-spacing:1px}
-.rating-text{font-size:0.78rem;color:rgba(255,255,255,0.5);font-weight:600}
-
-/* ── ABOUT ── */
-#about{background:var(--white)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:32px}}
-.about-heading{font-family:var(--font-display);font-size:clamp(1.55rem,3vw,2.15rem);font-weight:800;line-height:1.22;color:var(--ink);margin-bottom:16px;letter-spacing:-0.2px}
-.about-heading .hi{color:var(--accent)}
-.about-body p{color:#5a5a70;margin-bottom:14px;font-size:0.935rem;line-height:1.78}
-.about-body p strong{color:var(--ink)}
-.about-points{display:flex;flex-direction:column;gap:10px}
-.about-pt{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--border);transition:all 0.22s}
-.about-pt:hover{background:var(--accent-light);border-color:rgba(79,70,229,0.2);box-shadow:var(--shadow-sm)}
-.apt-ico{width:42px;height:42px;flex-shrink:0;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.apt-body h4{font-size:0.88rem;font-weight:700;color:var(--ink);margin-bottom:3px}
-.apt-body p{font-size:0.82rem;color:#5f5f78;line-height:1.68;margin:0}
-
-/* ── FEATURES ── */
-#features{background:var(--surface)}
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:540px){.feat-grid{grid-template-columns:1fr;gap:12px}}
-.feat-card{padding:26px 22px;position:relative;overflow:hidden}
-.feat-stripe{position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity 0.3s;border-radius:var(--r-xl) var(--r-xl) 0 0}
-.feat-card:hover .feat-stripe{opacity:1}
-.feat-ico{width:50px;height:50px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px}
-.feat-card h3{font-family:var(--font-display);font-size:0.98rem;font-weight:700;color:var(--ink);margin-bottom:8px}
-.feat-card p{color:#5f5f78;font-size:0.83rem;line-height:1.72;margin-bottom:14px}
-.feat-pill{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;border-radius:var(--r-pill);font-size:0.66rem;font-weight:700;letter-spacing:0.7px;text-transform:uppercase}
-
-/* ── APP INFO ── */
-#info{background:var(--white)}
-.info-table{width:100%;border-collapse:collapse;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--border)}
-.info-table tr{border-bottom:1px solid var(--border2);transition:background 0.2s}
-.info-table tr:last-child{border-bottom:none}
-.info-table tr:hover{background:var(--surface)}
-.info-table td{padding:14px 22px;font-size:0.9rem;vertical-align:middle}
-@media(max-width:540px){.info-table td{padding:12px 14px;font-size:0.83rem}}
-.info-k{font-size:0.75rem;font-weight:700;color:#9090a8;text-transform:uppercase;letter-spacing:1px;width:200px;display:flex;align-items:center;gap:8px}
-@media(max-width:540px){.info-k{width:auto;display:block;margin-bottom:4px}.info-table td{display:block}.info-table tr{border-bottom:1px solid var(--border)}}
-.info-v{font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.info-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.iv-chip{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:var(--r-pill);font-size:0.65rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase}
-
-/* ── SCREENSHOTS ── */
-#screenshots{background:var(--surface)}
-.ss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:768px){.ss-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
-@media(max-width:380px){.ss-grid{grid-template-columns:repeat(2,1fr);gap:8px}}
-.ss-item{aspect-ratio:9/18;border-radius:var(--r-lg);overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--border);transition:all 0.25s;background:linear-gradient(160deg,var(--accent-light),var(--surface));display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
-.ss-item:hover{transform:translateY(-5px) scale(1.02);box-shadow:var(--shadow-xl);border-color:rgba(79,70,229,0.3)}
-.ss-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:8px 8px 0;min-height:0;overflow:hidden}
-.ss-img-wrap img{width:100%;height:100%;object-fit:contain;display:block;border-radius:9px;transition:transform 0.3s}
-.ss-item:hover .ss-img-wrap img{transform:scale(1.03)}
-.ss-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.ss-ph-ico{font-size:2.2rem}
-.ss-ph-lbl{font-size:0.7rem;font-weight:600;color:#9090a8;text-align:center;padding:0 10px}
-.ss-overlay{position:absolute;inset:0;background:rgba(79,70,229,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s;font-size:1.8rem;backdrop-filter:blur(4px);border-radius:var(--r-lg)}
-.ss-item:hover .ss-overlay{opacity:1}
-.ss-cap{width:100%;background:linear-gradient(transparent,rgba(13,13,20,0.7));padding:16px 10px 9px;font-size:0.72rem;font-weight:700;color:#fff;text-align:center;flex-shrink:0}
-
-/* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;background:rgba(13,13,20,0.92);z-index:9999;align-items:center;justify-content:center;backdrop-filter:blur(16px);padding:20px}
-.lightbox.open{display:flex}
-.lb-inner{max-width:320px;width:100%;background:var(--white);border:1px solid var(--border);border-radius:var(--r-2xl);padding:24px;text-align:center;position:relative;box-shadow:var(--shadow-xl)}
-.lb-img{aspect-ratio:9/18;background:var(--surface);border-radius:var(--r-lg);margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:3rem;overflow:hidden;border:1px solid var(--border)}
-.lb-img img{width:100%;height:100%;object-fit:contain;border-radius:var(--r-lg)}
-.lb-title{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:4px;color:var(--ink)}
-.lb-sub{font-size:0.75rem;color:#9090a8}
-.lb-close{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:0.85rem;transition:all 0.2s}
-.lb-close:hover{background:var(--red-light);color:var(--red)}
-
-/* ── RELEASE NOTES ── */
-#release{background:var(--white)}
-.rn-card{max-width:900px;margin:0 auto;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-md)}
-.rn-head{padding:28px 32px;background:linear-gradient(135deg,var(--ink2),var(--ink3));display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
-@media(max-width:540px){.rn-head{padding:20px 18px}}
-.rn-head-badge{background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.3);color:#4ade80;padding:4px 14px;border-radius:var(--r-pill);font-size:0.68rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px}
-.rn-head h3{font-family:var(--font-display);font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:4px}
-.rn-head p{font-size:0.8rem;color:rgba(255,255,255,0.55)}
-.rn-body{padding:0;background:var(--white)}
-.rn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
-@media(max-width:640px){.rn-grid{grid-template-columns:1fr}}
-.rn-item{display:flex;align-items:flex-start;gap:11px;padding:14px 20px;border-bottom:1px solid var(--border2);border-right:1px solid var(--border2);transition:background 0.2s}
-@media(max-width:640px){.rn-item{border-right:none}}
-.rn-grid .rn-item:nth-child(even){border-right:none}
-.rn-item:hover{background:var(--surface)}
-.rn-ico{font-size:1rem;flex-shrink:0;margin-top:1px;width:24px;text-align:center}
-.rn-text{font-size:0.855rem;color:#4a4a60;line-height:1.6}
-.rn-text strong{color:var(--ink)}
-
-/* ── PERMISSIONS ── */
-#permissions{background:var(--surface)}
-.perm-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:640px){.perm-grid{grid-template-columns:1fr;gap:14px}}
-.perm-card{padding:28px 24px;display:flex;align-items:flex-start;gap:16px}
-.perm-ico{width:50px;height:50px;flex-shrink:0;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
-.perm-body h4{font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:6px}
-.perm-body p{font-size:0.875rem;color:#5f5f78;line-height:1.72}
-.privacy-note{padding:22px 26px;border-radius:var(--r-lg);background:#f0fdf4;border:1px solid rgba(5,150,105,0.2);border-left:4px solid var(--green);display:flex;gap:14px;align-items:flex-start;margin-top:20px}
-@media(max-width:540px){.privacy-note{padding:16px 16px;flex-direction:column;gap:10px}}
-.privacy-note-ico{font-size:1.3rem;flex-shrink:0;margin-top:1px}
-.privacy-note h4{color:var(--green);margin-bottom:5px;font-size:0.88rem;font-weight:700}
-.privacy-note p{color:#4a4a60;font-size:0.85rem;line-height:1.76;margin:0}
-
-/* ── INSTALL ── */
-#install{background:var(--white)}
-.install-timeline{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:0}
-.install-step{display:grid;grid-template-columns:64px 1fr;gap:0;position:relative}
-.install-step:not(:last-child) .step-line{position:absolute;left:31px;top:64px;bottom:-1px;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(79,70,229,0.1));z-index:0}
-.step-left{display:flex;flex-direction:column;align-items:center;padding-top:0;position:relative;z-index:1}
-.step-num{width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1rem;font-weight:800;box-shadow:var(--shadow-accent);flex-shrink:0}
-.step-right{padding:0 0 36px 24px}
-.step-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px 22px;transition:all 0.22s}
-.step-card-inner:hover{background:var(--accent-light);border-color:rgba(79,70,229,0.2);box-shadow:var(--shadow-md)}
-.step-emo{font-size:1.5rem;margin-bottom:8px;display:block}
-.step-card-inner h4{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:6px}
-.step-card-inner p{font-size:0.855rem;color:#5f5f78;line-height:1.72}
-.step-card-inner p strong{color:var(--ink)}
-@media(max-width:480px){.install-timeline{gap:0}.step-right{padding-bottom:24px;padding-left:16px}.step-card-inner{padding:16px 16px}}
-
-/* ── DOWNLOAD ── */
-#download{background:var(--ink2);position:relative;overflow:hidden}
-.dl-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
-.dl-glow{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(79,70,229,0.2) 0%,transparent 65%);top:-100px;left:50%;transform:translateX(-50%);pointer-events:none}
-.dl-wrapper{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:2}
-.dl-title{font-family:var(--font-display);font-size:clamp(1.7rem,3.8vw,2.6rem);font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-0.3px}
-.dl-title .hi{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.dl-sub{color:rgba(255,255,255,0.55);margin-bottom:36px;font-size:0.97rem}
-.dl-meta{display:flex;justify-content:center;gap:0;margin-bottom:36px;border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-lg);overflow:hidden;background:rgba(255,255,255,0.04);flex-wrap:wrap}
-.dl-meta-item{flex:1;min-width:100px;padding:16px 12px;text-align:center;border-right:1px solid rgba(255,255,255,0.08)}
-.dl-meta-item:last-child{border-right:none}
-@media(max-width:480px){.dl-meta-item{min-width:50%;border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}.dl-meta-item:nth-child(1){border-right:1px solid rgba(255,255,255,0.08)}.dl-meta-item:nth-child(3){border-right:1px solid rgba(255,255,255,0.08)}.dl-meta-item:nth-child(odd):last-child{border-right:none}}
-.dl-meta-val{font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:#fff;display:block}
-.dl-meta-lbl{font-size:0.62rem;font-weight:600;color:rgba(255,255,255,0.38);letter-spacing:1.5px;text-transform:uppercase}
-.dl-btn-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px}
-@media(max-width:480px){.dl-btn-row{flex-direction:column;align-items:stretch}.dl-btn-row .btn{justify-content:center}}
-.trust-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
-.trust-item{display:flex;align-items:center;gap:5px;font-size:0.74rem;color:rgba(255,255,255,0.45);font-weight:600}
-
-/* ── FAQ ── */
-#faq{background:var(--surface)}
-.faq-list{display:flex;flex-direction:column;gap:8px}
-.faq-item{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);background:var(--white);transition:border-color 0.25s,box-shadow 0.25s}
-.faq-item.open{border-color:rgba(79,70,229,0.3);box-shadow:var(--shadow-sm)}
-.faq-q{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:12px;transition:background 0.2s}
-.faq-q:hover{background:var(--surface)}
-.faq-q h3{font-size:0.92rem;font-weight:700;color:var(--ink);flex:1}
-.faq-toggle{width:26px;height:26px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:var(--accent);transition:all 0.3s;background:var(--accent-light)}
-.faq-item.open .faq-toggle{transform:rotate(45deg);background:var(--accent);color:#fff;border-color:var(--accent)}
-.faq-body{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1)}
-.faq-item.open .faq-body{max-height:500px}
-.faq-body-inner{padding:12px 20px 18px;color:#5a5a70;font-size:0.875rem;line-height:1.82;border-top:1px solid var(--border2)}
-.faq-body-inner strong{color:var(--ink)}
-
-/* ── ABOUT US (COMPANY) ── */
-#about-us{background:var(--white)}
-.about-us-inner{max-width:800px;margin:0 auto}
-.about-us-inner p{color:#5a5a70;font-size:0.935rem;line-height:1.82;margin-bottom:16px}
-.about-us-inner p strong{color:var(--ink)}
-
-/* ── CONTACT ── */
-#contact{background:var(--surface)}
-.contact-card{max-width:640px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:var(--r-2xl);padding:44px 40px;text-align:center;box-shadow:var(--shadow-md)}
-@media(max-width:540px){.contact-card{padding:28px 20px}}
-.contact-icon-wrap{width:72px;height:72px;border-radius:18px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px}
-.contact-email{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:var(--r-pill);background:var(--accent);color:#fff;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:var(--shadow-accent);transition:all 0.22s;margin-top:20px;word-break:break-all}
-.contact-email:hover{background:#3730a3;transform:translateY(-2px);box-shadow:0 12px 36px rgba(79,70,229,0.38)}
-.contact-details{margin-top:28px;padding-top:24px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:480px){.contact-details{grid-template-columns:1fr}}
-.contact-detail-item{background:var(--surface);border-radius:var(--r-lg);padding:14px;text-align:left}
-.cd-label{font-size:0.68rem;font-weight:700;color:#9090a8;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px}
-.cd-val{font-size:0.88rem;font-weight:600;color:var(--ink)}
-
-/* ── PRIVACY ── */
-#privacy{background:var(--white)}
-.legal-box{max-width:800px;margin:0 auto}
-.legal-section-title{font-family:var(--font-display);font-size:1.05rem;font-weight:800;color:var(--ink);margin:28px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--border)}
-.legal-section-title:first-child{margin-top:0}
-.legal-box p,.legal-box li{color:#5a5a70;font-size:0.9rem;line-height:1.82;margin-bottom:10px}
-.legal-box ul{padding-left:20px;margin-bottom:12px}
-.legal-box li{list-style:disc}
-.legal-box strong{color:var(--ink)}
-.legal-note{background:var(--green-light);border:1px solid rgba(5,150,105,0.2);border-left:4px solid var(--green);border-radius:var(--r-md);padding:14px 18px;margin:16px 0}
-.legal-note p{margin:0;font-size:0.84rem;color:#2d6a4f;line-height:1.68}
-
-/* ── DISCLAIMER ── */
-#disclaimer{background:var(--surface)}
-.disclaimer-box{max-width:800px;margin:0 auto}
-.disclaimer-box p{color:#5a5a70;font-size:0.9rem;line-height:1.82;margin-bottom:12px}
-.disclaimer-box strong{color:var(--ink)}
-.disc-alert{background:var(--orange-light);border:1px solid rgba(217,119,6,0.2);border-left:4px solid var(--orange);border-radius:var(--r-md);padding:14px 18px;margin:16px 0}
-.disc-alert p{margin:0;color:#92400e;font-size:0.84rem}
-
-/* ── TERMS ── */
-#terms{background:var(--white)}
-.terms-box{max-width:800px;margin:0 auto}
-.terms-box p,.terms-box li{color:#5a5a70;font-size:0.9rem;line-height:1.82;margin-bottom:10px}
-.terms-box ul{padding-left:20px;margin-bottom:12px}
-.terms-box li{list-style:disc}
-.terms-box strong{color:var(--ink)}
-.terms-section-title{font-family:var(--font-display);font-size:1.05rem;font-weight:800;color:var(--ink);margin:28px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--border)}
-.terms-section-title:first-child{margin-top:0}
-
-/* ── FOOTER ── */
-footer{background:var(--ink);padding:60px 0 28px;color:rgba(255,255,255,0.6)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
-@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:24px}}
-.footer-brand p{color:rgba(255,255,255,0.4);font-size:0.82rem;margin-top:12px;line-height:1.72;max-width:240px}
-.footer-col h5{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;font-weight:700}
-.footer-col a{display:block;color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.83rem;margin-bottom:9px;font-weight:500;transition:color 0.2s}
-.footer-col a:hover{color:#fff}
-.footer-logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:4px}
-.footer-logo-ico{width:32px;height:32px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,0.08);flex-shrink:0}
-.footer-logo-ico img{width:100%;height:100%;object-fit:cover;border-radius:8px}
-.footer-logo-name{font-family:var(--font-display);font-size:0.95rem;font-weight:800;color:#fff}
-.seo-section{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r-xl);padding:24px 28px;margin-bottom:44px}
-.seo-section h2{font-family:var(--font-display);font-size:0.9rem;color:rgba(255,255,255,0.4);margin-bottom:10px}
-.seo-section p{font-size:0.74rem;color:rgba(255,255,255,0.28);line-height:1.9}
-.seo-section p strong{color:rgba(255,255,255,0.42)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-bottom p{color:rgba(255,255,255,0.3);font-size:0.72rem}
-
-/* BTT */
-#btt{position:fixed;bottom:22px;right:22px;width:44px;height:44px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-accent);z-index:500;opacity:0;transform:translateY(16px);transition:opacity 0.3s,transform 0.3s,box-shadow 0.3s}
-#btt.show{opacity:1;transform:translateY(0)}
-#btt:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(79,70,229,0.38)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
-</style>
-</head>
-<body>
-
-<!-- ── HEADER ── -->
-<header id="mainHeader">
-  <div class="header-inner">
-    <a href="#hero" class="logo-wrap">
-      <div class="logo-icon">
-        <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader icon" loading="eager">
-      </div>
-      <div>
-        <span class="logo-name">MJ PDF Reader</span>
-        <span class="logo-ver">v2.2.1 · Free & Open Source</span>
-      </div>
-    </a>
-    <nav id="desktopNav">
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#release">What's New</a>
-      <a href="#install">Install</a>
-      <a href="#faq">FAQ</a>
-      <a href="#download" class="nav-dl">⬇ Download APK</a>
-    </nav>
-    <button class="hamburger" id="hamBtn" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#hero" onclick="closeMenu()">🏠 Home</a>
-    <a href="#about" onclick="closeMenu()">📖 About MJ PDF</a>
-    <a href="#features" onclick="closeMenu()">✨ Features</a>
-    <a href="#screenshots" onclick="closeMenu()">📸 Screenshots</a>
-    <a href="#release" onclick="closeMenu()">🆕 What's New</a>
-    <a href="#permissions" onclick="closeMenu()">🔒 Permissions & Privacy</a>
-    <a href="#install" onclick="closeMenu()">📲 How to Install</a>
-    <a href="#faq" onclick="closeMenu()">❓ FAQ</a>
-    <a href="#about-us" onclick="closeMenu()">🏢 About Us</a>
-    <a href="#contact" onclick="closeMenu()">📧 Contact Us</a>
-    <a href="#privacy" onclick="closeMenu()">🔏 Privacy Policy</a>
-    <a href="#disclaimer" onclick="closeMenu()">⚠️ Disclaimer</a>
-    <a href="#terms" onclick="closeMenu()">📜 Terms & Conditions</a>
-    <a href="#download" onclick="closeMenu()" class="m-dl">⬇ Download APK Now</a>
-</div>
-
-<!-- ── HERO ── -->
-<section id="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-kicker">
-          <span class="dot"></span>
-          PDF Viewer · Android APK · v2.2.1
-        </div>
-        <h1 class="hero-h1"><span class="hi">MJ PDF</span><br>Reader</h1>
-        <div class="hero-vtag">✦ v2.2.1 · Latest Version</div>
-        <p class="hero-desc">A <strong>fast, minimalist, powerful</strong> and completely free PDF viewer for Android. Open source with <strong>total privacy</strong> — no data collection, no ads, no bloat. Just blazing-fast PDF reading in <strong>15 MB</strong>.</p>
-        <div class="hero-tags">
-          <span class="hero-tag accent">📂 Open Source</span>
-          <span class="hero-tag accent">🔒 Zero Data</span>
-          <span class="hero-tag">🌙 Dark Mode</span>
-          <span class="hero-tag">⚡ 15 MB Only</span>
-          <span class="hero-tag">🔍 Fast Search</span>
-          <span class="hero-tag">📝 Text Mode</span>
-        </div>
-        <div class="hero-cta-row">
-          <a href="#download" class="btn btn-primary btn-lg">⬇ Download Free APK</a>
-          <a href="#features" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07);">Explore Features →</a>
-        </div>
-        <div class="hero-stats-row">
-          <div class="hero-stat"><span class="hs-v">15 MB</span><span class="hs-l">File Size</span></div>
-          <div class="hero-stat"><span class="hs-v">Android 5+</span><span class="hs-l">Requires</span></div>
-          <div class="hero-stat"><span class="hs-v">Free</span><span class="hs-l">Cost</span></div>
-          <div class="hero-stat"><span class="hs-v">Open Source</span><span class="hs-l">License</span></div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-phone-card">
-          <div class="hero-phone-icon">
-            <img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader App Icon">
-          </div>
-          <div class="hero-phone-name">MJ PDF Reader</div>
-          <div class="hero-phone-sub">Fast · Lightweight · Open Source<br>Made by Mudlej</div>
-          <div class="hero-phone-badges">
-            <span class="hp-badge g">✓ Free</span>
-            <span class="hp-badge b">📂 Open Source</span>
-            <span class="hp-badge p">🔒 Private</span>
-          </div>
-          <div class="hero-rating-row">
-            <span class="stars">★★★★★</span>
-            <span class="rating-text">4.9 / 5 · 1,280+ ratings</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT ── -->
-<section id="about" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-body">
-        <span class="chip chip-blue" style="margin-bottom:16px;">About the App</span>
-        <h2 class="about-heading">What is <span class="hi">MJ PDF Reader?</span></h2>
-        <p>MJ PDF Reader is a <strong>fast, minimalist, powerful and completely free</strong> PDF viewer for Android, created by the developer <strong>Mudlej</strong>. It is proudly open-source and available on GitLab for anyone to inspect, use, or contribute to.</p>
-        <p>Unlike bloated PDF readers that demand excessive permissions, show ads, or quietly harvest your data, MJ PDF Reader was built with a single focus: <strong>reading PDFs quickly and privately</strong>. At just 15 MB, it's one of the smallest full-featured PDF viewers available for Android.</p>
-        <p>With features like <strong>blazing-fast search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, and <strong>hyperlink support</strong> — MJ PDF punches far above its weight.</p>
-      </div>
-      <div class="about-points">
-        <div class="about-pt reveal">
-          <div class="apt-ico" style="background:var(--accent-light);">⚡</div>
-          <div class="apt-body"><h4>Blazingly Fast Performance</h4><p>Search across large PDFs in milliseconds. Pages render smoothly even on older Android devices running 5.0+.</p></div>
-        </div>
-        <div class="about-pt reveal">
-          <div class="apt-ico" style="background:var(--green-light);">🔒</div>
-          <div class="apt-body"><h4>Total Privacy — No Data Collected</h4><p>No analytics, no trackers, no advertising SDKs — just a clean, private PDF reader that stays offline.</p></div>
-        </div>
-        <div class="about-pt reveal">
-          <div class="apt-ico" style="background:var(--accent-light);">📂</div>
-          <div class="apt-body"><h4>100% Free & Open Source</h4><p>Complete source code on GitLab. Free forever with no in-app purchases, no subscriptions, no ads.</p></div>
-        </div>
-        <div class="about-pt reveal">
-          <div class="apt-ico" style="background:var(--orange-light);">📱</div>
-          <div class="apt-body"><h4>Multi-Instance & Wide Compatibility</h4><p>Open multiple PDFs simultaneously. Supports Android 5.0 through 14 across arm64-v8a, armeabi-v7a, x86, and x86_64.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FEATURES ── -->
-<section id="features" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-blue">App Features</span></div>
-    <h2 class="sec-title">Everything You Need in a <span class="hi">PDF Reader</span></h2>
-    <p class="sec-sub">MJ PDF Reader packs a powerful set of features into a lightweight 15 MB package — no compromises needed.</p>
-    <div class="feat-grid">
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#4f46e5,#7c3aed);"></div>
-        <div class="feat-ico" style="background:var(--accent-light);">🔍</div>
-        <h3>Blazing Fast Search</h3>
-        <p>Instantly search any keyword throughout the entire PDF. Filter results with a secondary query. Results are expandable for context and highlighted directly on the page.</p>
-        <span class="feat-pill" style="background:var(--accent-light);color:var(--accent);border:1px solid rgba(79,70,229,0.2);">⚡ Instant Results</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#059669,#0891b2);"></div>
-        <div class="feat-ico" style="background:var(--green-light);">🌙</div>
-        <h3>Dark Mode</h3>
-        <p>Switch between Light and Dark mode for comfortable reading at any time. Dark mode reduces eye strain during extended sessions and conserves battery on AMOLED screens.</p>
-        <span class="feat-pill" style="background:var(--green-light);color:var(--green);border:1px solid rgba(5,150,105,0.2);">👁 Eye Friendly</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#7c3aed,#d97706);"></div>
-        <div class="feat-ico" style="background:#f5f3ff;">📝</div>
-        <h3>Text Mode</h3>
-        <p>View the PDF as plain text for distraction-free reading. Customize text size, text color, and background color. Your preferences and last page are saved automatically.</p>
-        <span class="feat-pill" style="background:#f5f3ff;color:#7c3aed;border:1px solid rgba(124,58,237,0.2);">🎨 Customizable</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#d97706,#dc2626);"></div>
-        <div class="feat-ico" style="background:var(--orange-light);">⏩</div>
-        <h3>Auto Scroll</h3>
-        <p>Hands-free reading with auto scroll at adjustable speeds in both directions. Exits cleanly when you leave Full Screen Mode so you're always in control.</p>
-        <span class="feat-pill" style="background:var(--orange-light);color:var(--orange);border:1px solid rgba(217,119,6,0.2);">🤲 Hands-Free</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#0891b2,#4f46e5);"></div>
-        <div class="feat-ico" style="background:var(--teal-light);">📑</div>
-        <h3>Table of Contents</h3>
-        <p>Dedicated Table of Contents page to navigate large documents instantly. Jump to any chapter or section without scrolling through hundreds of pages manually.</p>
-        <span class="feat-pill" style="background:var(--teal-light);color:var(--teal);border:1px solid rgba(8,145,178,0.2);">🧭 Quick Nav</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#dc2626,#7c3aed);"></div>
-        <div class="feat-ico" style="background:var(--red-light);">🔗</div>
-        <h3>Hyperlinks & Links Page</h3>
-        <p>Full hyperlink support within PDFs. A dedicated Links page lists all URLs embedded in the document, making it easy to review and open external references.</p>
-        <span class="feat-pill" style="background:var(--red-light);color:var(--red);border:1px solid rgba(220,38,38,0.2);">🌐 Fully Linked</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#4f46e5,#059669);"></div>
-        <div class="feat-ico" style="background:var(--accent-light);">📱</div>
-        <h3>Full-Screen Mode</h3>
-        <p>Immersive full-screen reading with a toolbar for screen rotation, brightness control, auto scroll, horizontal scroll lock, and screenshot capture — all in one swipe.</p>
-        <span class="feat-pill" style="background:var(--accent-light);color:var(--accent);border:1px solid rgba(79,70,229,0.2);">🖥 Immersive</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#059669,#d97706);"></div>
-        <div class="feat-ico" style="background:var(--green-light);">💾</div>
-        <h3>Remembers Your Page</h3>
-        <p>Automatically remembers the last page in every document. Reopen any PDF and pick up exactly where you left off — even across multiple documents simultaneously.</p>
-        <span class="feat-pill" style="background:var(--green-light);color:var(--green);border:1px solid rgba(5,150,105,0.2);">🔖 Auto Bookmark</span>
-      </div>
-
-      <div class="card feat-card reveal">
-        <div class="feat-stripe" style="background:linear-gradient(90deg,#7c3aed,#0891b2);"></div>
-        <div class="feat-ico" style="background:#f5f3ff;">🌐</div>
-        <h3>Open Online PDFs</h3>
-        <p>Open PDFs directly from URLs without downloading first. Download and save online PDFs to your device. Share and print PDFs directly from the app.</p>
-        <span class="feat-pill" style="background:#f5f3ff;color:#7c3aed;border:1px solid rgba(124,58,237,0.2);">🔗 URL Support</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── APP INFO ── -->
-<section id="info" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-teal">App Details</span></div>
-    <h2 class="sec-title">App <span class="hi">Information</span></h2>
-    <p class="sec-sub">Complete technical specifications for MJ PDF Reader v2.2.1.</p>
-    <div class="reveal" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-      <table class="info-table">
-        <tbody>
-          <tr><td><div class="info-k">📱 App Name</div></td><td><div class="info-v">MJ PDF Reader</div></td></tr>
-          <tr><td><div class="info-k">👤 Developer</div></td><td><div class="info-v">Mudlej</div></td></tr>
-          <tr><td><div class="info-k">🗂 Category</div></td><td><div class="info-v">Tools / Productivity / PDF Viewer</div></td></tr>
-          <tr><td><div class="info-k">📦 Version</div></td><td><div class="info-v"><span class="info-dot" style="background:var(--accent);box-shadow:0 0 6px var(--accent);"></span>2.2.1 <span class="iv-chip chip-green">Latest</span></div></td></tr>
-          <tr><td><div class="info-k">📅 Release Date</div></td><td><div class="info-v">2024-05-19</div></td></tr>
-          <tr><td><div class="info-k">💾 File Size</div></td><td><div class="info-v">15 MB</div></td></tr>
-          <tr><td><div class="info-k">🤖 Android Target</div></td><td><div class="info-v">Android 14.0 (API 34)</div></td></tr>
-          <tr><td><div class="info-k">📲 Minimum Android</div></td><td><div class="info-v">Android 5.0 Lollipop (API 21)</div></td></tr>
-          <tr><td><div class="info-k">🏗 Architectures</div></td><td><div class="info-v"><span class="iv-chip chip-blue">arm64-v8a</span><span class="iv-chip chip-blue">armeabi-v7a</span><span class="iv-chip chip-blue">x86</span><span class="iv-chip chip-blue">x86_64</span></div></td></tr>
-          <tr><td><div class="info-k">💰 Price</div></td><td><div class="info-v"><span class="info-dot" style="background:var(--green);box-shadow:0 0 6px var(--green);"></span>Free — Always</div></td></tr>
-          <tr><td><div class="info-k">📂 Source Code</div></td><td><div class="info-v">Open Source (GitLab)</div></td></tr>
-          <tr><td><div class="info-k">🔑 Root Required</div></td><td><div class="info-v"><span class="iv-chip chip-green">NOT REQUIRED</span></div></td></tr>
-          <tr><td><div class="info-k">🔒 Data Collected</div></td><td><div class="info-v"><span class="iv-chip chip-green">✅ NONE</span></div></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ── SCREENSHOTS ── -->
-<section id="screenshots" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip" style="background:#f5f3ff;color:#7c3aed;border:1px solid rgba(124,58,237,0.2);">Gallery</span></div>
-    <h2 class="sec-title">App <span class="hi">Screenshots</span></h2>
-    <p class="sec-sub">See MJ PDF Reader in action — light mode, dark mode, and the main menu interface.</p>
-    <div class="ss-grid">
-
-      <div class="ss-item" data-title="Light Mode" data-img="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67" onclick="openLightbox(this)">
-        <div class="ss-img-wrap"><img src="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67" alt="Light Mode" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'ss-ph\'><span class=\'ss-ph-ico\'>☀️</span><span class=\'ss-ph-lbl\'>Light Mode</span></div>'"></div>
-        <div class="ss-overlay">🔍</div>
-        <div class="ss-cap">Light Mode</div>
-      </div>
-
-      <div class="ss-item" data-title="Dark Mode" data-img="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67" onclick="openLightbox(this)">
-        <div class="ss-img-wrap"><img src="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67" alt="Dark Mode" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'ss-ph\'><span class=\'ss-ph-ico\'>🌙</span><span class=\'ss-ph-lbl\'>Dark Mode</span></div>'"></div>
-        <div class="ss-overlay">🔍</div>
-        <div class="ss-cap">Dark Mode</div>
-      </div>
-
-      <div class="ss-item" data-title="Main Menu" data-img="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67" onclick="openLightbox(this)">
-        <div class="ss-img-wrap"><img src="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67" alt="Main Menu" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'ss-ph\'><span class=\'ss-ph-ico\'>📋</span><span class=\'ss-ph-lbl\'>Main Menu</span></div>'"></div>
-        <div class="ss-overlay">🔍</div>
-        <div class="ss-cap">Main Menu</div>
-      </div>
-
-      <div class="ss-item" data-title="Search Feature" data-img="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67" onclick="openLightbox(this)">
-        <div class="ss-img-wrap"><img src="https://camo.githubusercontent.com/9bd369f9c43ee08eb92991811b545849e655107cacc036fe3a97dc1e4e64bd47/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6672616d65642e706e67" alt="Search Feature" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'ss-ph\'><span class=\'ss-ph-ico\'>🔍</span><span class=\'ss-ph-lbl\'>Search Feature</span></div>'"></div>
-        <div class="ss-overlay">🔍</div>
-        <div class="ss-cap">Search Feature</div>
-      </div>
-
-      <div class="ss-item" data-title="Text Mode" data-img="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67" onclick="openLightbox(this)">
-        <div class="ss-img-wrap"><img src="https://camo.githubusercontent.com/ce940cd55ea51b77fb3794927935d6e11d55c8f72dfbc75e82fbd7041f9ff0b5/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6461726b5f6672616d65642e706e67" alt="Text Mode" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'ss-ph\'><span class=\'ss-ph-ico\'>📝</span><span class=\'ss-ph-lbl\'>Text Mode</span></div>'"></div>
-        <div class="ss-overlay">🔍</div>
-        <div class="ss-cap">Text Mode</div>
-      </div>
-
-      <div class="ss-item" data-title="Table of Contents" data-img="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67" onclick="openLightbox(this)">
-        <div class="ss-img-wrap"><img src="https://camo.githubusercontent.com/eb7927739f05a6377187e706c86f05547b5c4685db3d1105e3a580c87564017b/68747470733a2f2f6769746c61622e636f6d2f6d75646c656a5f616e64726f69642f6d6a5f7064665f7265616465722f2d2f7261772f6d61696e2f73637265656e73686f74732f6c696768745f6d61696e5f6d656e755f6672616d65642e706e67" alt="Table of Contents" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'ss-ph\'><span class=\'ss-ph-ico\'>📑</span><span class=\'ss-ph-lbl\'>Table of Contents</span></div>'"></div>
-        <div class="ss-overlay">🔍</div>
-        <div class="ss-cap">Table of Contents</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <div class="lb-inner">
-    <button class="lb-close" onclick="closeLightbox()" aria-label="Close">✕</button>
-    <div class="lb-img" id="lbPreview">
-      <span id="lbEmoji">📄</span>
-      <img id="lbImg" src="" alt="" style="display:none;">
-    </div>
-    <div class="lb-title" id="lbTitle">Screenshot</div>
-    <div class="lb-sub">MJ PDF Reader v2.2.1</div>
-  </div>
-</div>
-
-<!-- ── RELEASE NOTES ── -->
-<section id="release" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-green">What's New</span></div>
-    <h2 class="sec-title">MJ PDF <span class="hi">v2.2.1 Release Notes</span></h2>
-    <p class="sec-sub">Version 2.1.1 introduced a major overhaul — new brand identity, blazing-fast search, Text Mode, and 20+ improvements.</p>
-    <div class="rn-card reveal">
-      <div class="rn-head">
-        <div>
-          <span class="rn-head-badge">🎉 Major Update</span>
-          <h3 style="margin-top:10px;">MJ PDF V2.1.1 — Complete Overhaul</h3>
-          <p>Rebranded app + 20+ new features, fixes, and performance improvements</p>
-        </div>
-      </div>
-      <div class="rn-body">
-        <div class="rn-grid">
-          <div class="rn-item"><span class="rn-ico">🎨</span><span class="rn-text">Rebranded as <strong>MJ PDF</strong> with a new original icon</span></div>
-          <div class="rn-item"><span class="rn-ico">⚡</span><span class="rn-text">Search is now <strong>blazingly fast</strong> across the entire document</span></div>
-          <div class="rn-item"><span class="rn-ico">🔎</span><span class="rn-text">Added ability to <strong>filter search results</strong> by a secondary query</span></div>
-          <div class="rn-item"><span class="rn-ico">📖</span><span class="rn-text">Search results are <strong>expandable</strong> for more surrounding context</span></div>
-          <div class="rn-item"><span class="rn-ico">✨</span><span class="rn-text">Chosen result <strong>highlighted directly in the PDF</strong></span></div>
-          <div class="rn-item"><span class="rn-ico">🔗</span><span class="rn-text">Full support for <strong>hyperlinks</strong> embedded in PDF documents</span></div>
-          <div class="rn-item"><span class="rn-ico">📑</span><span class="rn-text">Dedicated <strong>Table of Contents</strong> page for easy navigation</span></div>
-          <div class="rn-item"><span class="rn-ico">⏩</span><span class="rn-text"><strong>Auto scrolling</strong> with adjustable speed in both directions</span></div>
-          <div class="rn-item"><span class="rn-ico">↔️</span><span class="rn-text">Button to <strong>lock horizontal scrolling</strong> for long-form reading</span></div>
-          <div class="rn-item"><span class="rn-ico">📸</span><span class="rn-text">Take a <strong>screenshot</strong> directly within the app</span></div>
-          <div class="rn-item"><span class="rn-ico">📝</span><span class="rn-text"><strong>Text Mode</strong> with customizable font, colors, and background</span></div>
-          <div class="rn-item"><span class="rn-ico">💾</span><span class="rn-text">All preferences and <strong>last page saved automatically</strong></span></div>
-          <div class="rn-item"><span class="rn-ico">🌐</span><span class="rn-text">Page listing <strong>all links embedded</strong> in the file</span></div>
-          <div class="rn-item"><span class="rn-ico">📦</span><span class="rn-text">App size <strong>decreased by 27.5%</strong></span></div>
-          <div class="rn-item"><span class="rn-ico">🔙</span><span class="rn-text"><strong>Double press to exit</strong> — prevents accidental back-press</span></div>
-          <div class="rn-item"><span class="rn-ico">🛠</span><span class="rn-text">Fixed last visited page not being remembered sometimes</span></div>
-          <div class="rn-item"><span class="rn-ico">🛠</span><span class="rn-text">Fixed auto scrolling not stopping on Full Screen exit</span></div>
-          <div class="rn-item"><span class="rn-ico">🛠</span><span class="rn-text">Fixed double-tap zoom reset and several common crashes</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PERMISSIONS & PRIVACY ── -->
-<section id="permissions" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-green">Privacy & Permissions</span></div>
-    <h2 class="sec-title">Permissions & <span class="hi">Privacy</span></h2>
-    <p class="sec-sub">MJ PDF Reader is committed to your privacy. It collects no data and requests only the permissions strictly necessary to function.</p>
-    <div class="perm-grid">
-      <div class="card perm-card reveal">
-        <div class="perm-ico" style="background:var(--accent-light);">🌐</div>
-        <div class="perm-body">
-          <h4>Internet Access</h4>
-          <p>Required <strong>only for opening PDFs through URLs and links</strong>. This permission is not used for any advertising, analytics, or data collection whatsoever.</p>
-        </div>
-      </div>
-      <div class="card perm-card reveal">
-        <div class="perm-ico" style="background:var(--orange-light);">📁</div>
-        <div class="perm-body">
-          <h4>Storage Access</h4>
-          <p>Required for <strong>saving downloaded PDFs</strong> and <strong>opening PDFs from local storage</strong>. No files are accessed beyond what you explicitly open in the app.</p>
-        </div>
-      </div>
-    </div>
-    <div class="privacy-note reveal">
-      <div class="privacy-note-ico">🛡️</div>
-      <div>
-        <h4>Zero Data Collection — Guaranteed</h4>
-        <p>MJ PDF Reader <strong>does not collect any data</strong>. There are no analytics SDKs, no advertising frameworks, no crash reporting services, and no network calls to any third-party servers. Your PDFs, reading history, and usage patterns remain completely private on your device. The app is open source — you can verify every line of code yourself on GitLab.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── INSTALL ── -->
-<section id="install" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-orange">Install Guide</span></div>
-    <h2 class="sec-title">How to Download <span class="hi">&amp; Install</span></h2>
-    <p class="sec-sub">Install MJ PDF Reader APK on your Android device in under 2 minutes with these simple steps.</p>
-    <div class="install-timeline">
-
-      <div class="install-step reveal">
-        <div class="step-line"></div>
-        <div class="step-left"><div class="step-num">1</div></div>
-        <div class="step-right">
-          <div class="step-card-inner">
-            <span class="step-emo">⚙️</span>
-            <h4>Enable Unknown Sources</h4>
-            <p>Go to <strong>Settings → Security</strong> on your Android device. Toggle on <em>"Install from Unknown Sources"</em> or <em>"Allow from this source"</em> to permit APK sideloading.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="install-step reveal">
-        <div class="step-line"></div>
-        <div class="step-left"><div class="step-num">2</div></div>
-        <div class="step-right">
-          <div class="step-card-inner">
-            <span class="step-emo">📥</span>
-            <h4>Download the APK File</h4>
-            <p>Scroll to the <strong>Download section</strong> on this page and tap "Download MJ PDF APK". The file <em>mj-pdf-2.2.1.apk</em> (~15 MB) will save to your Downloads folder.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="install-step reveal">
-        <div class="step-line"></div>
-        <div class="step-left"><div class="step-num">3</div></div>
-        <div class="step-right">
-          <div class="step-card-inner">
-            <span class="step-emo">🛡️</span>
-            <h4>Verify the File (Optional)</h4>
-            <p>Optionally scan the downloaded APK with your antivirus app for extra peace of mind. MJ PDF is open source — you can verify it yourself on GitLab.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="install-step reveal">
-        <div class="step-line"></div>
-        <div class="step-left"><div class="step-num">4</div></div>
-        <div class="step-right">
-          <div class="step-card-inner">
-            <span class="step-emo">📲</span>
-            <h4>Install the APK</h4>
-            <p>Open your <strong>File Manager</strong>, navigate to Downloads, and tap the APK file. Follow the on-screen prompts to complete installation.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="install-step reveal">
-        <div class="step-left"><div class="step-num" style="background:var(--green);">5</div></div>
-        <div class="step-right">
-          <div class="step-card-inner">
-            <span class="step-emo">📄</span>
-            <h4>Start Reading!</h4>
-            <p>Open MJ PDF Reader from your app drawer and <strong>open your first PDF</strong>. All features are immediately available — no account, no sign-up required!</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── DOWNLOAD ── -->
-<section id="download" class="section">
-  <div class="dl-bg-grid"></div>
-  <div class="dl-glow"></div>
-  <div class="container">
-    <div class="dl-wrapper reveal">
-      <span class="chip" style="background:rgba(129,140,248,0.15);color:#a5b4fc;border:1px solid rgba(129,140,248,0.3);margin-bottom:22px;">Download Now</span>
-      <div class="dl-title">MJ PDF Reader APK<br><span class="hi">v2.2.1</span></div>
-      <p class="dl-sub">The latest version — free, open source, and only 15 MB. No account required.</p>
-      <div class="dl-meta">
-        <div class="dl-meta-item"><span class="dl-meta-val">v2.2.1</span><span class="dl-meta-lbl">Version</span></div>
-        <div class="dl-meta-item"><span class="dl-meta-val">15 MB</span><span class="dl-meta-lbl">File Size</span></div>
-        <div class="dl-meta-item"><span class="dl-meta-val">Android 5+</span><span class="dl-meta-lbl">Requires</span></div>
-        <div class="dl-meta-item"><span class="dl-meta-val">FREE</span><span class="dl-meta-lbl">Cost</span></div>
-      </div>
-      <div class="dl-btn-row">
-        <a href="https://gitlab.com/mudlej_android/mj_pdf_reader/uploads/61d28d2434f42c02e8dca9000a21e8a9/mj-pdf-2.2.1.apk" class="btn btn-primary btn-lg" rel="noopener noreferrer">⬇ Download MJ PDF APK</a>
-      </div>
-      <div class="trust-row">
-        <span class="trust-item">✅ No Root Required</span>
-        <span class="trust-item">🔒 Zero Data Collected</span>
-        <span class="trust-item">🚫 No Ads</span>
-        <span class="trust-item">📂 Open Source</span>
-        <span class="trust-item">⚡ Only 15 MB</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FAQ ── -->
-<section id="faq" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip" style="background:#f5f3ff;color:#7c3aed;border:1px solid rgba(124,58,237,0.2);">FAQ</span></div>
-    <h2 class="sec-title">Frequently Asked <span class="hi">Questions</span></h2>
-    <p class="sec-sub">Everything you need to know about MJ PDF Reader — features, privacy, installation, and more.</p>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>What is MJ PDF Reader?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">MJ PDF Reader is a fast, minimalist, powerful, and completely free PDF viewer for Android developed by Mudlej. It is 100% open source and available on GitLab. It features dark mode, blazing-fast search, Text Mode for plain-text reading, auto scroll, table of contents, hyperlink support, multi-instance support, and the ability to open online PDFs — all packed into just 15 MB with zero data collection.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Does MJ PDF Reader collect any personal data?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">No. MJ PDF Reader does not collect any data whatsoever. The app contains no analytics SDKs, no advertising frameworks, and makes no network requests to third-party servers. The only network activity is when you explicitly open a PDF via a URL. Everything you read, every document you open, and your reading preferences all stay entirely on your device.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>What permissions does MJ PDF Reader require?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">MJ PDF Reader requests only two permissions: <strong>(1) Internet</strong> — required for opening PDFs through URLs and links. Not used for advertising or tracking. <strong>(2) Storage</strong> — required for saving downloaded PDFs and for opening PDFs from your device's local storage. No other permissions are requested or required.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Is MJ PDF Reader free and open source?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Yes, MJ PDF Reader is completely free to download and use, with no in-app purchases, no subscriptions, and no premium tiers. The entire source code is publicly available on GitLab, allowing anyone to inspect the code, verify the privacy claims, report issues, or contribute improvements.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>What Android version is needed to run MJ PDF Reader?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">MJ PDF Reader requires Android 5.0 (Lollipop) or higher. It targets Android 14 and supports four processor architectures: arm64-v8a (most modern phones), armeabi-v7a (older ARM devices), x86, and x86_64 (Intel-based tablets and emulators). This broad compatibility means it works on the vast majority of Android devices currently in use.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Can I open PDFs from the internet or online links?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Yes. MJ PDF Reader supports opening PDFs directly through URLs and online links. You can paste a PDF URL and the app will open it directly. You can also save/download the online PDF to your device storage for offline access later. This is what the Internet permission is used for.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Does MJ PDF Reader need root access?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">No, root access is not required. MJ PDF Reader installs and runs on standard, non-rooted Android devices. You simply need to enable "Install from Unknown Sources" temporarily in your device security settings during APK installation, and then re-disable it afterward for best security practice.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>What is Text Mode in MJ PDF Reader?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Text Mode extracts and displays the text content of a PDF as plain readable text, stripping away all PDF formatting and graphics. This is ideal for reading text-heavy documents, e-books, or articles in a clean, distraction-free view. In Text Mode you can customize the font size, text color, and background color. All your preferences and your last page position are saved automatically for each document.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>How do I enable dark mode?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Dark mode can be toggled directly from within the app's reading view. Tap the menu icon while a PDF is open, and select the Dark Mode option to switch between light and dark themes. The app will remember your preference across sessions automatically.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Can I open multiple PDFs at the same time?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Yes. MJ PDF Reader supports multi-instance mode, allowing you to open multiple PDF documents simultaneously. The app also remembers the last read page for each individual document, so you can switch between multiple files and always return to exactly where you left off.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>How does auto scroll work?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Auto Scroll enables hands-free reading by automatically scrolling through the PDF at a speed you set. You can scroll forward or backward. The speed is fully adjustable to match your reading pace. Auto scroll automatically stops and exits when you leave Full Screen Mode, ensuring you stay in control at all times.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Is it safe to install MJ PDF Reader as an APK?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Yes. MJ PDF Reader is completely open source — you can inspect every line of code on GitLab before installing. The APK is the exact same build distributed on alternative app stores. We recommend downloading only from the official link on this page or from the GitLab releases page to ensure authenticity. You can also scan the APK with an antivirus app before installation for extra assurance.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Does MJ PDF Reader support password-protected PDFs?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">MJ PDF Reader uses Android's built-in PDF rendering engine, which supports standard PDF features. For password-protected PDFs, the app will prompt you to enter the password to unlock and view the document. Functionality may vary depending on the encryption type used in the PDF.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>Can I share or print PDFs from MJ PDF Reader?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Yes. MJ PDF Reader allows you to share PDFs directly from the app using Android's standard share sheet, enabling you to send documents via email, messaging apps, or cloud storage. Printing is also supported through Android's built-in print system — just select Print from the share or options menu.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><h3>How do I update MJ PDF Reader to the latest version?</h3><div class="faq-toggle">+</div></div>
-        <div class="faq-body"><div class="faq-body-inner">Since MJ PDF Reader is installed as an APK outside the Play Store, it will not update automatically. To update, simply download the latest APK file from this page and install it over your existing installation — all your data, reading positions, and preferences will be preserved. You can check the version number in the app's About section.</div></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT US ── -->
-<section id="about-us" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-blue">About Us</span></div>
-    <h2 class="sec-title">About <span class="hi">Us</span></h2>
-    <p class="sec-sub">The story behind MJ PDF Reader and our mission to build privacy-first tools for Android.</p>
-    <div class="about-us-inner">
-      <p>MJ PDF Reader is an independent, open-source project created by <strong>Mudlej</strong> — an Android developer passionate about building tools that respect user privacy and prioritize performance above all else.</p>
-      <p>The project was born out of frustration with mainstream PDF readers that are bloated with ads, aggressively request unnecessary permissions, track user behavior, and demand subscriptions for features that should be free. The goal was simple: build a <strong>fast, lightweight, beautiful, and completely private PDF viewer</strong> for Android users worldwide.</p>
-      <p>Today, MJ PDF Reader serves thousands of users across the globe who value their privacy and need a reliable PDF reading experience. The app is fully open source, available on <strong>GitLab</strong>, and welcomes contributions from developers who share the same values.</p>
-      <p>We are committed to keeping MJ PDF Reader <strong>100% free, ad-free, and tracker-free — forever</strong>. No venture capital, no advertising partners, no hidden monetization. Just a useful tool built for users, by a developer who uses it themselves every day.</p>
-      <p>Have a suggestion, found a bug, or want to contribute? We'd love to hear from you at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="abc6c1dbcfcdd9cecacfced9ebccc6cac2c785c8c4c6">[email&#160;protected]</a></strong> or via the GitLab repository.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section id="contact" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-teal">Get in Touch</span></div>
-    <h2 class="sec-title">Contact <span class="hi">Us</span></h2>
-    <p class="sec-sub">Have a question, bug report, or feature request? We'd love to hear from you.</p>
-    <div class="contact-card">
-      <div class="contact-icon-wrap">✉️</div>
-      <h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--ink);margin-bottom:8px;">Reach Out Directly</h3>
-      <p style="color:#6b6b80;font-size:0.9rem;line-height:1.7;">Whether you've found a bug, want to request a feature, or just want to say hello — we read every message and respond as quickly as possible.</p>
-      <a href="/cdn-cgi/l/email-protection#d3beb9a3b7b5a1b6b2b7b6a193b4beb2babffdb0bcbe" class="contact-email">✉️ <span class="__cf_email__" data-cfemail="026f6872666470676366677042656f636b6e2c616d6f">[email&#160;protected]</span></a>
-      <div class="contact-details">
-        <div class="contact-detail-item">
-          <div class="cd-label">Response Time</div>
-          <div class="cd-val">Within 24–48 hours</div>
-        </div>
-        <div class="contact-detail-item">
-          <div class="cd-label">Source Code</div>
-          <div class="cd-val">GitLab (Issues tab)</div>
-        </div>
-        <div class="contact-detail-item">
-          <div class="cd-label">Bug Reports</div>
-          <div class="cd-val">Via email or GitLab</div>
-        </div>
-        <div class="contact-detail-item">
-          <div class="cd-label">Support Language</div>
-          <div class="cd-val">English</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PRIVACY POLICY ── -->
-<section id="privacy" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-green">Legal</span></div>
-    <h2 class="sec-title">Privacy <span class="hi">Policy</span></h2>
-    <p class="sec-sub">Last updated: May 19, 2024. We take your privacy very seriously — here is exactly what we collect (and don't collect).</p>
-    <div class="legal-box">
-      <div class="legal-note"><p>🛡️ <strong>Short version:</strong> MJ PDF Reader collects absolutely no personal data. Nothing. Zero. This policy explains what permissions we use and why.</p></div>
-      <div class="legal-section-title">1. Information We Collect</div>
-      <p>MJ PDF Reader does <strong>not collect, store, transmit, or share any personal information</strong> of any kind. There are no analytics SDKs, no advertising frameworks, no crash reporting libraries, and no third-party services integrated into the application.</p>
-      <p>We do not collect: your name, email address, device identifiers, IP address, location data, usage statistics, reading habits, file names, or any other personal or behavioral data.</p>
-      <div class="legal-section-title">2. Permissions Used</div>
-      <p>The app requests only two Android permissions:</p>
-      <ul>
-        <li><strong>INTERNET</strong> — Used solely to fetch PDFs when you provide a URL or tap an online PDF link. This permission is never used to contact advertising networks, analytics servers, or any third-party infrastructure.</li>
-        <li><strong>READ/WRITE EXTERNAL STORAGE</strong> — Used solely to open PDF files stored on your device and to save downloaded PDFs. No files are accessed without explicit user action.</li>
-      </ul>
-      <div class="legal-section-title">3. Data Storage</div>
-      <p>All data generated by the app (such as your last read page position, Text Mode preferences, and display settings) is stored <strong>locally on your device only</strong> using Android's standard SharedPreferences and file storage APIs. This data never leaves your device.</p>
-      <div class="legal-section-title">4. Third-Party Services</div>
-      <p>MJ PDF Reader does <strong>not integrate any third-party services</strong>, including but not limited to: Google Analytics, Firebase, Facebook SDK, Crashlytics, AdMob, or any other advertising or analytics platform.</p>
-      <div class="legal-section-title">5. Children's Privacy</div>
-      <p>MJ PDF Reader does not collect any data from users of any age, including children under 13. The app is safe for use by all ages.</p>
-      <div class="legal-section-title">6. Changes to This Policy</div>
-      <p>If we ever change this privacy policy, we will update the date at the top and notify users via the GitLab repository. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-      <div class="legal-section-title">7. Contact</div>
-      <p>For any privacy-related questions, please contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="781512081c1e0a1d191c1d0a381f15191114561b1715">[email&#160;protected]</a></strong>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── DISCLAIMER ── -->
-<section id="disclaimer" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip chip-orange">Legal</span></div>
-    <h2 class="sec-title"><span class="hi">Disclaimer</span></h2>
-    <p class="sec-sub">Important information about the use of MJ PDF Reader and this website.</p>
-    <div class="disclaimer-box">
-      <div class="disc-alert"><p>⚠️ <strong>Note:</strong> This page is an informational resource about MJ PDF Reader. The app is developed by Mudlej and hosted on GitLab.</p></div>
-      <p><strong>Informational Purpose:</strong> The content on this website is provided for informational purposes only. While we strive to keep all information accurate and up to date, we make no warranties or representations of any kind regarding the completeness, accuracy, or reliability of the information provided.</p>
-      <p><strong>APK Download:</strong> The APK file available for download on this page is sourced directly from the official GitLab releases by Mudlej. We recommend always verifying APK files using antivirus software before installation. Download from official sources only.</p>
-      <p><strong>No Warranty:</strong> MJ PDF Reader is provided "as is" without any warranties, express or implied. The developer is not responsible for any damage to your device, data loss, or other issues that may arise from the installation or use of the application.</p>
-      <p><strong>External Links:</strong> This website may contain links to external websites (such as GitLab). We are not responsible for the content, privacy practices, or availability of those external sites.</p>
-      <p><strong>Third-Party Content:</strong> MJ PDF Reader is designed to open PDF files. The developer is not responsible for the content of PDF files opened through the application. Users are solely responsible for ensuring they have the right to access and view any PDF documents they open.</p>
-      <p><strong>Jurisdiction:</strong> Use of this application and website is subject to applicable local laws and regulations. By downloading and using MJ PDF Reader, you agree to comply with all applicable laws in your jurisdiction.</p>
-      <p><strong>Changes:</strong> We reserve the right to modify this disclaimer at any time without prior notice. Continued use of the application after any modifications constitutes your acceptance of the updated terms.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── TERMS & CONDITIONS ── -->
-<section id="terms" class="section reveal">
-  <div class="sec-divider"></div>
-  <div class="container">
-    <div class="sec-label"><span class="chip" style="background:#f5f3ff;color:#7c3aed;border:1px solid rgba(124,58,237,0.2);">Legal</span></div>
-    <h2 class="sec-title">Terms &amp; <span class="hi">Conditions</span></h2>
-    <p class="sec-sub">Last updated: May 19, 2024. By downloading or using MJ PDF Reader, you agree to these terms.</p>
-    <div class="terms-box">
-      <div class="terms-section-title">1. Acceptance of Terms</div>
-      <p>By downloading, installing, or using MJ PDF Reader ("the Application"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the application.</p>
-      <div class="terms-section-title">2. License</div>
-      <p>MJ PDF Reader is open-source software. The source code is available on GitLab and is subject to its respective open-source license. You are granted a <strong>free, non-exclusive, non-transferable license</strong> to install and use the application on Android devices that you own or control, solely for your personal, non-commercial purposes.</p>
-      <div class="terms-section-title">3. Permitted Use</div>
-      <ul>
-        <li>Use the application to open, read, and manage PDF files on your device</li>
-        <li>Open PDFs from URLs for personal reading</li>
-        <li>Share PDFs using Android's share functionality</li>
-        <li>Use all features as intended without modification of the application code</li>
-      </ul>
-      <div class="terms-section-title">4. Prohibited Use</div>
-      <ul>
-        <li>Redistributing modified versions of the APK without proper attribution</li>
-        <li>Using the application in any way that violates applicable laws</li>
-        <li>Attempting to reverse engineer the application for malicious purposes</li>
-        <li>Using the application to open or distribute illegal or copyrighted content without authorization</li>
-      </ul>
-      <div class="terms-section-title">5. Intellectual Property</div>
-      <p>The MJ PDF Reader name, logo, and branding are the property of Mudlej. The source code is open source as specified in the GitLab repository. Third-party libraries used within the application remain the property of their respective owners.</p>
-      <div class="terms-section-title">6. Limitation of Liability</div>
-      <p>To the maximum extent permitted by law, the developer of MJ PDF Reader shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the application, including but not limited to data loss, device damage, or loss of business.</p>
-      <div class="terms-section-title">7. Governing Law</div>
-      <p>These terms shall be governed by and construed in accordance with applicable laws. Any disputes shall be resolved in the jurisdiction where the developer is based.</p>
-      <div class="terms-section-title">8. Changes to Terms</div>
-      <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to this page. Continued use of the application constitutes acceptance of the revised terms.</p>
-      <div class="terms-section-title">9. Contact</div>
-      <p>For questions about these Terms and Conditions, contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9c4c3d9cdcfdbccc8cdccdbe9cec4c8c0c587cac6c4">[email&#160;protected]</a></strong>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="container">
-    <div class="seo-section">
-      <h2>MJ PDF Reader APK — Complete Resource Guide</h2>
-      <p>This page provides a comprehensive guide to <strong>MJ PDF Reader APK v2.2.1</strong>, a fast, lightweight, open-source PDF viewer for Android developed by Mudlej. MJ PDF Reader is available for free via direct APK download. It supports Android 5.0 through Android 14 across all major CPU architectures. Key features include <strong>blazing-fast PDF search</strong>, <strong>dark mode</strong>, <strong>Text Mode</strong>, <strong>auto scroll</strong>, <strong>table of contents</strong>, <strong>hyperlink support</strong>, and <strong>total privacy with zero data collection</strong>. The app weighs only 15 MB, requires no root access, and collects absolutely no personal data — only requesting Internet (for URL-based PDFs) and Storage permissions. All information on this page is provided for informational purposes only.</p>
-    </div>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#hero" class="footer-logo-wrap">
-          <div class="footer-logo-ico"><img src="https://apt.izzysoft.de/fdroid/repo/com.gitlab.mudlej.MjPdfReader/en-US/icon.png" alt="MJ PDF Reader icon"></div>
-          <span class="footer-logo-name">MJ PDF Reader</span>
-        </a>
-        <p>A fast, minimalist, powerful and totally free PDF viewer for Android. Made by Mudlej. Open source. No ads. No data collected.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Navigation</h5>
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#info">App Details</a>
-        <a href="#screenshots">Screenshots</a>
-        <a href="#download">Download</a>
-      </div>
-      <div class="footer-col">
-        <h5>Resources</h5>
-        <a href="#release">Release Notes</a>
-        <a href="#permissions">Permissions & Privacy</a>
-        <a href="#install">Install Guide</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://gitlab.com/mudlej_android/mj_pdf_reader" target="_blank" rel="noopener">Source Code ↗</a>
-      </div>
-      <div class="footer-col">
-        <h5>Company & Legal</h5>
-        <a href="#about-us">About Us</a>
-        <a href="#contact">Contact Us</a>
-        <a href="#privacy">Privacy Policy</a>
-        <a href="#disclaimer">Disclaimer</a>
-        <a href="#terms">Terms & Conditions</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 MJ PDF Reader — Made by Mudlej — Open Source on GitLab. All rights reserved.</p>
-      <p>Not affiliated with any third-party PDF services or platforms.</p>
-    </div>
-  </div>
-</footer>
-
-<button id="btt" aria-label="Back to top">↑</button>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// HEADER SCROLL
-var hdr=document.getElementById('mainHeader'),bttBtn=document.getElementById('btt'),ticking=false;
-window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){hdr.classList.toggle('scrolled',window.scrollY>40);bttBtn.classList.toggle('show',window.scrollY>500);ticking=false});ticking=true}},{passive:true});
-
-// HAMBURGER
-var hamBtn=document.getElementById('hamBtn'),mobileMenu=document.getElementById('mobileMenu');
-hamBtn.addEventListener('click',function(e){
-  e.stopPropagation();
-  var isOpen=mobileMenu.classList.contains('open');
-  if(isOpen){
-    hamBtn.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow='';
-  } else {
-    hamBtn.classList.add('open');
-    mobileMenu.classList.add('open');
-    document.body.style.overflow='hidden';
-  }
-});
-function closeMenu(){
-  hamBtn.classList.remove('open');
-  mobileMenu.classList.remove('open');
-  document.body.style.overflow='';
-}
-// Close menu when clicking outside
-document.addEventListener('click',function(e){
-  if(mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !hamBtn.contains(e.target)){
-    closeMenu();
-  }
-});
-
-// BACK TO TOP
-bttBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
-
-// FAQ
-function toggleFaq(el){var item=el.parentElement,isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});if(!isOpen)item.classList.add('open')}
-
-// LIGHTBOX
-function openLightbox(el){
-  var title=el.dataset.title||'Screenshot',img=el.dataset.img||'';
-  var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbEmoji=document.getElementById('lbEmoji');
-  document.getElementById('lbTitle').textContent=title;
-  if(img){lbImg.src=img;lbImg.alt=title;lbImg.style.display='block';lbEmoji.style.display='none';lbImg.onerror=function(){lbImg.style.display='none';lbEmoji.style.display='';var icons={'Light Mode':'☀️','Dark Mode':'🌙','Main Menu':'📋','Search Feature':'🔍','Text Mode':'📝','Table of Contents':'📑'};lbEmoji.textContent=icons[title]||'📄'}}else{lbImg.style.display='none';lbEmoji.style.display=''}
-  lb.style.display='flex';document.body.style.overflow='hidden'
-}
-function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}
-document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
-
-// SCROLL REVEAL
-var reveals=document.querySelectorAll('.reveal');
-var ro=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in')},i*50)
+</body>
+</html>
