@@ -1,0 +1,9 @@
+# robots.txt for https://www.mjpdf.site/
+# MJ PDF Reader — Fast, Lightweight & Open Source PDF Viewer for Android
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.mjpdf.site/sitemap.xml
