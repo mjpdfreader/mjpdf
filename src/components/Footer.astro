@@ -1,0 +1,15 @@
+---
+import { SITE } from '../config/site';
+import { currentRelease } from '../data/releases';
+---
+<footer><div class="wrap cols">
+  <div>
+    <strong style="color:var(--text)">MJ PDF {currentRelease.version}</strong>
+    <p>MJ PDF is an open-source Android PDF reader made by {SITE.author} (GPL-3.0). This website is an independent presentation of the app. For the project itself, see the <a href={SITE.links.official} rel="noopener">official project page</a>.</p>
+    <p>Book covers visible in screenshots belong to their respective publishers and are shown only as sample content.</p>
+  </div>
+  <div><strong style="color:var(--text)">Site</strong><ul>
+    <li><a href="/features/">Features</a></li><li><a href="/screenshots/">Screenshots</a></li><li><a href="/download/">Download</a></li><li><a href="/releases/">Releases</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li></ul></div>
+  <div><strong style="color:var(--text)">Project</strong><ul>
+    <li><a href={SITE.links.source} rel="noopener">Source code (GitLab)</a></li><li><a href={SITE.links.mirror} rel="noopener">GitHub mirror</a></li><li><a href={SITE.links.fdroid} rel="noopener">F-Droid</a></li><li><a href={SITE.links.izzy} rel="noopener">IzzyOnDroid</a></li></ul></div>
+</div></footer>

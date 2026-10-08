@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+const groups = [
+ ['Library', ['Home with Recent, Library and Folders tabs','Continue reading where you left off, with detailed reading history','Reading statuses: To Read, Reading, On Hold, Completed, Abandoned','Browse your device like a file manager, including SD cards','Search every PDF on your device']],
+ ['PDF Reader', ['Fast, smooth rendering','Dark mode for the app and the PDF itself','True full screen with configurable shortcut buttons','Single Page and Dual Page modes (3.1.0 adds Single Page mode and page fit options)','Unified Reading Mode settings and improved theme controls','Screen rotation and right-to-left (RTL) reading fixes in 3.1.0']],
+ ['Search', ['Live results while you type','Next / previous result navigation inside the reader','Improved in-document search in 3.1.0']],
+ ['Navigation', ['Table of contents','Links in the file','Bookmarks','Jump back / jump forward and navigation history']],
+ ['Annotation', ['Highlight text in several colors','Add notes and save them into the PDF','Handwritten signatures saved as vector strokes','Fill PDF forms','Select text to copy, share, web-search, translate or look up']],
+ ['Text Mode', ['Read any PDF like an e-book','Reflow, fonts and themes']],
+ ['Sharing & saving', ['Share quotes as images with book name, author and themes','Safer saving in 3.1.0, with rescue copies after a failed save','Incognito mode']],
+] as [string, string[]][];
+---
+<Base title="Features" description="Everything MJ PDF 3.1.0 does: library, reader, search, navigation, annotation, Text Mode and safer saving." path="/features/" crumbs={[{name:'Features',path:'/features/'}]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Features</nav>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">Features in MJ PDF 3.1.0</h1>
+    <p class="lead">A reader and a library manager in one app. Features listed here come from the project's published app descriptions and release information.</p></div>
+  <section class="sec" style="padding-top:30px"><div class="wrap grid3">
+    {groups.map(([t,l]) => <div class="card"><h2 style="font-size:1.4rem">{t}</h2><ul class="checks">{l.map((i)=><li>{i}</li>)}</ul></div>)}
+  </div></section>
+</Base>

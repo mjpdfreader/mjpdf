@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import Gallery from '../components/Gallery.astro';
+import { shots } from '../data/screenshots';
+const cats = [...new Set(shots.map((s) => s.category))];
+---
+<Base title="Screenshots" description="Real screenshots of MJ PDF 3.1.0: library, dark mode, highlights, reader menu and quote sharing." path="/screenshots/" crumbs={[{name:'Screenshots',path:'/screenshots/'}]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Screenshots</nav>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">MJ PDF 3.1.0 screenshots</h1>
+    <p class="lead">Unedited screenshots of the app. Tap an image to enlarge.</p></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap">
+    {cats.map((c) => <div style="margin-bottom:34px"><h2 style="font-size:1.5rem">{c}</h2><Gallery items={shots.filter((s) => s.category === c)} /></div>)}
+  </div></section>
+</Base>

@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../config/site';
+import { releases } from '../../data/releases';
+export function getStaticPaths() {
+  return releases.filter((r) => r.highlights.length || r.current).map((release) => ({ params: { slug: release.slug }, props: { release } }));
+}
+const { release } = Astro.props;
+const i = releases.findIndex((r) => r.slug === release.slug);
+const prev = releases[i + 1];
+---
+<Base title={`${release.title} — Release Notes`} description={release.summary} path={`/releases/${release.slug}/`} crumbs={[{name:'Releases',path:'/releases/'},{name:release.version,path:`/releases/${release.slug}/`}]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/releases/">Releases</a> / {release.version}</nav>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">{release.title} — Release Notes</h1>
+    <p class="lead">{release.summary}</p>
+    {release.date && <p>Released {release.date}</p>}</div>
+  <section class="sec" style="padding-top:20px"><div class="wrap">
+    <h2>Highlights</h2>
+    <ul class="checks">{release.highlights.map((h) => <li>{h}</li>)}</ul>
+    <h2 style="margin-top:40px">Fixes across</h2>
+    <ul class="checks">{release.fixes.map((h) => <li>{h}</li>)}</ul>
+    <p style="margin-top:1.4rem;color:var(--mut)">This summary follows the project's published release information. For the full changelog see the <a href={SITE.links.source} rel="noopener">official repository</a>.</p>
+    <div class="btn-row"><a class="btn pri" href="/download/">Download</a><a class="btn" href={SITE.links.source} rel="noopener">Source Code</a>{prev && prev.highlights.length > 0 && <a class="btn" href={`/releases/${prev.slug}/`}>Previous: {prev.version}</a>}</div>
+  </div></section>
+</Base>

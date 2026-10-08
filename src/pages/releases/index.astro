@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import { releases } from '../../data/releases';
+---
+<Base title="Releases" description="MJ PDF release notes, starting with the current 3.1.0 release." path="/releases/" crumbs={[{name:'Releases',path:'/releases/'}]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Releases</nav>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">Releases</h1></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap grid3">
+    {releases.filter((r) => r.highlights.length || r.current).map((r) => (
+      <a class="card" href={`/releases/${r.slug}/`} style="text-decoration:none;color:inherit"><h2 style="font-size:1.4rem">{r.title}</h2>{r.current && <span class="badge">Current</span>}<p style="margin-top:.8rem;color:var(--mut)">{r.summary}</p></a>
+    ))}
+  </div></section>
+</Base>

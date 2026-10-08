@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import { SITE, SITE_URL, abs } from '../config/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Crumb { name: string; path: string }
+interface Props { title: string; description?: string; path?: string; crumbs?: Crumb[]; jsonld?: object[]; noindex?: boolean; ogImage?: string }
+const { title, description = SITE.description, path = '/', crumbs = [], jsonld = [], noindex = false, ogImage = SITE.ogImage } = Astro.props;
+const canonical = abs(path);
+const fullTitle = path === '/' ? title : `${title} | ${SITE.name}`;
+const og = abs(ogImage);
+const graph = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: abs('/') },
+  ...(crumbs.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [{ name: 'Home', path: '/' }, ...crumbs].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: abs(c.path) })) }] : []),
+  ...jsonld,
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/images/mj-pdf-icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={og} />
+  <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MJ PDF 3.1.0 home and dark-mode reader screens on Android" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={og} />
+  {graph.map((g) => <script type="application/ld+json" set:html={JSON.stringify(g)} />)}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <Header current={path} />
+  <main id="main"><slot /></main>
+  <Footer />
+  <script is:inline>
+    var b=document.querySelector('.menu-btn'),n=document.getElementById('site-nav');
+    if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)})}
+  </script>
+</body>
+</html>

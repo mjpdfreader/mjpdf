@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+import { APK } from '../data/apk';
+import { currentRelease } from '../data/releases';
+const rows: [string, string][] = [
+  ['Version', `${APK.versionName} (version code ${APK.versionCode})`],
+  ['Package', APK.packageName],
+  ['Format', 'APK'],
+  ['Size', `${APK.sizeLabel} (${APK.sizeBytes.toLocaleString('en-US')} bytes)`],
+  ['Requires', `${APK.minAndroid} or newer (target API ${APK.targetSdk})`],
+  ['CPU architecture in this file', 'x86_64 only'],
+  ['Signed with', APK.signer],
+  ['License', 'GPL-3.0'],
+];
+const sw = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'MJ PDF', softwareVersion: APK.versionName, operatingSystem: 'Android 6.0+', fileSize: APK.sizeLabel, applicationCategory: 'BusinessApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } };
+---
+<Base title="Download MJ PDF 3.1.0" description="Download MJ PDF 3.1.0 for Android: F-Droid, IzzyOnDroid, source code, and the x86_64 APK with size and SHA-256 checksum." path="/download/" crumbs={[{name:'Download',path:'/download/'}]} jsonld={[sw]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Download</nav>
+    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">Download MJ PDF {currentRelease.version}</h1></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap">
+    <div class="note"><strong>Check your CPU before using the APK on this page.</strong> {APK.abiNote}</div>
+    <h2>Install on a phone</h2>
+    <p class="lead">Use an official distribution channel. They deliver the right build for your device and handle updates.</p>
+    <div class="btn-row">
+      <a class="btn pri" href={SITE.links.fdroid} rel="noopener">F-Droid</a>
+      <a class="btn pri" href={SITE.links.izzy} rel="noopener">IzzyOnDroid</a>
+      <a class="btn" href={SITE.links.source} rel="noopener">Source code</a>
+    </div>
+    <h2 style="margin-top:56px">Direct APK (x86_64)</h2>
+    <div class="card" style="margin-top:1rem">
+      <table class="spec"><tbody>
+        {rows.map(([k,v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}
+        <tr><th scope="row">SHA-256</th><td class="mono">{APK.sha256}</td></tr>
+      </tbody></table>
+      <div class="btn-row"><a class="btn pri" href={APK.path} download={APK.fileName}>Download MJ PDF {currentRelease.version} APK (x86_64)</a><a class="btn" href="/releases/3-1-0/">Release notes</a></div>
+    </div>
+    <h2 style="margin-top:56px">Install steps</h2>
+    <ol style="padding-left:1.2rem;display:grid;gap:8px;margin-top:1rem">
+      <li>Download the APK, then compare its SHA-256 with the value above.</li>
+      <li>Allow installs from your browser or file manager when Android asks.</li>
+      <li>Open the file and confirm the installation.</li>
+      <li>If Android reports that the app is not compatible with your device, your phone is ARM-based; use F-Droid or IzzyOnDroid instead.</li>
+    </ol>
+    <h2 style="margin-top:56px">Trust information</h2>
+    <p class="lead">The APK is served unmodified from this site. The package name is <code>{APK.packageName}</code>, the same ID used by the F-Droid and IzzyOnDroid listings. The signing certificate is an F-Droid build key, not the developer's own release key, so it will not update over a build signed by a different key.</p>
+  </div></section>
+</Base>

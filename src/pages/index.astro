@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import Gallery from '../components/Gallery.astro';
+import { SITE, abs } from '../config/site';
+import { APK } from '../data/apk';
+import { currentRelease } from '../data/releases';
+import { shots, shotSrc, SHOT_W, SHOT_H } from '../data/screenshots';
+const by = (id: string) => shots.find((s) => s.id === id)!;
+const home = by('home'), dark = by('dark'), hl = by('highlights'), menu = by('menu'), quote = by('quote');
+const app = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'MJ PDF', applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Android 6.0+', softwareVersion: APK.versionName, fileSize: APK.sizeLabel, license: 'https://www.gnu.org/licenses/gpl-3.0.html',
+  url: abs('/'), image: abs('/images/mj-pdf-icon-512.png'), author: { '@type': 'Person', name: SITE.author },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } };
+---
+<Base title="MJ PDF 3.1.0 — Free Open-Source PDF Reader for Android" description={SITE.description} path="/" jsonld={[app]}>
+  <section class="hero"><div class="wrap grid">
+    <div>
+      <img class="icon" src="/images/mj-pdf-icon-192.png" width="84" height="84" alt="MJ PDF app icon" />
+      <span class="badge">Current version · <b>{currentRelease.version}</b></span>
+      <h1 style="margin-top:1rem">MJ PDF {currentRelease.version}<br /><span>{SITE.tagline}</span></h1>
+      <p class="lead" style="margin-top:1.2rem">A library manager and a fast reader in one app: continue where you left off, search, highlight, sign and fill forms, or switch to Text Mode and read a PDF like an e-book.</p>
+      <div class="btn-row">
+        <a class="btn pri" href="/download/">Download MJ PDF {currentRelease.version}</a>
+        <a class="btn" href={SITE.links.source} rel="noopener">Source Code</a>
+      </div>
+      <div class="pills"><span class="badge">Open source · GPL-3.0</span><span class="badge">No ads</span><span class="badge">Android 6.0+</span></div>
+    </div>
+    <div class="hero-shots" aria-hidden="false">
+      <img src={shotSrc(home,800)} width={SHOT_W} height={SHOT_H} alt={home.alt} fetchpriority="high" />
+      <img src={shotSrc(dark,800)} width={SHOT_W} height={SHOT_H} alt={dark.alt} />
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <span class="eyebrow">What's in 3.1.0</span>
+    <h2>A stability release, built around correctness</h2>
+    <p class="lead">{currentRelease.summary}</p>
+    <div class="grid3">
+      {currentRelease.highlights.slice(0,6).map((h) => <div class="card"><h3>{h}</h3></div>)}
+    </div>
+    <div class="btn-row"><a class="btn" href="/releases/3-1-0/">Read the 3.1.0 release notes</a></div>
+  </div></section>
+
+  <section class="sec" style="background:var(--bg2)"><div class="wrap">
+    <div class="split">
+      <div><span class="eyebrow">Read PDFs your way</span><h2>Your library, always at the right page</h2>
+        <p class="lead">Home has Recent, Library and Folders tabs. Pick up exactly where you left off, organize with reading statuses, and browse your device like a file manager — SD cards included.</p></div>
+      <img src={shotSrc(home,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={home.alt} />
+    </div>
+    <div class="split rev">
+      <div><span class="eyebrow">Annotate &amp; sign</span><h2>Highlight, note, sign</h2>
+        <p class="lead">Select text and choose a highlight color. Add notes, draw handwritten signatures, and fill PDF forms. Copy, share, web-search or translate a selection from the same bar.</p></div>
+      <img src={shotSrc(hl,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={hl.alt} />
+    </div>
+    <div class="split">
+      <div><span class="eyebrow">Everything within reach</span><h2>One menu for the whole reader</h2>
+        <p class="lead">Search, go to page, bookmarks, full screen, Text Mode, table of contents, notes, highlights and navigation history are a tap away.</p></div>
+      <img src={shotSrc(menu,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={menu.alt} />
+    </div>
+    <div class="split rev">
+      <div><span class="eyebrow">Dark mode</span><h2>Easy on the eyes</h2>
+        <p class="lead">Dark mode applies to the app and to the PDF page itself, so night reading stays comfortable.</p></div>
+      <img src={shotSrc(dark,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={dark.alt} />
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <span class="eyebrow">Screenshots</span><h2>See MJ PDF {currentRelease.version}</h2>
+    <Gallery />
+    <div class="btn-row"><a class="btn" href="/screenshots/">All screenshots</a></div>
+  </div></section>
+
+  <section class="sec" style="background:var(--bg2)"><div class="wrap">
+    <span class="eyebrow">Get it</span><h2>Download</h2>
+    <p class="lead">Install from F-Droid or IzzyOnDroid on a phone, or grab the x86_64 APK for emulators and Chromebooks. See the download page for details.</p>
+    <div class="btn-row"><a class="btn pri" href="/download/">Go to downloads</a><a class="btn" href="/privacy/">Permissions &amp; privacy</a></div>
+  </div></section>
+</Base>
