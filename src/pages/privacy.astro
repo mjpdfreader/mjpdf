@@ -1,18 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
 import { APK } from '../data/apk';
+import { SITE } from '../config/site';
 ---
-<Base title="Privacy & Permissions" description="What MJ PDF 3.1.0 asks for on Android and what to know about privacy, based on the supplied APK." path="/privacy/" crumbs={[{name:'Privacy',path:'/privacy/'}]}>
+<Base title="Privacy & Permissions — MJ PDF 3.1.0" description="What MJ PDF 3.1.0 asks for on Android, what is verified about its privacy, and what is not claimed." path="/privacy/" crumbs={[{name:'Privacy',path:'/privacy/'}]}>
   <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Privacy</nav>
-    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">Privacy &amp; permissions</h1>
-    <p class="lead">What we can verify, stated plainly.</p></div>
-  <section class="sec" style="padding-top:20px"><div class="wrap" style="max-width:860px">
+    <h1>Privacy &amp; <span class="grad">permissions</span></h1>
+    <p class="lead" style="margin-top:1rem">What can be verified about MJ PDF 3.1.0, stated plainly and without exaggeration.</p></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap narrow prose">
     <h2>What is verified</h2>
-    <ul class="checks"><li>MJ PDF is open source (GPL-3.0), so its code can be inspected.</li><li>No advertising is part of the app.</li><li>PDFs are read locally on your device.</li></ul>
-    <div class="note"><strong>About trackers.</strong> The project's own documentation states that Exodus Privacy reports a tracker in MJ PDF. The supplied APK also bundles the ACRA crash-reporting library. This site therefore does not claim "zero tracking" or "no data collection". Review the source code or the Exodus report for details.</div>
-    <h2 style="margin-top:40px">Permissions declared in the 3.1.0 APK</h2>
-    <table class="spec"><tbody>{APK.permissions.map(([p,d]) => <tr><th scope="row" class="mono">{p}</th><td>{d}</td></tr>)}</tbody></table>
-    <h2 style="margin-top:40px">This website</h2>
-    <p>This website is a static site. It has no accounts, forms or advertising scripts.</p>
+    <ul class="checks"><li>MJ PDF is open source under the GPL-3.0 license, so its code can be inspected on <a href={SITE.links.source} rel="noopener">GitLab</a>.</li><li>The app contains no advertising.</li><li>Your PDFs are opened and rendered on your device.</li><li>Incognito mode is available in the reader menu.</li></ul>
+    <div class="note"><strong>About trackers.</strong> The project documentation states that Exodus Privacy reports a tracker in MJ PDF, and the APK bundles the ACRA crash-reporting library. This website therefore does not claim "zero tracking" or "no data collection". Review the source code and the Exodus report for details.</div>
+    <h2>Permissions in the 3.1.0 APK</h2>
+    <div class="card"><table class="spec"><tbody>{APK.permissions.map(([p, d]) => <tr><th scope="row" class="mono">{p}</th><td>{d}</td></tr>)}</tbody></table></div>
+    <h2>This website</h2>
+    <p>This site is static. It has no accounts, forms, advertising scripts or analytics code. Downloading the APK from this site is a plain file download.</p>
+    <h2>Questions</h2>
+    <p>Open an issue on the <a href={SITE.links.mirror} rel="noopener">GitHub mirror</a> or the GitLab project, or read the <a href="/faq/">FAQ</a>.</p>
   </div></section>
 </Base>

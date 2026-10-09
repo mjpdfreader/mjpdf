@@ -2,12 +2,15 @@
 import Base from '../../layouts/Base.astro';
 import { releases } from '../../data/releases';
 ---
-<Base title="Releases" description="MJ PDF release notes, starting with the current 3.1.0 release." path="/releases/" crumbs={[{name:'Releases',path:'/releases/'}]}>
+<Base title="MJ PDF Release Notes and Version History" description="Release notes for MJ PDF, starting with the current 3.1.0 correctness and stability release." path="/releases/" crumbs={[{name:'Releases',path:'/releases/'}]}>
   <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Releases</nav>
-    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">Releases</h1></div>
-  <section class="sec" style="padding-top:20px"><div class="wrap grid3">
-    {releases.filter((r) => r.highlights.length || r.current).map((r) => (
-      <a class="card" href={`/releases/${r.slug}/`} style="text-decoration:none;color:inherit"><h2 style="font-size:1.4rem">{r.title}</h2>{r.current && <span class="badge">Current</span>}<p style="margin-top:.8rem;color:var(--mut)">{r.summary}</p></a>
+    <h1><span class="grad">Releases</span></h1>
+    <p class="lead" style="margin-top:1rem">MJ PDF 3.1.0 is the current version on this website. Version 3.0.0 started the 3.x generation, a full rewrite of the 1.x and 2.x apps.</p></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap"><div class="grid2">
+    {releases.filter((r) => r.highlights.length).map((r) => (
+      <a class="card glow" href={`/releases/${r.slug}/`}><span class="chip">{r.current ? 'Current' : 'Previous'}</span><h2 style="font-size:1.6rem;margin-top:1rem">{r.title}</h2><p>{r.summary}</p></a>
     ))}
-  </div></section>
+  </div>
+  <h2 style="margin-top:3rem">About 3.0.0</h2>
+  <p class="lead">{releases.find((r) => r.version === '3.0.0')?.summary} Detailed 3.0.0 notes are available in the official repository.</p></div></section>
 </Base>

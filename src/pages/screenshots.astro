@@ -1,14 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 import Gallery from '../components/Gallery.astro';
+import Cta from '../components/Cta.astro';
 import { shots } from '../data/screenshots';
+import { abs } from '../config/site';
 const cats = [...new Set(shots.map((s) => s.category))];
+const imgs = { '@context': 'https://schema.org', '@type': 'ImageGallery', name: 'MJ PDF 3.1.0 screenshots', image: shots.map((s) => ({ '@type': 'ImageObject', contentUrl: abs(`/images/screenshots/${s.file}-800.webp`), name: s.title, description: s.alt })) };
 ---
-<Base title="Screenshots" description="Real screenshots of MJ PDF 3.1.0: library, dark mode, highlights, reader menu and quote sharing." path="/screenshots/" crumbs={[{name:'Screenshots',path:'/screenshots/'}]}>
+<Base title="Screenshots — MJ PDF 3.1.0 on Android" description="Real screenshots of MJ PDF 3.1.0: the Recent and Library tabs, text highlights, dark mode, the reader menu and Share Quote." path="/screenshots/" crumbs={[{name:'Screenshots',path:'/screenshots/'}]} jsonld={[imgs]}>
   <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Screenshots</nav>
-    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">MJ PDF 3.1.0 screenshots</h1>
-    <p class="lead">Unedited screenshots of the app. Tap an image to enlarge.</p></div>
-  <section class="sec" style="padding-top:20px"><div class="wrap">
-    {cats.map((c) => <div style="margin-bottom:34px"><h2 style="font-size:1.5rem">{c}</h2><Gallery items={shots.filter((s) => s.category === c)} /></div>)}
+    <h1>MJ PDF 3.1.0 <span class="grad">screenshots</span></h1>
+    <p class="lead" style="margin-top:1rem">Unedited screenshots taken from the real app. Tap an image to enlarge it, then use the arrow keys or buttons to browse. Book covers shown are sample content.</p></div>
+  <section class="sec"><div class="wrap">
+    {cats.map((c) => <div style="margin-bottom:clamp(30px,5vw,56px)"><h2 style="font-size:1.6rem">{c}</h2><Gallery items={shots.filter((s) => s.category === c)} /></div>)}
   </div></section>
+  <Cta />
 </Base>

@@ -1,0 +1,7 @@
+---
+import { faqs } from '../data/faq';
+interface Props { limit?: number; group?: string }
+const { limit, group } = Astro.props;
+const list = faqs.filter((f) => !group || f.group === group).slice(0, limit);
+---
+<div>{list.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>

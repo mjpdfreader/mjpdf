@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import { pages } from '../data/pages';
+const groups = [...new Set(pages.map((p) => p.group))];
+---
+<Base title="Sitemap — All Pages on mjpdf.site" description="Every page on the MJ PDF website: features, screenshots, download, release notes, guides, FAQ and privacy." path="/sitemap/" crumbs={[{name:'Sitemap',path:'/sitemap/'}]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Sitemap</nav>
+    <h1><span class="grad">Sitemap</span></h1>
+    <p class="lead" style="margin-top:1rem">Every page on this website. Search engines can use the <a href="/sitemap.xml">XML sitemap</a>; there is also an <a href="/rss.xml">RSS feed</a>.</p></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap"><div class="grid3">
+    {groups.map((g) => <div class="card"><h2 style="font-size:1.3rem">{g}</h2><ul class="map-list">{pages.filter((p) => p.group === g).map((p) => <li><a href={p.path}>{p.title}</a><span>{p.blurb}</span></li>)}</ul></div>)}
+  </div></div></section>
+</Base>

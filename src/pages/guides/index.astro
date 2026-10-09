@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import Phone from '../../components/Phone.astro';
+import Cta from '../../components/Cta.astro';
+import { guides } from '../../data/guides';
+---
+<Base title="MJ PDF Guides — How to Use Your Android PDF Reader" description="Practical how-to guides for MJ PDF 3.1.0: highlight PDF text, read in dark mode, use Text Mode and share quotes." path="/guides/" crumbs={[{name:'Guides',path:'/guides/'}]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Guides</nav>
+    <h1><span class="grad">Guides</span> for MJ PDF</h1>
+    <p class="lead" style="margin-top:1rem">Short, practical walkthroughs based on the controls in MJ PDF 3.1.0.</p></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap"><div class="grid2">
+    {guides.map((g) => <a class="card glow" href={`/guides/${g.slug}/`}><h2 style="font-size:1.45rem">{g.title}</h2><p>{g.description}</p></a>)}
+  </div></div></section>
+  <Cta />
+</Base>

@@ -1,17 +1,19 @@
 ---
 import '../styles/global.css';
-import { SITE, SITE_URL, abs } from '../config/site';
+import { SITE, abs } from '../config/site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 interface Crumb { name: string; path: string }
-interface Props { title: string; description?: string; path?: string; crumbs?: Crumb[]; jsonld?: object[]; noindex?: boolean; ogImage?: string }
-const { title, description = SITE.description, path = '/', crumbs = [], jsonld = [], noindex = false, ogImage = SITE.ogImage } = Astro.props;
+interface Props { title: string; description?: string; path?: string; crumbs?: Crumb[]; jsonld?: object[]; noindex?: boolean; ogImage?: string; ogType?: 'website' | 'article'; preload?: string; keywords?: string }
+const { title, description = SITE.description, path = '/', crumbs = [], jsonld = [], noindex = false, ogImage = SITE.ogImage, ogType = 'website', preload, keywords } = Astro.props;
 const canonical = abs(path);
 const fullTitle = path === '/' ? title : `${title} | ${SITE.name}`;
 const og = abs(ogImage);
+const person = { '@type': 'Person', name: SITE.author, url: SITE.links.official };
 const graph = [
-  { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: abs('/') },
+  { '@context': 'https://schema.org', '@type': 'WebSite', '@id': abs('/#website'), name: SITE.name, url: abs('/'), inLanguage: 'en', description: SITE.description, publisher: person },
+  { '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: fullTitle, description, inLanguage: 'en', isPartOf: { '@id': abs('/#website') }, primaryImageOfPage: { '@type': 'ImageObject', url: og, width: 1200, height: 630 } },
   ...(crumbs.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [{ name: 'Home', path: '/' }, ...crumbs].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: abs(c.path) })) }] : []),
   ...jsonld,
@@ -21,27 +23,39 @@ const graph = [
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <meta name="author" content={SITE.author} />
+  <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'} />
   <link rel="canonical" href={canonical} />
-  {noindex && <meta name="robots" content="noindex" />}
-  <meta name="theme-color" content="#0b1020" />
+  <link rel="alternate" hreflang="en" href={canonical} />
+  <link rel="alternate" hreflang="x-default" href={canonical} />
+  <link rel="alternate" type="application/rss+xml" title="MJ PDF updates and guides" href="/rss.xml" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#070b18" />
+  <meta name="color-scheme" content="dark light" />
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/png" href="/images/mj-pdf-icon-192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <meta property="og:type" content="website" />
+  {preload && <link rel="preload" as="image" href={preload} type="image/webp" fetchpriority="high" />}
+  <meta property="og:type" content={ogType} />
   <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={og} />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="MJ PDF 3.1.0 home and dark-mode reader screens on Android" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={og} />
+  <meta name="twitter:image:alt" content="MJ PDF 3.1.0 home and dark-mode reader screens on Android" />
   {graph.map((g) => <script type="application/ld+json" set:html={JSON.stringify(g)} />)}
 </head>
 <body>
@@ -51,7 +65,7 @@ const graph = [
   <Footer />
   <script is:inline>
     var b=document.querySelector('.menu-btn'),n=document.getElementById('site-nav');
-    if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)})}
+    if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}})}
   </script>
 </body>
 </html>

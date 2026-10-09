@@ -1,78 +1,117 @@
 ---
 import Base from '../layouts/Base.astro';
+import Phone from '../components/Phone.astro';
 import Gallery from '../components/Gallery.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
 import { SITE, abs } from '../config/site';
 import { APK } from '../data/apk';
 import { currentRelease } from '../data/releases';
-import { shots, shotSrc, SHOT_W, SHOT_H } from '../data/screenshots';
-const by = (id: string) => shots.find((s) => s.id === id)!;
-const home = by('home'), dark = by('dark'), hl = by('highlights'), menu = by('menu'), quote = by('quote');
-const app = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'MJ PDF', applicationCategory: 'BusinessApplication',
-  operatingSystem: 'Android 6.0+', softwareVersion: APK.versionName, fileSize: APK.sizeLabel, license: 'https://www.gnu.org/licenses/gpl-3.0.html',
-  url: abs('/'), image: abs('/images/mj-pdf-icon-512.png'), author: { '@type': 'Person', name: SITE.author },
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } };
+import { guides } from '../data/guides';
+import { faqs } from '../data/faq';
+const app = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', '@id': abs('/#app'), name: 'MJ PDF', alternateName: 'MJ PDF Reader', applicationCategory: 'BusinessApplication', applicationSubCategory: 'PDF reader',
+  operatingSystem: 'Android 6.0+', softwareVersion: APK.versionName, fileSize: APK.sizeLabel, license: 'https://www.gnu.org/licenses/gpl-3.0.html', isAccessibleForFree: true,
+  description: SITE.description, url: abs('/'), image: abs('/images/mj-pdf-icon-512.png'), screenshot: [abs('/images/screenshots/mj-pdf-3-1-0-home-recent-800.webp'), abs('/images/screenshots/mj-pdf-3-1-0-dark-mode-800.webp')],
+  downloadUrl: abs('/download/'), codeRepository: SITE.links.source, author: { '@type': 'Person', name: SITE.author }, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } };
+const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.slice(0, 6).map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
+const bento = [
+  ['Library', 'Recent, Library and Folders tabs, reading history, cover grid and list views, and reading statuses from To Read to Completed.', 'w4'],
+  ['Dark mode', 'Darkens the PDF page itself, not only the toolbars.', ''],
+  ['Search', 'Search the text of one PDF with next and previous results, or search your whole library.', ''],
+  ['Annotate', 'Highlights in several colors, notes, handwritten signatures and PDF forms.', 'w4'],
+  ['Text Mode', 'Reflow a PDF and read it like an e-book.', ''],
+  ['Navigate', 'Table of contents, links in the file, bookmarks, and jump back or forward through your history.', ''],
+  ['Safer saving', 'New in 3.1.0: files are saved more safely, with rescue copies after a failed save.', 'w3'],
+  ['Private by design', 'Open source and ad-free, with incognito mode when you do not want a document remembered.', 'w3'],
+];
 ---
-<Base title="MJ PDF 3.1.0 — Free Open-Source PDF Reader for Android" description={SITE.description} path="/" jsonld={[app]}>
+<Base title="MJ PDF 3.1.0 — Free Open-Source PDF Reader for Android" description="MJ PDF 3.1.0 is a free, open-source Android PDF reader with a library, dark mode, search, highlights, notes, signatures and Text Mode. No ads. Download from F-Droid or IzzyOnDroid." path="/" jsonld={[app, faqLd]} preload="/images/screenshots/mj-pdf-3-1-0-home-recent-800.webp" keywords="MJ PDF, Android PDF reader, open source PDF reader, PDF reader no ads, PDF dark mode Android, highlight PDF Android, F-Droid PDF reader">
   <section class="hero"><div class="wrap grid">
     <div>
       <img class="icon" src="/images/mj-pdf-icon-192.png" width="84" height="84" alt="MJ PDF app icon" />
-      <span class="badge">Current version · <b>{currentRelease.version}</b></span>
-      <h1 style="margin-top:1rem">MJ PDF {currentRelease.version}<br /><span>{SITE.tagline}</span></h1>
-      <p class="lead" style="margin-top:1.2rem">A library manager and a fast reader in one app: continue where you left off, search, highlight, sign and fill forms, or switch to Text Mode and read a PDF like an e-book.</p>
-      <div class="btn-row">
-        <a class="btn pri" href="/download/">Download MJ PDF {currentRelease.version}</a>
-        <a class="btn" href={SITE.links.source} rel="noopener">Source Code</a>
-      </div>
-      <div class="pills"><span class="badge">Open source · GPL-3.0</span><span class="badge">No ads</span><span class="badge">Android 6.0+</span></div>
+      <span class="chip">Latest version · <b>{currentRelease.version}</b></span>
+      <h1 style="margin-top:1.1rem">MJ PDF <span class="grad">{currentRelease.version}</span><span class="sub">{SITE.tagline}</span></h1>
+      <p class="lead" style="margin-top:1.3rem">A free, open-source PDF reader for Android that is also a library manager. Pick up where you left off, search, highlight, sign and fill forms, or switch to Text Mode and read a PDF like an e-book.</p>
+      <div class="btn-row"><a class="btn pri" href="/download/">Download MJ PDF {currentRelease.version}</a><a class="btn" href={SITE.links.source} rel="noopener">Source Code</a></div>
+      <div class="chips"><span class="chip"><b>GPL-3.0</b> open source</span><span class="chip"><b>No</b> ads</span><span class="chip"><b>Android 6.0+</b></span></div>
     </div>
-    <div class="hero-shots" aria-hidden="false">
-      <img src={shotSrc(home,800)} width={SHOT_W} height={SHOT_H} alt={home.alt} fetchpriority="high" />
-      <img src={shotSrc(dark,800)} width={SHOT_W} height={SHOT_H} alt={dark.alt} />
-    </div>
+    <div class="stage"><Phone id="home" eager /><Phone id="dark" eager /></div>
   </div></section>
 
   <section class="sec"><div class="wrap">
-    <span class="eyebrow">What's in 3.1.0</span>
-    <h2>A stability release, built around correctness</h2>
+    <div class="grid4" style="margin-top:0">
+      <div class="card"><div class="stat">{currentRelease.version}<small>Current version</small></div></div>
+      <div class="card"><div class="stat">{APK.sizeLabel}<small>APK size</small></div></div>
+      <div class="card"><div class="stat">Android 6+<small>Minimum version</small></div></div>
+      <div class="card"><div class="stat">GPL-3.0<small>Open-source license</small></div></div>
+    </div>
+  </div></section>
+
+  <section class="sec alt"><div class="wrap">
+    <span class="eyebrow">Everything in one reader</span>
+    <h2>A PDF reader for Android that stays out of your way</h2>
+    <p class="lead">MJ PDF combines a reader and a library in one app. Whether you read textbooks, manuals, papers or e-books saved as PDF, everything you need sits within reach.</p>
+    <div class="bento">{bento.map(([t,d,c]) => <div class={`card ${c}`}><h3>{t}</h3><p>{d}</p></div>)}</div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="split">
+      <div class="txt"><span class="eyebrow">Library</span><h2>Always back at the right page</h2>
+        <p class="lead">The Recent tab puts the book you were reading first, with page count, progress and when you last opened it. Library shows a cover grid you can filter by reading status, and Folders lets you browse your device like a file manager, SD cards included.</p>
+        <ul class="checks"><li>Continue Reading card with progress</li><li>Reading statuses: To Read, Reading, On Hold, Completed, Abandoned</li><li>Search your library from the home screen</li></ul></div>
+      <Phone id="home" />
+    </div>
+    <div class="split rev">
+      <div class="txt"><span class="eyebrow">Annotate &amp; sign</span><h2>Mark up what matters</h2>
+        <p class="lead">Select text and pick a highlight color from the bar that appears. The same bar lets you copy, share, search the web, add a note or translate the selection. When a document needs your mark, add a signature or fill in the form.</p>
+        <div class="btn-row"><a class="btn" href="/guides/highlight-pdf-text-on-android/">Read the highlighting guide</a></div></div>
+      <Phone id="highlights" />
+    </div>
+    <div class="split">
+      <div class="txt"><span class="eyebrow">Reader menu</span><h2>Every tool is one tap away</h2>
+        <p class="lead">Search, Go To Page, Bookmark Page, Full Screen, Hide Margins, Page Text, Print, Add signature, Incognito, Table of Contents, My Bookmarks, My Notes, My Highlights and Text Mode all live in a single menu.</p>
+        <ul class="checks"><li>Jump back, jump forward and navigation history</li><li>Links in the file and file metadata</li><li>Toggle shortcuts for one-handed reading</li></ul></div>
+      <Phone id="menu" />
+    </div>
+    <div class="split rev">
+      <div class="txt"><span class="eyebrow">Dark mode</span><h2>Comfortable night reading</h2>
+        <p class="lead">Dark mode inverts the page as well as the interface, so a late-night chapter does not light up the room. Version 3.1.0 also improves theme controls and unifies Reading Mode settings.</p>
+        <div class="btn-row"><a class="btn" href="/guides/read-pdf-in-dark-mode-on-android/">Dark mode guide</a></div></div>
+      <Phone id="dark" />
+    </div>
+    <div class="split">
+      <div class="txt"><span class="eyebrow">Share</span><h2>Quotes worth sharing</h2>
+        <p class="lead">Turn a passage into a quote card with the book name and author and a choice of Light, Dark or Sepia themes, ready to send to any app.</p>
+        <div class="btn-row"><a class="btn" href="/guides/share-quotes-from-pdf-as-images/">Share Quote guide</a></div></div>
+      <Phone id="quote" />
+    </div>
+  </div></section>
+
+  <section class="sec alt"><div class="wrap">
+    <span class="eyebrow">New in {currentRelease.version}</span>
+    <h2>A release focused on correctness and stability</h2>
     <p class="lead">{currentRelease.summary}</p>
-    <div class="grid3">
-      {currentRelease.highlights.slice(0,6).map((h) => <div class="card"><h3>{h}</h3></div>)}
-    </div>
-    <div class="btn-row"><a class="btn" href="/releases/3-1-0/">Read the 3.1.0 release notes</a></div>
-  </div></section>
-
-  <section class="sec" style="background:var(--bg2)"><div class="wrap">
-    <div class="split">
-      <div><span class="eyebrow">Read PDFs your way</span><h2>Your library, always at the right page</h2>
-        <p class="lead">Home has Recent, Library and Folders tabs. Pick up exactly where you left off, organize with reading statuses, and browse your device like a file manager — SD cards included.</p></div>
-      <img src={shotSrc(home,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={home.alt} />
-    </div>
-    <div class="split rev">
-      <div><span class="eyebrow">Annotate &amp; sign</span><h2>Highlight, note, sign</h2>
-        <p class="lead">Select text and choose a highlight color. Add notes, draw handwritten signatures, and fill PDF forms. Copy, share, web-search or translate a selection from the same bar.</p></div>
-      <img src={shotSrc(hl,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={hl.alt} />
-    </div>
-    <div class="split">
-      <div><span class="eyebrow">Everything within reach</span><h2>One menu for the whole reader</h2>
-        <p class="lead">Search, go to page, bookmarks, full screen, Text Mode, table of contents, notes, highlights and navigation history are a tap away.</p></div>
-      <img src={shotSrc(menu,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={menu.alt} />
-    </div>
-    <div class="split rev">
-      <div><span class="eyebrow">Dark mode</span><h2>Easy on the eyes</h2>
-        <p class="lead">Dark mode applies to the app and to the PDF page itself, so night reading stays comfortable.</p></div>
-      <img src={shotSrc(dark,800)} width={SHOT_W} height={SHOT_H} loading="lazy" alt={dark.alt} />
-    </div>
+    <div class="grid3">{currentRelease.highlights.map((h) => <div class="card"><h3>{h}</h3></div>)}</div>
+    <p style="margin-top:1.4rem">Fixes also landed across {currentRelease.fixes.join(', ')}. <a href="/releases/3-1-0/">Read the full 3.1.0 release notes</a>.</p>
   </div></section>
 
   <section class="sec"><div class="wrap">
-    <span class="eyebrow">Screenshots</span><h2>See MJ PDF {currentRelease.version}</h2>
+    <span class="eyebrow">Gallery</span><h2>See MJ PDF {currentRelease.version} in action</h2>
+    <p class="lead">Unedited screenshots from the real app. Tap any image to enlarge it.</p>
     <Gallery />
-    <div class="btn-row"><a class="btn" href="/screenshots/">All screenshots</a></div>
   </div></section>
 
-  <section class="sec" style="background:var(--bg2)"><div class="wrap">
-    <span class="eyebrow">Get it</span><h2>Download</h2>
-    <p class="lead">Install from F-Droid or IzzyOnDroid on a phone, or grab the x86_64 APK for emulators and Chromebooks. See the download page for details.</p>
-    <div class="btn-row"><a class="btn pri" href="/download/">Go to downloads</a><a class="btn" href="/privacy/">Permissions &amp; privacy</a></div>
+  <section class="sec alt"><div class="wrap">
+    <span class="eyebrow">Get started</span><h2>Up and running in three steps</h2>
+    <ol class="steps"><li><div><b>Install</b><span>Get MJ PDF from F-Droid or IzzyOnDroid, or build it from source.</span></div></li><li><div><b>Open a PDF</b><span>Pick a file from Folders or open one from another app.</span></div></li><li><div><b>Make it yours</b><span>Choose a theme, a page mode and highlight colors in the reader.</span></div></li></ol>
+    <h2 style="margin-top:3rem">Guides</h2>
+    <div class="grid2">{guides.map((g) => <a class="card" href={`/guides/${g.slug}/`}><h3>{g.title}</h3><p>{g.description}</p></a>)}</div>
   </div></section>
+
+  <section class="sec"><div class="wrap narrow">
+    <span class="eyebrow">FAQ</span><h2>Common questions</h2>
+    <Faq limit={6} />
+    <div class="btn-row"><a class="btn" href="/faq/">All questions</a></div>
+  </div></section>
+  <Cta />
 </Base>

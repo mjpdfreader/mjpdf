@@ -1,0 +1,20 @@
+import { APK } from './apk';
+export const faqs: { q: string; a: string; group: string }[] = [
+  { group: 'General', q: 'What is MJ PDF?', a: 'MJ PDF is a free, open-source PDF reader for Android made by Mudlej. It combines a library manager with a fast reader, so you can organize, open, search and annotate PDFs in one app.' },
+  { group: 'General', q: 'What is the current version of MJ PDF?', a: 'This website presents MJ PDF 3.1.0, a correctness and stability release that adds Single Page mode, page fit options, unified Reading Mode settings, improved in-document search and safer file saving.' },
+  { group: 'General', q: 'Is MJ PDF free and open source?', a: 'Yes. The source code is public on GitLab and the app is released under the GPL-3.0 license. There are no ads.' },
+  { group: 'General', q: 'What is new in MJ PDF 3.1.0?', a: 'Version 3.1.0 adds Single Page mode, page fit options, unified Reading Mode settings and improved theme controls. It improves in-document search and document identification, saves files more safely with rescue copies after a failed save, and fixes issues with search, gestures, backups, rotation and right-to-left reading.' },
+  { group: 'Installing', q: 'Which Android versions does MJ PDF 3.1.0 support?', a: `The supplied 3.1.0 build requires ${APK.minAndroid} or newer.` },
+  { group: 'Installing', q: 'Where should I install MJ PDF from?', a: 'Use an official channel. F-Droid and IzzyOnDroid both list the app under the package name com.gitlab.mudlej.MjPdfReader, and the source code is on GitLab.' },
+  { group: 'Installing', q: 'Will the APK on this website install on my phone?', a: 'Only if your device uses an x86_64 processor. The file on the download page contains x86_64 native libraries only. Most phones use ARM processors, so phone users should install from F-Droid or IzzyOnDroid.' },
+  { group: 'Installing', q: 'How can I verify the downloaded APK?', a: `Compare its SHA-256 checksum with the one printed on the download page: ${APK.sha256}.` },
+  { group: 'Using the app', q: 'Does MJ PDF have a dark mode?', a: 'Yes. Dark mode darkens the PDF page as well as the interface. Open the reader menu and tap Dark Mode.' },
+  { group: 'Using the app', q: 'Can I highlight text and add notes?', a: 'Yes. Select text, choose a highlight color from the bar and add notes. Your notes and highlights can be listed from the reader menu.' },
+  { group: 'Using the app', q: 'What is Text Mode?', a: 'Text Mode reflows a PDF so you can read it like an e-book, with adjustable reading settings.' },
+  { group: 'Using the app', q: 'Can MJ PDF sign and fill PDFs?', a: 'Yes. The reader menu includes Add signature, and the app supports filling PDF forms.' },
+  { group: 'Using the app', q: 'Can I search inside a PDF?', a: 'Yes. In-document search lets you move through results, and 3.1.0 improved it. You can also search your whole library from the home screen.' },
+  { group: 'Using the app', q: 'Does MJ PDF have an incognito mode?', a: 'Yes. Incognito is available from the reader menu.' },
+  { group: 'Privacy', q: 'Does MJ PDF show ads or collect data?', a: 'There are no ads. The project documentation notes that Exodus Privacy reports a tracker in the app, and the APK bundles the ACRA crash-reporting library, so this site does not claim zero tracking. See the privacy page for permissions.' },
+  { group: 'Privacy', q: 'Why does the app ask for all-files access?', a: 'The APK declares the MANAGE_EXTERNAL_STORAGE permission, which supports browsing folders and finding PDFs on your device.' },
+  { group: 'Source', q: 'Where is the source code?', a: 'On GitLab at gitlab.com/mudlej_android/mj_pdf_reader, with a GitHub mirror.' },
+];

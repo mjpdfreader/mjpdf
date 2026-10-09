@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Phone from '../../components/Phone.astro';
+import Cta from '../../components/Cta.astro';
+import { SITE, abs } from '../../config/site';
+import { guides } from '../../data/guides';
+export function getStaticPaths() { return guides.map((guide) => ({ params: { slug: guide.slug }, props: { guide } })); }
+const { guide } = Astro.props;
+const path = `/guides/${guide.slug}/`;
+const rel = guides.filter((g) => guide.related.includes(g.slug));
+const how = { '@context': 'https://schema.org', '@type': 'HowTo', name: guide.title, description: guide.description, image: abs('/images/og-mj-pdf-3-1-0.png'), tool: [{ '@type': 'HowToTool', name: 'MJ PDF 3.1.0 for Android' }], step: guide.steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text })) };
+const art = { '@context': 'https://schema.org', '@type': 'Article', headline: guide.title, description: guide.description, mainEntityOfPage: abs(path), image: abs('/images/og-mj-pdf-3-1-0.png'), author: { '@type': 'Person', name: SITE.author }, publisher: { '@type': 'Person', name: SITE.author } };
+---
+<Base title={guide.title} description={guide.description} path={path} crumbs={[{name:'Guides',path:'/guides/'},{name:guide.title,path}]} ogType="article" jsonld={[how, art]}>
+  <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / {guide.title}</nav>
+    <h1 style="font-size:clamp(2rem,5vw,3.4rem)">{guide.h1}</h1>
+    <p class="lead" style="margin-top:1rem">{guide.intro}</p></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap">
+    <div class="split"><div class="txt"><h2>Step by step</h2>
+      <ol class="steps">{guide.steps.map((s) => <li><div><b>{s.name}</b><span>{s.text}</span></div></li>)}</ol></div>
+      <Phone id={guide.shot} /></div>
+    <h2>Tips</h2>
+    <ul class="checks">{guide.tips.map((t) => <li>{t}</li>)}</ul>
+    <h2 style="margin-top:3rem">Related guides</h2>
+    <div class="grid2">{rel.map((g) => <a class="card" href={`/guides/${g.slug}/`}><h3>{g.title}</h3><p>{g.description}</p></a>)}</div>
+  </div></section>
+  <Cta />
+</Base>

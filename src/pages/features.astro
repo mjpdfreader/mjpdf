@@ -1,20 +1,56 @@
 ---
 import Base from '../layouts/Base.astro';
-const groups = [
- ['Library', ['Home with Recent, Library and Folders tabs','Continue reading where you left off, with detailed reading history','Reading statuses: To Read, Reading, On Hold, Completed, Abandoned','Browse your device like a file manager, including SD cards','Search every PDF on your device']],
- ['PDF Reader', ['Fast, smooth rendering','Dark mode for the app and the PDF itself','True full screen with configurable shortcut buttons','Single Page and Dual Page modes (3.1.0 adds Single Page mode and page fit options)','Unified Reading Mode settings and improved theme controls','Screen rotation and right-to-left (RTL) reading fixes in 3.1.0']],
- ['Search', ['Live results while you type','Next / previous result navigation inside the reader','Improved in-document search in 3.1.0']],
- ['Navigation', ['Table of contents','Links in the file','Bookmarks','Jump back / jump forward and navigation history']],
- ['Annotation', ['Highlight text in several colors','Add notes and save them into the PDF','Handwritten signatures saved as vector strokes','Fill PDF forms','Select text to copy, share, web-search, translate or look up']],
- ['Text Mode', ['Read any PDF like an e-book','Reflow, fonts and themes']],
- ['Sharing & saving', ['Share quotes as images with book name, author and themes','Safer saving in 3.1.0, with rescue copies after a failed save','Incognito mode']],
-] as [string, string[]][];
+import Phone from '../components/Phone.astro';
+import Cta from '../components/Cta.astro';
+const groups: { id: string; title: string; shot: string; intro: string; items: [string, string][] }[] = [
+ { id: 'library', title: 'Library', shot: 'library', intro: 'MJ PDF is more than a viewer. It remembers what you read and helps you find it again.', items: [
+   ['Recent, Library and Folders', 'Three tabs on the home screen: what you opened lately, everything MJ PDF knows about, and a file browser.'],
+   ['Reading history and progress', 'See page counts, percentage read and when you last opened each document.'],
+   ['Reading statuses', 'Filter by To Read, Reading, On Hold, Completed and Abandoned.'],
+   ['Grid and list views', 'Browse covers in a grid or scan titles in a list.'],
+   ['Device and SD card browsing', 'Open files directly from folders, including removable storage.'] ] },
+ { id: 'reader', title: 'PDF reader', shot: 'dark', intro: 'A reader built for long sessions, with page layouts and themes you can tune.', items: [
+   ['Dark mode', 'Applies to the PDF page and the interface.'],
+   ['Full screen', 'Hide the bars and keep shortcut buttons within reach.'],
+   ['Single Page and Dual Page modes', 'Single Page mode and page fit options arrived in 3.1.0.'],
+   ['Unified Reading Mode settings', 'One place to tune how documents are displayed.'],
+   ['Screen rotation and RTL reading', 'Rotation and right-to-left reading were fixed in 3.1.0.'] ] },
+ { id: 'search', title: 'Search & navigation', shot: 'menu', intro: 'Find the passage, jump to it and come back.', items: [
+   ['In-document search', 'Move between results; improved in 3.1.0.'],
+   ['Table of contents and links', 'Follow the document outline and links embedded in the file.'],
+   ['Bookmarks', 'Bookmark pages and list them from My Bookmarks.'],
+   ['Jump back, jump forward, history', 'Follow a link and return to exactly where you were.'],
+   ['Go To Page', 'Jump straight to any page number.'] ] },
+ { id: 'annotation', title: 'Annotation', shot: 'highlights', intro: 'Mark up the page without leaving the reader.', items: [
+   ['Highlights', 'Several colors, listed under My Highlights.'],
+   ['Notes', 'Attach thoughts to passages and review them under My Notes.'],
+   ['Signatures', 'Add a handwritten signature to a document.'],
+   ['PDF forms', 'Fill in form fields.'],
+   ['Selection actions', 'Copy, share, search the web or translate the selected text.'] ] },
+ { id: 'text-mode', title: 'Text Mode & sharing', shot: 'quote', intro: 'Read like an e-book and share what you find.', items: [
+   ['Text Mode', 'Reflow PDF text for comfortable reading on a small screen.'],
+   ['Share Quote', 'Create a quote card with book name, author and Light, Dark or Sepia themes.'],
+   ['Page Text and Print', 'Get the text of a page or print the document.'] ] },
+ { id: 'safety', title: 'Saving & privacy', shot: 'home', intro: 'Your documents come first.', items: [
+   ['Safer saving', 'Improved in 3.1.0, with rescue copies after a failed save.'],
+   ['Improved document identification', 'Document identification was improved in 3.1.0.'],
+   ['Incognito mode', 'Read without leaving a trace in your history.'],
+   ['Open source, no ads', 'GPL-3.0 code you can inspect.'] ] },
+];
 ---
-<Base title="Features" description="Everything MJ PDF 3.1.0 does: library, reader, search, navigation, annotation, Text Mode and safer saving." path="/features/" crumbs={[{name:'Features',path:'/features/'}]}>
+<Base title="Features — Android PDF Reader with Library, Dark Mode & Annotation" description="Every feature of MJ PDF 3.1.0: library with reading statuses, dark mode, Single Page mode, search, bookmarks, highlights, notes, signatures, forms, Text Mode and safer saving." path="/features/" crumbs={[{name:'Features',path:'/features/'}]} keywords="PDF reader features, Android PDF annotation, PDF dark mode, PDF reflow, Text Mode">
   <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Features</nav>
-    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">Features in MJ PDF 3.1.0</h1>
-    <p class="lead">A reader and a library manager in one app. Features listed here come from the project's published app descriptions and release information.</p></div>
-  <section class="sec" style="padding-top:30px"><div class="wrap grid3">
-    {groups.map(([t,l]) => <div class="card"><h2 style="font-size:1.4rem">{t}</h2><ul class="checks">{l.map((i)=><li>{i}</li>)}</ul></div>)}
+    <h1>Features in <span class="grad">MJ PDF 3.1.0</span></h1>
+    <p class="lead" style="margin-top:1rem">A complete PDF reader and library for Android. Everything below is drawn from the project's published information and the 3.1.0 release.</p>
+    <div class="chips">{groups.map((g) => <a class="chip" href={`#${g.id}`}>{g.title}</a>)}</div></div>
+  <section class="sec"><div class="wrap">
+    {groups.map((g, i) => (
+      <div class={`split ${i % 2 ? 'rev' : ''}`} id={g.id}>
+        <div class="txt"><span class="eyebrow">{g.title}</span><h2>{g.intro}</h2>
+          <ul class="checks">{g.items.map(([t, d]) => <li><b style="color:var(--text)">{t}.</b> {d}</li>)}</ul></div>
+        <Phone id={g.shot} />
+      </div>
+    ))}
   </div></section>
+  <Cta />
 </Base>

@@ -1,14 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
 import { SITE } from '../config/site';
 ---
-<Base title="About" description="About MJ PDF and this website." path="/about/" crumbs={[{name:'About',path:'/about/'}]}>
+<Base title="About MJ PDF and This Website" description="About MJ PDF, the open-source Android PDF reader made by Mudlej, and about this independent presentation of version 3.1.0." path="/about/" crumbs={[{name:'About',path:'/about/'}]}>
   <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
-    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">About MJ PDF</h1></div>
-  <section class="sec" style="padding-top:20px"><div class="wrap" style="max-width:820px">
-    <p>MJ PDF is a PDF reader for Android made by {SITE.author}. Versions 1 and 2 were based on PDF Viewer Plus; according to the project, the app was entirely rewritten in 3.0.0.</p>
-    <p>This website presents version 3.1.0. It is an independent presentation of the app, not the project's own page. The project's official page is <a href={SITE.links.official} rel="noopener">mudlej.com/projects/mj-pdf</a>.</p>
-    <h2 style="margin-top:36px">Links</h2>
-    <ul class="checks"><li><a href={SITE.links.source} rel="noopener">Source code and issues (GitLab)</a></li><li><a href={SITE.links.mirror} rel="noopener">GitHub mirror</a></li></ul>
+    <h1>About <span class="grad">MJ PDF</span></h1></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap narrow prose">
+    <h2>The app</h2>
+    <p>MJ PDF is a PDF reader for Android made by {SITE.author}. Versions 1 and 2 were based on PDF Viewer Plus. According to the project, the app was entirely rewritten in 3.0.0, and 3.1.0 is a correctness and stability release in that generation.</p>
+    <p>It is free software released under the GPL-3.0 license, with its source code on GitLab and a mirror on GitHub.</p>
+    <h2>This website</h2>
+    <p>This website is an independent presentation of MJ PDF 3.1.0, built around real screenshots and facts checked against the app's APK. The project's own page is <a href={SITE.links.official} rel="noopener">mudlej.com/projects/mj-pdf</a>.</p>
+    <h2>Project links</h2>
+    <ul class="checks"><li><a href={SITE.links.source} rel="noopener">Source code and issues (GitLab)</a></li><li><a href={SITE.links.mirror} rel="noopener">GitHub mirror</a></li><li><a href={SITE.links.fdroid} rel="noopener">F-Droid listing</a></li><li><a href={SITE.links.izzy} rel="noopener">IzzyOnDroid listing</a></li></ul>
   </div></section>
+  <Cta />
 </Base>

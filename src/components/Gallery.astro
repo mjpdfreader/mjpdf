@@ -7,7 +7,7 @@ const { items = shots } = Astro.props;
   {items.map((s, i) => (
     <figure role="listitem">
       <button type="button" data-i={i} aria-label={`Enlarge: ${s.title}`}>
-        <img src={shotSrc(s, 400)} srcset={`${shotSrc(s,400)} 400w, ${shotSrc(s,800)} 800w`} sizes="260px" width={SHOT_W} height={SHOT_H} loading="lazy" alt={s.alt} />
+        <img src={shotSrc(s, 400)} srcset={`${shotSrc(s,400)} 400w, ${shotSrc(s,800)} 800w`} sizes="(max-width:600px) 62vw, 270px" width={SHOT_W} height={SHOT_H} loading="lazy" alt={s.alt} />
       </button>
       <figcaption><b>{s.title}</b>{s.caption}</figcaption>
     </figure>

@@ -1,0 +1,10 @@
+---
+import { shots, shotSrc, SHOT_W, SHOT_H } from '../data/screenshots';
+interface Props { id: string; eager?: boolean; sizes?: string; class?: string }
+const { id, eager = false, sizes = '(max-width:860px) 70vw, 300px', class: cls = '' } = Astro.props;
+const s = shots.find((x) => x.id === id)!;
+---
+<figure class={`phone ${cls}`}>
+  <img src={shotSrc(s, 800)} srcset={`${shotSrc(s,400)} 400w, ${shotSrc(s,800)} 800w`} sizes={sizes} width={SHOT_W} height={SHOT_H}
+    alt={s.alt} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : undefined} />
+</figure>

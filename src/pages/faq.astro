@@ -1,23 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
-import { APK } from '../data/apk';
-const faqs: [string, string][] = [
- ['What is MJ PDF?', 'A free, open-source PDF reader for Android made by Mudlej. It combines a reader with a library manager.'],
- ['What is the current version?', 'This site presents MJ PDF 3.1.0, a correctness and stability release.'],
- ['Is it free and open source?', 'Yes. The source code is on GitLab and the app is licensed under the GPL.'],
- ['Which Android versions are supported?', `The supplied 3.1.0 build requires ${APK.minAndroid} or newer.`],
- ['Will the APK on this site install on my phone?', 'Only if your device uses an x86_64 processor. The file on the download page contains x86_64 libraries only. Most phones are ARM; use F-Droid or IzzyOnDroid.'],
- ['Does it collect my data?', 'There are no ads. The project documentation notes that Exodus Privacy reports a tracker in the app, so this site does not claim zero tracking. See the privacy page.'],
- ['Can it open PDFs from a link?', 'Yes, the app declares internet access for opening PDFs from web addresses.'],
- ['What is Text Mode?', 'It lets you read a PDF like an e-book with reflow, fonts and themes.'],
- ['Where is the source code?', 'On GitLab at gitlab.com/mudlej_android/mj_pdf_reader, with a GitHub mirror for issues.'],
-];
-const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
+import Cta from '../components/Cta.astro';
+import { faqs } from '../data/faq';
+const groups = [...new Set(faqs.map((f) => f.group))];
+const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
 ---
-<Base title="FAQ" description="Answers about MJ PDF 3.1.0: compatibility, privacy, Text Mode, source code and installation." path="/faq/" crumbs={[{name:'FAQ',path:'/faq/'}]} jsonld={[ld]}>
+<Base title="MJ PDF FAQ — Installing, Features and Privacy" description="Answers to common questions about MJ PDF 3.1.0: Android support, installing from F-Droid, the x86_64 APK, dark mode, highlights, Text Mode and privacy." path="/faq/" crumbs={[{name:'FAQ',path:'/faq/'}]} jsonld={[ld]}>
   <div class="wrap page-h"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / FAQ</nav>
-    <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:1rem">Frequently asked questions</h1></div>
-  <section class="sec" style="padding-top:20px"><div class="wrap" style="max-width:820px">
-    {faqs.map(([q,a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+    <h1>Frequently asked <span class="grad">questions</span></h1></div>
+  <section class="sec" style="padding-top:20px"><div class="wrap narrow">
+    {groups.map((g) => <div style="margin-bottom:2.4rem"><h2 style="font-size:1.5rem">{g}</h2>{faqs.filter((f) => f.group === g).map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>)}
   </div></section>
+  <Cta />
 </Base>
